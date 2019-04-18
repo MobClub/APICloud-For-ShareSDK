@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <title>ShareSDK Demo</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+        label {
+            margin: 10px;
+            font-size: 24px;
+        }
+
+        ul {
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            margin: 5px 10px;
+            padding: 5px;
+            color: #000;
+            word-wrap: break-word;
+        }
+
+        #main{
+                display: block;
+        }
+        a.button{
+          display: -webkit-box;
+          -webkit-box-pack: center;
+          -webkit-box-align: center;
+          height: 36px;
+          margin: 8px;
+          background-color: rgba(240,240,240,1.0);
+          border-color: rgba(220,220,220,1.0);
+          border-width: 2px;
+          border-style: solid;
+	      }
+        a.active{
+          background-color: rgba(240,240,240,0.6);
+	      }
+    </style>
+
+    <script src="../script/ShareSDK.js"></script>
+    <script>
+        // 授权
+        function authBtnClickHandler() {
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.authorize({
+                "platform": $sharesdk.PlatformID.SinaWeibo
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: "授权成功",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "授权失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消授权",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+        }
+
+        // 取消授权
+        function cancelAuthBtnClickHandler() {
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.cancelAuthorize({
+                "platform": $sharesdk.PlatformID.SinaWeibo
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: "成功",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+        }
+
+        // 获取用户信息
+        function userInfoBtnClickHandler() {
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.getUserInfo({
+                "platform": $sharesdk.PlatformID.SinaWeibo
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: $sharesdk.ObjectToJsonString(ret.data),
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+        }
+
+        // 分享内容
+        function shareContentClickHandler() {
+            var shareParams =
+                {
+                    "text" : "测试的文字",
+                    "imageUrl" : "http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg",
+                    "title" : "测试的标题",
+                    "titleUrl" : "http://www.mob.com",
+                    "description" : "测试的描述",
+                    "site" : "ShareSDK",
+                    "siteUrl" : "http://www.mob.com",
+                    "type" : $sharesdk.ContentType.Auto
+                };
+
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.shareContent({
+                "platform": $sharesdk.PlatformID.SinaWeibo,
+                "shareParams": shareParams
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: "成功",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+
+        }
+
+        // 一键分享内容/显示分享菜单
+        function oneKeyShareContentClickHandler() {
+            var shareParams =
+                {
+                    "text" : "测试的文字",
+                    "imageUrl" : "http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg",
+                    "title" : "测试的标题",
+                    "titleUrl" : "http://www.mob.com",
+                    "description" : "测试的描述",
+                    "site" : "ShareSDK",
+                    "siteUrl" : "http://www.mob.com",
+                    "type" : $sharesdk.ContentType.Auto
+                };
+            var platforms =
+                [
+                    $sharesdk.PlatformID.SinaWeibo,
+                    $sharesdk.PlatformID.WeChat
+                ];
+
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.oneKeyShareContent({
+                "platforms": platforms, //为null时，显示全部可分享的平台（排除当前环境不可分享平台）
+                "shareParams": shareParams
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: "成功",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+        }
+
+        // 新浪微博LinkCard卡片类型链接分享
+        function oneSinaLinkCardShareContentClickHandler() {
+            var shareParams =
+                {
+                    "text" : "测试的文字",
+                    "imageUrl" : "http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg",
+                    "title" : "",
+                    "titleUrl" : "http://www.mob.com",
+                    "sina_linkCard" : 1,
+                    "sina_cardTitle" : "cardTitle",
+                    "sina_cardSummary" : "cardSummary",
+                    "type" : $sharesdk.ContentType.WebPage,
+                };
+
+            var shareApi = api.require('ShareSDKPlus');
+            shareApi.shareContent({
+                "platform": $sharesdk.PlatformID.SinaWeibo,
+                "shareParams": shareParams
+            },function(ret, err){
+                var state = ret.state;
+                switch(state)
+                {
+                    case $sharesdk.ResponseState.Success://1
+                        api.toast({
+                            msg: "成功",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Fail://2
+                        api.toast({
+                            msg: "失败",
+                            location: 'middle'
+                        });
+                        break;
+                    case $sharesdk.ResponseState.Cancel://3
+                        api.toast({
+                            msg: "取消",
+                            location: 'middle'
+                        });
+                        break;
+                    default:
+                }
+
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <label>ShareSDK Demo</label>
+    <div id="main">
+            <a class="button" tapmode="active" onclick="authBtnClickHandler()">授权</a>
+            <a class="button" tapmode="active" onclick="cancelAuthBtnClickHandler()">取消授权</a>
+            <a class="button" tapmode="active" onclick="userInfoBtnClickHandler()">获取用户信息</a>
+            <a class="button" tapmode="active" onclick="shareContentClickHandler()">分享内容</a>
+            <a class="button" tapmode="active" onclick="oneKeyShareContentClickHandler()">一键分享内容</a>
+            <a class="button" tapmode="active" onclick="oneSinaLinkCardShareContentClickHandler()">新浪微博LinkCard卡片类型链接分享</a>
+    </div>
+</body>
+
+</html>

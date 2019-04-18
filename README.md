@@ -46,13 +46,12 @@ ShareSDKPlus封装了ShareSDK,是对APICloud平台的支持，为APICloud开发�
 如有问题请联系技术支持:  
 
 ```
-服务电话:   400-685-2216     
-QQ:        4006852216
+服务电话:   400-685-2216  
 节假日值班电话:
     iOS：185-1664-1951
 Android: 185-1664-1950
 电子邮箱:   support@mob.com
-市场合作:   021-54623100
+市场合作:   021-54623189
 ```
 
 **模块使用攻略**
@@ -61,7 +60,7 @@ Android: 185-1664-1950
 详情参考:[快速集成获取apppkey和appSecret](http://wiki.mob.com/%E4%BA%A7%E5%93%81%E7%AE%80%E4%BB%8B-5/)
 
 
-**使用此模块之前建议先配置  [config.xml](/APICloud/技术专题/app-config-manual) 文件，配置完毕，需通过云端编译生效，配置方法如下：**
+**使用此模块之前建议先配置  [config.xml](https://docs.apicloud.com/Dev-Guide/app-config-manual) 文件，配置完毕，需通过云端编译生效，配置方法如下：**
 
 - 名称：ShareSDKPlus
 - 参数：MOBAppKey、MOBAppSecret
