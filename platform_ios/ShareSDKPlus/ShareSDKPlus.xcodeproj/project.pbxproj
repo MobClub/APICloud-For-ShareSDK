@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		0BA9C0E722645E0600C17D58 /* CreatePackage_Plus */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0BA9C0EA22645E0600C17D58 /* Build configuration list for PBXAggregateTarget "CreatePackage_Plus" */;
+			buildPhases = (
+				0BA9C0EB22645E3100C17D58 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CreatePackage_Plus;
+			productName = CreatePackage_PlusExtend;
+		};
+		0BA9C0EC2264619500C17D58 /* ExportModule_ShareSDKPlus */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0BA9C0ED2264619500C17D58 /* Build configuration list for PBXAggregateTarget "ExportModule_ShareSDKPlus" */;
+			buildPhases = (
+				0B2843062265B88400B8AC75 /* ShellScript */,
+			);
+			dependencies = (
+				0B2843082265BC3900B8AC75 /* PBXTargetDependency */,
+			);
+			name = ExportModule_ShareSDKPlus;
+			productName = ExportModule_ShareSDKPlusExtend;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0BA9C0DF22643AA200C17D58 /* ShareSDKPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0B2843072265BC3900B8AC75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528608201A596B0600587EC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BA9C0E722645E0600C17D58;
+			remoteInfo = CreatePackage_Plus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		528608261A596B0600587EC2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSDKPlus.m; sourceTree = "<group>"; };
+		0BA9C0D722643AA200C17D58 /* ShareSDKPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKPlus.h; sourceTree = "<group>"; };
+		528608281A596B0600587EC2 /* libShareSDKPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareSDKPlus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		528608251A596B0600587EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BA9C0D522643AA200C17D58 /* ShareSDKPlus */ = {
+			isa = PBXGroup;
+			children = (
+				0BA9C0D722643AA200C17D58 /* ShareSDKPlus.h */,
+				0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */,
+			);
+			path = ShareSDKPlus;
+			sourceTree = "<group>";
+		};
+		5286081F1A596B0600587EC2 = {
+			isa = PBXGroup;
+			children = (
+				0BA9C0D522643AA200C17D58 /* ShareSDKPlus */,
+				528608291A596B0600587EC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		528608291A596B0600587EC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				528608281A596B0600587EC2 /* libShareSDKPlus.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		528608271A596B0600587EC2 /* ShareSDKPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5286083C1A596B0600587EC2 /* Build configuration list for PBXNativeTarget "ShareSDKPlus" */;
+			buildPhases = (
+				528608241A596B0600587EC2 /* Sources */,
+				528608251A596B0600587EC2 /* Frameworks */,
+				528608261A596B0600587EC2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareSDKPlus;
+			productName = ModuleDemo;
+			productReference = 528608281A596B0600587EC2 /* libShareSDKPlus.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		528608201A596B0600587EC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Mob;
+				TargetAttributes = {
+					0BA9C0E722645E0600C17D58 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					0BA9C0EC2264619500C17D58 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					528608271A596B0600587EC2 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 528608231A596B0600587EC2 /* Build configuration list for PBXProject "ShareSDKPlus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5286081F1A596B0600587EC2;
+			productRefGroup = 528608291A596B0600587EC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				528608271A596B0600587EC2 /* ShareSDKPlus */,
+				0BA9C0E722645E0600C17D58 /* CreatePackage_Plus */,
+				0BA9C0EC2264619500C17D58 /* ExportModule_ShareSDKPlus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B2843062265B88400B8AC75 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n#要build的target名\nTARGET_NAME=${PROJECT_NAME}\n#echo \"target_Name=${TARGET_NAME}\"\n\nModuleName=ShareSDKPlus\n\n#要build的target名\nINSTALL_DIR=${SRCROOT}/../UZModules/${ModuleName}\nINSTALL_DIR_A=${INSTALL_DIR}/lib${TARGET_NAME}.a\n\n\n#模块打包\nEXPORT_ROOT=${SRCROOT}/../Export_Modules/${ModuleName}\nEXPORT_DIR=${EXPORT_ROOT}/target\nEXPORT_DIR_A=${EXPORT_DIR}/lib${TARGET_NAME}.a\n\n#SDK\nSDK_DIR=${SRCROOT}/../SDK\n\nif [ -d \"${EXPORT_DIR}\" ]\nthen\nrm -rf \"${EXPORT_DIR}\"\nfi\nmkdir -p \"${EXPORT_DIR}\"\n\ncp \"${INSTALL_DIR_A}\" \"${EXPORT_DIR}/\"\n\n#添加必要的ShareSDK相关包\n#SDK/Required/MOBFoundation.framework\ncp -R \"${SDK_DIR}/Required/MOBFoundation.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/ShareSDK.framework\ncp -R \"${SDK_DIR}/ShareSDK/ShareSDK.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Required\ncp -R \"${SDK_DIR}/ShareSDK/Support/Required/\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Optional\ncp -R \"${SDK_DIR}/ShareSDK/Support/Optional/\" \"${EXPORT_DIR}/\"\n\n\n#SDK/ShareSDK/Support/PlatformConnector\n#SDK/ShareSDK/Support/PlatformSDK\n#如下：store模块只提供QQ平台、新浪平台、微信平台，其他平台可通过ExportModule_ShareSDKPlusExtend 添加平台打包成自定义模块上传使用\n# QQ\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/QQConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework\" \"${EXPORT_DIR}/\"\n# Sina\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/libWeiboSDK.a\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle\" \"${EXPORT_DIR}/\"\n# Wechat\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/WechatConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/WeChatSDK/libWeChatSDK.a\" \"${EXPORT_DIR}/\"\n\ncd ${EXPORT_ROOT}/../\nzip -rq ${ModuleName}.zip ${ModuleName}\n\n\nopen ${EXPORT_ROOT}\n";
+		};
+		0BA9C0EB22645E3100C17D58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\n#要build的target名\nTARGET_NAME=${PROJECT_NAME}\n#echo \"target_Name=${TARGET_NAME}\"\n\n#要build的target名\nINSTALL_DIR=${SRCROOT}/../UZModules/ShareSDKPlus\nINSTALL_DIR_A=${INSTALL_DIR}/lib${TARGET_NAME}.a\nINSTALL_DIR_Headers=${INSTALL_DIR}/Headers\n\nWORK_DIR=build\nDEVICE_DIR_A=${WORK_DIR}/Release-iphoneos/lib${TARGET_NAME}.a\nSIMULATOR_DIR_A=${WORK_DIR}/Release-iphonesimulator/lib${TARGET_NAME}.a\nDEVICE_DIR_INCLUDE=${WORK_DIR}/Release-iphoneos/include\n\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\n#xcodebuild -target ${TARGET_NAME} clean\n\nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -arch \"armv7s\" -arch \"armv7\" -arch \"arm64\" -configuration \"Release\" -target \"${TARGET_NAME}\" -sdk iphoneos build\nxcodebuild BITCODE_GENERATION_MODE=bitcode OTHER_CFLAGS=\"-fembed-bitcode\" -arch \"i386\" -arch \"x86_64\" -configuration \"Release\" -target \"${TARGET_NAME}\" -sdk iphonesimulator build\n\n#模拟器build\n#xcodebuild -target ${TARGET_NAME} -configuration Release -sdk iphonesimulator\n#真机build\n#xcodebuild -target ${TARGET_NAME} -configuration Release -sdk iphoneos\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR_A}\" ]\nthen\nrm -rf \"${INSTALL_DIR_A}\"\nfi\n\nif [ -d \"${INSTALL_DIR_Headers}\" ]\nthen\nrm -rf \"${INSTALL_DIR_Headers}\"\nfi\n\n#复制头文件到目标文件夹\n#cp -R \"${DEVICE_DIR_INCLUDE}\" \"${INSTALL_DIR_Headers}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR_A}\" \"${SIMULATOR_DIR_A}\" -output \"${INSTALL_DIR_A}\"\n\nrm -r \"${WORK_DIR}\"\n\n\n\n\n\n\n\n\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		528608241A596B0600587EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BA9C0DF22643AA200C17D58 /* ShareSDKPlus.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B2843082265BC3900B8AC75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BA9C0E722645E0600C17D58 /* CreatePackage_Plus */;
+			targetProxy = 0B2843072265BC3900B8AC75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0BA9C0E822645E0600C17D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0BA9C0E922645E0600C17D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0BA9C0EE2264619500C17D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0BA9C0EF2264619500C17D58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5286083A1A596B0600587EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5286083B1A596B0600587EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5286083D1A596B0600587EC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../SDK/**";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/UZEngine/**";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = /include;
+				PRODUCT_NAME = ShareSDKPlus;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5286083E1A596B0600587EC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../SDK/**";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/UZEngine/**";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-ObjC";
+				PRIVATE_HEADERS_FOLDER_PATH = /include;
+				PRODUCT_NAME = ShareSDKPlus;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BA9C0EA22645E0600C17D58 /* Build configuration list for PBXAggregateTarget "CreatePackage_Plus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BA9C0E822645E0600C17D58 /* Debug */,
+				0BA9C0E922645E0600C17D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BA9C0ED2264619500C17D58 /* Build configuration list for PBXAggregateTarget "ExportModule_ShareSDKPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BA9C0EE2264619500C17D58 /* Debug */,
+				0BA9C0EF2264619500C17D58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		528608231A596B0600587EC2 /* Build configuration list for PBXProject "ShareSDKPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5286083A1A596B0600587EC2 /* Debug */,
+				5286083B1A596B0600587EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5286083C1A596B0600587EC2 /* Build configuration list for PBXNativeTarget "ShareSDKPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5286083D1A596B0600587EC2 /* Debug */,
+				5286083E1A596B0600587EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 528608201A596B0600587EC2 /* Project object */;
+}
