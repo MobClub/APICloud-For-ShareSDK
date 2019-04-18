@@ -699,3 +699,9 @@ iOS系统，Android系统
 
 可提供的1.0.0及更高版本
 
+# 如何扩充平台
+
+当前ShareSDKPlus只支持微信、QQ、新浪微博三个平台，如果想要支持其他平台应如果操作
+
+### iOS方案
+[点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/info_ios.md#a)
