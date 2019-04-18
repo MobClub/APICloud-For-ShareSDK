@@ -8,6 +8,10 @@ Description: ShareSDK在APICloud平台的插件
 
 <div class="outline">
 
+[iOS配置](#p1)
+
+[android配置](#p2)
+
 [常量须知](#a0)
 
 [authorize](#a1)
@@ -62,36 +66,318 @@ Android: 185-1664-1950
 
 **使用此模块之前建议先配置  [config.xml](https://docs.apicloud.com/Dev-Guide/app-config-manual) 文件，配置完毕，需通过云端编译生效，配置方法如下：**
 
-- 名称：ShareSDKPlus
-- 参数：MOBAppKey、MOBAppSecret
-- 配置示例:
+<div id="p1"></div>
+
+**iOS配置：**  
+配置config.xml文件，下面是所有平台需要配置信息，开发者自行删减。下面的值都是sharesdk demo测试使用申请，开发者自行调整
 
 ```xml
   <feature name="ShareSDKPlus">
-    <param name="MOBAppKey" value="moba6b6c6d6" />
-    <param name="MOBAppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3" />
     
-    <param name="SinaWei_AppKey" value="568898243" />
-    <param name="SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
-    <param name="SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
-        
-    <param name="QQ_AppKey" value="100371282" />
-    <param name="QQ_AppSecret" value="aed9b0303e3ed1e27bae87c33761161d" />
+        <param name="SinaWei_AppKey" value="568898243" />
+        <param name="SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
+        <param name="SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
 
-    <param name="Wechat_AppKey" value="wx617c77c82218ea2c" />
-    <param name="Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
-    
-    ...
-    
+        <param name="QQ_AppKey" value="100371282" />
+        <param name="QQ_AppSecret" value="aed9b0303e3ed1e27bae87c33761161d" />
+
+        <param name="Wechat_AppKey" value="wx617c77c82218ea2c" />
+        <param name="Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
+
+        <param name="Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
+        <param name="Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />
+
+        <param name="Facebook_AppKey" value="1412473428822331" />
+        <param name="Facebook_AppSecret" value="a42f4f3f867dc947b9ed6020c2e93558" />
+        <param name="Facebook_DisplayName" value="shareSDK" />
+
+        <param name="Twitter_AppKey" value="viOnkeLpHBKs6KXV7MPpeGyzE" />
+        <param name="Twitter_AppSecret" value="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" />
+        <param name="Twitter_RedirectUri" value="http://mob.com" />
+
+        <param name="Instagram_AppKey" value="ff68e3216b4f4f989121aa1c2962d058" />
+        <param name="Instagram_AppSecret" value="1b2e82f110264869b3505c3fe34e31a1" />
+        <param name="Instagram_RedirectUri" value="http://sharesdk.cn" />
+
+        <param name="Google_AppKey" value="232554794995.apps.googleusercontent.com" />
+        <param name="Google_AppSecret" value="PEdFgtrMw97aCvf0joQj7EMk" />
+        <param name="Google_RedirectUri" value="http://localhost" />
+
+        <param name="Line_AuthType" value="2" />
+
+        <param name="AliPaySocial_AppKey" value="2017062107540437" />
+
+        <param name="MeiPai_AppKey" value="1089867639" />
+
+        <param name="DingTalk_AppKey" value="dingoabcwtuab76wy0kyzo" />
+
+        <param name="DouBan_AppKey" value="02e2cbe5ca06de5908a863b15e149b0b" />
+        <param name="DouBan_AppSecret" value="9f1e7b4f71304f2f" />
+        <param name="DouBan_RedirectUri" value="http://www.sharesdk.cn" />
+
+        <param name="TencentWeibo_AppKey" value="801307650" />
+        <param name="TencentWeibo_AppSecret" value="ae36f4ee3946e1cbb98d6965b0b2ff5c" />
+        <param name="TencentWeibo_RedirectUri" value="http://www.sharesdk.cn" />
+
+        <param name="YinXiang_AppKey" value="46131514-6903" />
+        <param name="YinXiang_AppSecret" value="08d7a6f3afcc888a" />
+        <param name="YinXiang_Sandbox" value="1" />
+
+        <param name="YouDaoNote_AppKey" value="dcde25dca105bcc36884ed4534dab940" />
+        <param name="YouDaoNote_AppSecret" value="d98217b4020e7f1874263795f44838fe" />
+        <param name="YouDaoNote_RedirectUri" value="http://www.sharesdk.cn/" />
+
+        <param name="Mingdao_AppKey" value="97230F25CA5C" />
+        <param name="Mingdao_AppSecret" value="A5DC29AF7C5A5851F28E903AE9EAC0" />
+        <param name="Mingdao_RedirectUri" value="http://mob.com" />
+
+        <param name="Kaixin_AppKey" value="358443394194887cee81ff5890870c7c" />
+        <param name="Kaixin_AppSecret" value="da32179d859c016169f66d90b6db2a23" />
+        <param name="Kaixin_RedirectUri" value="http://www.sharesdk.cn/" />
+
+        <param name="Renren_AppId" value="226427" />
+        <param name="Renren_AppKey" value="fc5b8aed373c4c27a05b712acba0f8c3" />
+        <param name="Renren_AppSecret" value="f29df781abdd4f49beca5a2194676ca4" />
+        <param name="Renren_AuthType" value="2" />
+
+        <param name="YiXin_AppKey" value="yx0d9a9f9088ea44d78680f3274da1765f" />
+        <param name="YiXin_AppSecret" value="1a5bd421ae089c3" />
+        <param name="YiXin_RedirectUri" value="https://open.yixin.im/resource/oauth2_callback.html" />
+
+        <param name="Kakao_AppKey" value="9c17eb03317e0e627ec95a400f5785fb" />
+        <param name="Kakao_ApiKey" value="802e551a5048c3172fc1dedaaf40fcf1" />
+        <param name="Kakao_RedirectUri" value="http://www.mob.com/oauth" />
+
+        <param name="YouTube_AppKey" value="906418427202-jinnbqal1niq4s8isbg2ofsqc5ddkcgr.apps.googleusercontent.com" />
+        <param name="YouTube_AppSecret" value="" />
+        <param name="YouTube_RedirectUri" value="http://localhost" />
+
+        <param name="Flickr_AppKey" value="cbed81d4a1bc7417693ab7865e354717" />
+        <param name="Flickr_AppSecret" value="4c490343869091f2" />
+
+        <param name="Dropbox_AppKey" value="us514wslpfojbxc" />
+        <param name="Dropbox_AppSecret" value="w0nmp4os3ngo1ja" />
+        <param name="Dropbox_RedirectUri" value="http://localhost" />
+
+        <param name="Evernote_AppKey" value="46131514-6903" />
+        <param name="Evernote_AppSecret" value="08d7a6f3afcc888a" />
+        <param name="Evernote_Sandbox" value="1" />
+
+        <param name="Pinterest_AppKey" value="4987008320438021391" />
+
+        <param name="Pocket_AppKey" value="11496-de7c8c5eb25b2c9fcdc2b627" />
+        <param name="Pocket_RedirectUri" value="pocketapp1234" />
+
+        <param name="LinkedIn_AppKey" value="46kic3zr7s4n" />
+        <param name="LinkedIn_AppSecret" value="RWw6WRl9YJOcdWsj" />
+        <param name="LinkedIn_RedirectUri" value="http://baidu.com" />
+
+        <param name="VKontakte_AppKey" value="5312801" />
+        <param name="VKontakte_AppSecret" value="ZHG2wGymmNUCRLG2r6CY" />
+        <param name="VKontakte_AuthType" value="2" />
+
+        <param name="Instapaper_AppKey" value="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA" />
+        <param name="Instapaper_AppSecret" value="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe" />
+
+        <param name="Tumblr_AppKey" value="2QUXqO9fcgGdtGG1FcvML6ZunIQzAEL8xY6hIaxdJnDti2DYwM" />
+        <param name="Tumblr_AppSecret" value="3Rt0sPFj7u2g39mEVB3IBpOzKnM3JnTtxX2bao2JKk4VV1gtNo" />
+        <param name="Tumblr_RedirectUri" value="http://sharesdk.cn" />
+
+        <param name="SMS_CountryList" value="0" />
+
+        <param name="CMCC_AppId" value="300011862498" />
+        <param name="CMCC_AppKey" value="38D9CA1CC280C5F207E2C343745D4A4B" />
+        <param name="CMCC_DisplayUI" value="1" />
+
+        <param name="Telegram_BotToken" value="646009290:AAGSonNPZqyjl0MUER8MdM8pwSPritFVNgI" />
+        <param name="Telegram_BotDomain" value="http://www.mob.com" />
+
+        <param name="Reddit_AppKey" value="ObzXn50T7Cg0Xw" />
+        <param name="Reddit_RedirectUri" value="https://www.mob.com/reddit_callback" />
+
+        <param name="ESurfing_AppKey" value="8148612606" />
+        <param name="ESurfing_AppSecret" value="mCltrhUqwshFa86egDTs0491ibaAulKA" />
+        <param name="ESurfing_AppName" value="shareSDK" />
+ 
   </feature>
 ```
 
-- 字段描述:
+>字段描述:  
+>**SinaWei_AppKey、SinaWei_AppSecret、SinaWei_RedirectUri**：从新浪微博开放平台获取。  
+>**Wechat_AppKey、Wechat_AppSecret**：从微信开放平台获取。  
+>以此类推  
+
+配置白名单和urlScheme,将plist文件放入res目录下，文件内容：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <!-- 从Mob平台获取 -->
+    <key>MOBAppKey</key>
+    <string>moba6b6c6d6</string>
+    <key>MOBAppSecret</key>
+    <string>b89d2427a3bc7ad1aea1e1e8c1d36bf3</string>
+
+    <!-- 配置urlScheme 根据集成平台删减，这里要根据各自平台进行配置scheme值，下面的值都是sharesdk demo测试使用申请 开发者自行调整 -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>facebook</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1412473428822331</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>qq</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>tencent100371282</string>
+                <string>QQ05FB8B52</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>wechat</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>wx617c77c82218ea2c</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>weibo</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>wb568898243</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>twitter</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>twitterkit-viOnkeLpHBKs6KXV7MPpeGyzE</string>
+            </array>
+        </dict>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>douyin</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>aw9ivykfjvi4hpwo</string>
+            </array>
+        </dict>
+    </array>
     
-    **MOBAppKey、MOBAppSecret**：从Mob平台获取。  
-    **SinaWei_AppKey、SinaWei_AppSecret、SinaWei_RedirectUri**：从新浪微博开放平台获取。  
-    **Wechat_AppKey、Wechat_AppSecret**：从微信开放平台获取。  
-    以此类推
+    <!-- 白名单 根据集成平台删减 -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>kakaotalk-5.9.7</string>
+        <string>pinterestsdk.v1</string>
+        <string>vkauthorize</string>
+        <string>storylink</string>
+        <string>kakaolink</string>
+        <string>storykompassauth</string>
+        <string>kakaokompassauth</string>
+        <string>yixinfav</string>
+        <string>yixinoauth</string>
+        <string>yixinopenapi</string>
+        <string>yixin</string>
+        <string>pocket-oauth-v1</string>
+        <string>dingtalk-open</string>
+        <string>dingtalk</string>
+        <string>alipayshare</string>
+        <string>alipay</string>
+        <string>whatsapp</string>
+        <string>tim</string>
+        <string>timapi</string>
+        <string>timopensdkfriend</string>
+        <string>timwpa</string>
+        <string>timgamebindinggroup</string>
+        <string>timapiwallet</string>
+        <string>timOpensdkSSoLogin</string>
+        <string>wtlogintim</string>
+        <string>timopensdkgrouptribeshare</string>
+        <string>timopensdkapiV4</string>
+        <string>timgamebindinggroup</string>
+        <string>timopensdkdataline</string>
+        <string>wtlogintimV1</string>
+        <string>timapiV1</string>
+        <string>yixinoauth</string>
+        <string>yixin</string>
+        <string>sinaweibohd</string>
+        <string>sinaweibo</string>
+        <string>weibosdk2.5</string>
+        <string>weibosdk</string>
+        <string>weibo</string>
+        <string>sinaweibosso</string>
+        <string>weixin</string>
+        <string>youtube</string>
+        <string>mpsharesdk11</string>
+        <string>mpsharesdk10</string>
+        <string>mtmv</string>
+        <string>mqqopensdkapiV4</string>
+        <string>mqzone</string>
+        <string>mqqwpa</string>
+        <string>wtloginmqq2</string>
+        <string>mqzoneopensdkapiV2</string>
+        <string>mqzoneopensdkapi19</string>
+        <string>mqzoneopensdkapi</string>
+        <string>mqzoneopensdk</string>
+        <string>mqqopensdkapiV3</string>
+        <string>mqqopensdkapiV2</string>
+        <string>mqq</string>
+        <string>mqqOpensdkSSoLogin</string>
+        <string>mqqapi</string>
+        <string>lineauth</string>
+        <string>line</string>
+        <string>instagram</string>
+        <string>fbauth</string>
+        <string>fb-messenger-platform-20150714</string>
+        <string>fb-messenger</string>
+        <string>fbauth2</string>
+        <string>fbapi</string>
+        <string>fbapi20130214</string>
+        <string>twitterauth</string>
+        <string>tg</string>
+        <string>telegram</string>
+        <string>renrenapi</string>
+        <string>renrenios</string>
+        <string>renreniphone</string>
+        <string>douyinsharesdk</string>
+        <string>douyinopensdk</string>
+    </array>
+    
+    <!-- 权限 -->
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>写入相册视频</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>从手机相册中选择</string>
+</dict>
+```
+    
+<div id="p2"></div>
+    
+**Android配置：**    
+    
     
     
 ## **模块接口**
@@ -704,4 +990,5 @@ iOS系统，Android系统
 当前ShareSDKPlus只支持微信、QQ、新浪微博三个平台，如果想要支持其他平台应如果操作
 
 ### iOS方案
-[点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/info_ios.md#a)
+[点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/blob/master/info_ios.md#a)
+
