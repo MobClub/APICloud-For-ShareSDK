@@ -81,7 +81,6 @@
 		0BA9C1B4226467F600C17D58 /* SinaWeiboConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C169226467F500C17D58 /* SinaWeiboConnector.framework */; };
 		0BA9C1B5226467F600C17D58 /* DouBanConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C16A226467F500C17D58 /* DouBanConnector.framework */; };
 		0BA9C1B6226467F600C17D58 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C16B226467F500C17D58 /* ShareSDK.framework */; };
-		0BA9C1B7226467F600C17D58 /* MOBDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C16D226467F500C17D58 /* MOBDebug.framework */; };
 		0BA9C1B8226467F600C17D58 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C16E226467F500C17D58 /* MOBFoundation.framework */; };
 		5204B61221549CD900306B1E /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5204B60D21549CD900306B1E /* libopencore-amrwb.a */; };
 		5204B61321549CD900306B1E /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5204B60E21549CD900306B1E /* libopencore-amrnb.a */; };
@@ -261,7 +260,6 @@
 		0BA9C169226467F500C17D58 /* SinaWeiboConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnector.framework; sourceTree = "<group>"; };
 		0BA9C16A226467F500C17D58 /* DouBanConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouBanConnector.framework; sourceTree = "<group>"; };
 		0BA9C16B226467F500C17D58 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
-		0BA9C16D226467F500C17D58 /* MOBDebug.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBDebug.framework; sourceTree = "<group>"; };
 		0BA9C16E226467F500C17D58 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		5204B60D21549CD900306B1E /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
 		5204B60E21549CD900306B1E /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				52BA30D319F6367A00D81640 /* JavaScriptCore.framework in Frameworks */,
 				52BA309519F6367A00D81640 /* AddressBook.framework in Frameworks */,
 				52BA309619F6367A00D81640 /* AddressBookUI.framework in Frameworks */,
-				0BA9C1B7226467F600C17D58 /* MOBDebug.framework in Frameworks */,
 				52BA309819F6367A00D81640 /* AssetsLibrary.framework in Frameworks */,
 				52BA309919F6367A00D81640 /* AudioToolbox.framework in Frameworks */,
 				5204B61421549CD900306B1E /* libAMR.a in Frameworks */,
@@ -812,7 +809,6 @@
 		0BA9C16C226467F500C17D58 /* Required */ = {
 			isa = PBXGroup;
 			children = (
-				0BA9C16D226467F500C17D58 /* MOBDebug.framework */,
 				0BA9C16E226467F500C17D58 /* MOBFoundation.framework */,
 			);
 			path = Required;

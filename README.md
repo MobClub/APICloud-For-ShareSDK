@@ -285,7 +285,17 @@ function ShareSDK()
                                                          
 var $sharesdk = new ShareSDK();
 ```
+
+添加ShareSDK.js目的主要是提供平台号，回调状态等一些常量
  
+<div id="b0"></div>
+
+# **引入模块**
+
+```js
+var shareApi = api.require('ShareSDKPlus');
+```
+
  
 <div id="a1"></div>
 
