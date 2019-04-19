@@ -14,6 +14,7 @@
 				0BA9C0EB22645E3100C17D58 /* ShellScript */,
 			);
 			dependencies = (
+				0B0194582269C42B00B05829 /* PBXTargetDependency */,
 			);
 			name = CreatePackage_Plus;
 			productName = CreatePackage_PlusExtend;
@@ -37,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0B0194572269C42B00B05829 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528608201A596B0600587EC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 528608271A596B0600587EC2;
+			remoteInfo = ShareSDKPlus;
+		};
 		0B2843072265BC3900B8AC75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 528608201A596B0600587EC2 /* Project object */;
@@ -210,6 +218,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0B0194582269C42B00B05829 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 528608271A596B0600587EC2 /* ShareSDKPlus */;
+			targetProxy = 0B0194572269C42B00B05829 /* PBXContainerItemProxy */;
+		};
 		0B2843082265BC3900B8AC75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0BA9C0E722645E0600C17D58 /* CreatePackage_Plus */;

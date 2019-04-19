@@ -33,7 +33,6 @@ static NSString *const shareSDKModuleName = @"ShareSDKPlus";
     }
     
     [self setupPlatformConfigWithParams:config];
-    [self setupSecurityPlatformConfig];
     
 }
 
@@ -52,6 +51,8 @@ static NSString *const shareSDKModuleName = @"ShareSDKPlus";
 + (void)setupPlatformConfigWithParams:(NSDictionary *)params
 {
     [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        
+        // config.xml 读取
         
         if (params[@"SinaWei_AppKey"] && params[@"SinaWei_AppSecret"] && params[@"SinaWei_RedirectUri"])
         {
@@ -228,12 +229,10 @@ static NSString *const shareSDKModuleName = @"ShareSDKPlus";
             [platformsRegister setupESurfingByAppKey:params[@"ESurfing_AppKey"] appSecret:params[@"ESurfing_AppSecret"] appName:params[@"ESurfing_AppName"]];
         }
         
-    }];
-}
-
-+ (void)setupSecurityPlatformConfig
-{
-    [ShareSDK registPlatforms:^(SSDKRegister *platformsRegister) {
+        
+        
+        
+        // key.xml 读取
         UZAppDelegate *app = [UZAppDelegate appDelegate];
         if ([app securityValueForKey:@"ShareSDKPlus_SinaWei_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_SinaWei_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_SinaWei_RedirectUri"])
         {
