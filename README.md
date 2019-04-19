@@ -58,7 +58,7 @@ Android: 185-1664-1950
 市场合作:   021-54623189
 ```
 
-### 模块使用攻略
+## 模块使用攻略
 
 开发者使用本模块之前需要先到[Mob官网](https://www.mob.com)申请开发者账号，并在账号内填写相应信息创建自己的 APP，从而获取AppKey和AppSecret,然后添加ShareSDK功能。  
 详情参考:[快速集成获取apppkey和appSecret](http://wiki.mob.com/%E4%BA%A7%E5%93%81%E7%AE%80%E4%BB%8B-5/)
@@ -68,7 +68,7 @@ Android: 185-1664-1950
 
 <div id="p1"></div>
 
-#### iOS配置：
+### iOS配置：
 **1.配置config.xml文件** 下面是配置各个平台urlScheme列子，开发者自行删减。下面的值都是sharesdk demo测试使用，开发者自行调整
 
 ```xml
@@ -403,7 +403,7 @@ key.xml 文件需要放在 widget://res 文件目录下，格式如下：
     
 <div id="p2"></div>
     
-#### Android配置：  
+### Android配置：  
     
     
     
@@ -603,7 +603,7 @@ var $sharesdk = new ShareSDK();
  
 <div id="b0"></div>
 
-# **引入模块**
+### **引入模块**
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -612,18 +612,18 @@ var shareApi = api.require('ShareSDKPlus');
  
 <div id="a1"></div>
 
-# **authorize**
+### **authorize**
 
 授权  
 authorize({params}, callback(ret, err))
 
-## params
+#### params
 platform：
 
 - 类型：数字
 - 描述：授权平台号，是新浪微博授权还是微信授权或者其他平台授权，由此参数决定
 
-## callback(ret, err)
+#### callback(ret, err)
 
 ret：
 
@@ -641,7 +641,7 @@ ret：
 }
 ```
 
-## 示例代码
+#### 示例代码
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -674,7 +674,7 @@ shareApi.authorize({
 });
 ```
 
-## 可用性
+#### 可用性
 
 iOS系统，Android系统
 
@@ -683,18 +683,18 @@ iOS系统，Android系统
 
 <div id="a2"></div>
 
-# **cancelAuthorize**
+### **cancelAuthorize**
 
 取消授权  
 cancelAuthorize({params}, callback(ret, err))
 
-## params
+#### params
 platform：
 
 - 类型：数字
 - 描述：授权平台号
 
-## callback(ret, err)
+#### callback(ret, err)
 
 ret：
 
@@ -711,7 +711,7 @@ ret：
 }
 ```
 
-## 示例代码
+#### 示例代码
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -744,7 +744,7 @@ shareApi.cancelAuthorize({
 });
 ```
 
-## 可用性
+#### 可用性
 
 iOS系统，Android系统
 
@@ -753,18 +753,18 @@ iOS系统，Android系统
 
 <div id="a3"></div>
 
-# **getUserInfo**
+### **getUserInfo**
 
 获取用户信息  
 getUserInfo({params}, callback(ret, err))
 
-## params
+#### params
 platform：
 
 - 类型：数字
 - 描述：平台号，是获取新浪微博还是微信或者其他平台用户信息，由此参数决定
 
-## callback(ret, err)
+#### callback(ret, err)
 
 ret：
 
@@ -782,7 +782,7 @@ ret：
 }
 ```
 
-## 示例代码
+#### 示例代码
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -815,19 +815,20 @@ shareApi.getUserInfo({
 });
 ```
 
-## 可用性
+#### 可用性
 
 iOS系统，Android系统
 
 可提供的1.0.0及更高版本
 
 <div id="a4"></div>
-# **shareContent**
+
+### **shareContent**
 
 分享  
 shareContent({params}, callback(ret, err))
 
-## params
+#### params
 platform：
 
 - 类型：数字
@@ -842,7 +843,7 @@ shareParams：
 	- title：标题
 	- type：分享类型：分享文本、分享图片、分享链接等等
 
-## callback(ret, err)
+#### callback(ret, err)
 
 ret：
 
@@ -860,7 +861,7 @@ ret：
 }
 ```
 
-## 示例代码
+#### 示例代码
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -907,7 +908,7 @@ shareApi.shareContent({
 });
 ```
 
-## 可用性
+#### 可用性
 
 iOS系统，Android系统
 
@@ -915,12 +916,12 @@ iOS系统，Android系统
 
 
 <div id="a5"></div>
-# **oneKeyShareContent**
+### **oneKeyShareContent**
 
 一键分享/菜单分享
 oneKeyShareContent({params}, callback(ret, err))
 
-## params
+#### params
 platforms：
 
 - 类型：数组
@@ -935,7 +936,7 @@ shareParams：
 	- title：标题
 	- type：分享类型：分享文本、分享图片、分享链接等等
 
-## callback(ret, err)
+#### callback(ret, err)
 
 ret：
 
@@ -953,7 +954,7 @@ ret：
 }
 ```
 
-## 示例代码
+#### 示例代码
 
 ```js
 var shareApi = api.require('ShareSDKPlus');
@@ -1006,16 +1007,19 @@ shareApi.oneKeyShareContent({
 });
 ```
 
-## 可用性
+#### 可用性
 
 iOS系统，Android系统
 
 可提供的1.0.0及更高版本
 
-# 如何扩充平台
+## 如何扩充平台
 
 当前ShareSDKPlus只支持微信、QQ、新浪微博、facebook、twitter五个平台，如果想要支持其他平台应如何操作
 
 ### iOS方案
 [点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/blob/master/info_ios.md#a)
+
+### android方案
+
 
