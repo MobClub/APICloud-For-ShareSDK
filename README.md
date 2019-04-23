@@ -406,6 +406,7 @@ key.xml 文件需要放在 widget://res 文件目录下，格式如下：
 ### Android配置：  
 Mob-AppKey/Mob-AppSecret的配置：
 这两个参数的配置在config.xml文件里，以meta-data标签的形式来配置，例如：
+
     <meta-data name="Mob-AppKey" value="moba6b6c6d6"/>
     <meta-data name="Mob-AppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3"/>
     
