@@ -416,9 +416,6 @@ Android配置第三方平台的AppKey等信息遵循APICloud的惯例是在confi
 	
 	<feature name="ShareSDKPlus">
 
-        <param name="MOBAppKey" value="moba6b6c6d6" />
-        <param name="MOBAppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3" />
-
         <param name="SinaWei_AppKey" value="568898243" />
         <param name="SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
         <param name="SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
@@ -1180,5 +1177,7 @@ iOS系统，Android系统
 [点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/blob/master/info_ios.md#a)
 
 ### android方案
+
+
 
 
