@@ -404,6 +404,11 @@ key.xml 文件需要放在 widget://res 文件目录下，格式如下：
 <div id="p2"></div>
     
 ### Android配置：  
+Mob-AppKey/Mob-AppSecret的配置：
+这两个参数的配置在config.xml文件里，以meta-data标签的形式来配置，例如：
+    <meta-data name="Mob-AppKey" value="moba6b6c6d6"/>
+    <meta-data name="Mob-AppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3"/>
+    
 Android配置第三方平台的AppKey等信息遵循APICloud的惯例是在config.xml中配置。
 在name为"ShareSDKPlus"的<feature>标签内，配置<param>标签来填充AppKey等属性的值。
 下面是配置各个平台AppKey/AppSecret/RedirectUrl的例子，实际的使用中需要开发者填写自己在第三方网站申请的值（只需要改变值，不要改变AppKey/AppSecret/RedirectUrl的名称，否则将会读取不到）
