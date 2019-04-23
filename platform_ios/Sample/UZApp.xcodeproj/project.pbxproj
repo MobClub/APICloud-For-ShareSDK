@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B2843042265B46600B8AC75 /* libShareSDKPlusExtend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2843012265B46500B8AC75 /* libShareSDKPlusExtend.a */; };
-		0B2843052265B46600B8AC75 /* libShareSDKPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2843032265B46500B8AC75 /* libShareSDKPlus.a */; };
+		0B57A8CE226F19E7006F1DEA /* libShareSDKPlusExtend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57A8CB226F19E7006F1DEA /* libShareSDKPlusExtend.a */; };
+		0B57A8CF226F19E7006F1DEA /* libShareSDKPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B57A8CD226F19E7006F1DEA /* libShareSDKPlus.a */; };
 		0BA9C16F226467F500C17D58 /* RennSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BA9C109226467F500C17D58 /* RennSDK.bundle */; };
 		0BA9C170226467F500C17D58 /* RennSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA9C10A226467F500C17D58 /* RennSDK.framework */; };
 		0BA9C171226467F500C17D58 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BA9C10C226467F500C17D58 /* WeiboSDK.bundle */; };
@@ -175,8 +175,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B2843012265B46500B8AC75 /* libShareSDKPlusExtend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShareSDKPlusExtend.a; sourceTree = "<group>"; };
-		0B2843032265B46500B8AC75 /* libShareSDKPlus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShareSDKPlus.a; sourceTree = "<group>"; };
+		0B57A8CB226F19E7006F1DEA /* libShareSDKPlusExtend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShareSDKPlusExtend.a; sourceTree = "<group>"; };
+		0B57A8CD226F19E7006F1DEA /* libShareSDKPlus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libShareSDKPlus.a; sourceTree = "<group>"; };
 		0BA9C109226467F500C17D58 /* RennSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RennSDK.bundle; sourceTree = "<group>"; };
 		0BA9C10A226467F500C17D58 /* RennSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RennSDK.framework; sourceTree = "<group>"; };
 		0BA9C10C226467F500C17D58 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
@@ -416,7 +416,6 @@
 				0BA9C19D226467F500C17D58 /* VKontakteConnector.framework in Frameworks */,
 				0BA9C172226467F500C17D58 /* libWeiboSDK.a in Frameworks */,
 				52BA30FC19F6368400D81640 /* OpenAL.framework in Frameworks */,
-				0B2843052265B46600B8AC75 /* libShareSDKPlus.a in Frameworks */,
 				0BA9C173226467F500C17D58 /* libDouyinOpenSDK.a in Frameworks */,
 				5204B61321549CD900306B1E /* libopencore-amrnb.a in Frameworks */,
 				52BA30FD19F6368400D81640 /* OpenGLES.framework in Frameworks */,
@@ -425,7 +424,6 @@
 				0BA9C1B0226467F500C17D58 /* RenrenConnector.framework in Frameworks */,
 				0BA9C1B1226467F500C17D58 /* PinterestConnector.framework in Frameworks */,
 				0BA9C1A4226467F500C17D58 /* DouyinConnector.framework in Frameworks */,
-				0B2843042265B46600B8AC75 /* libShareSDKPlusExtend.a in Frameworks */,
 				0BA9C19B226467F500C17D58 /* QQConnector.framework in Frameworks */,
 				52BA310019F6368400D81640 /* PhotosUI.framework in Frameworks */,
 				0BA9C185226467F500C17D58 /* libYixinSDK.a in Frameworks */,
@@ -468,6 +466,7 @@
 				0BA9C19F226467F500C17D58 /* MingDaoConnector.framework in Frameworks */,
 				52BA30C319F6367A00D81640 /* CoreBluetooth.framework in Frameworks */,
 				52BA30C419F6367A00D81640 /* CoreFoundation.framework in Frameworks */,
+				0B57A8CF226F19E7006F1DEA /* libShareSDKPlus.a in Frameworks */,
 				52BA30C519F6367A00D81640 /* CoreImage.framework in Frameworks */,
 				52BA30C619F6367A00D81640 /* CoreMIDI.framework in Frameworks */,
 				52BA30C719F6367A00D81640 /* CoreMotion.framework in Frameworks */,
@@ -503,6 +502,7 @@
 				52BA309F19F6367A00D81640 /* CoreMedia.framework in Frameworks */,
 				0BA9C1AC226467F500C17D58 /* TwitterConnector.framework in Frameworks */,
 				52BA30A019F6367A00D81640 /* CoreTelephony.framework in Frameworks */,
+				0B57A8CE226F19E7006F1DEA /* libShareSDKPlusExtend.a in Frameworks */,
 				52BA30A119F6367A00D81640 /* CoreVideo.framework in Frameworks */,
 				0BA9C199226467F500C17D58 /* KaiXinConnector.framework in Frameworks */,
 				52BA30A219F6367A00D81640 /* Foundation.framework in Frameworks */,
@@ -531,27 +531,27 @@
 		0B2842FF2265B46500B8AC75 /* UZModules */ = {
 			isa = PBXGroup;
 			children = (
-				0B2843002265B46500B8AC75 /* ShareSDKPlusExtend */,
-				0B2843022265B46500B8AC75 /* ShareSDKPlus */,
+				0B57A8CC226F19E7006F1DEA /* shareSDKPlus */,
+				0B57A8CA226F19E7006F1DEA /* shareSDKPlusExtend */,
 			);
 			name = UZModules;
 			path = ../../UZModules;
 			sourceTree = "<group>";
 		};
-		0B2843002265B46500B8AC75 /* ShareSDKPlusExtend */ = {
+		0B57A8CA226F19E7006F1DEA /* shareSDKPlusExtend */ = {
 			isa = PBXGroup;
 			children = (
-				0B2843012265B46500B8AC75 /* libShareSDKPlusExtend.a */,
+				0B57A8CB226F19E7006F1DEA /* libShareSDKPlusExtend.a */,
 			);
-			path = ShareSDKPlusExtend;
+			path = shareSDKPlusExtend;
 			sourceTree = "<group>";
 		};
-		0B2843022265B46500B8AC75 /* ShareSDKPlus */ = {
+		0B57A8CC226F19E7006F1DEA /* shareSDKPlus */ = {
 			isa = PBXGroup;
 			children = (
-				0B2843032265B46500B8AC75 /* libShareSDKPlus.a */,
+				0B57A8CD226F19E7006F1DEA /* libShareSDKPlus.a */,
 			);
-			path = ShareSDKPlus;
+			path = shareSDKPlus;
 			sourceTree = "<group>";
 		};
 		0BA9C104226467F500C17D58 /* SDK */ = {

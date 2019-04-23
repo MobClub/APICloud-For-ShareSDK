@@ -11,7 +11,7 @@
 #import <MOBFoundation/MOBFoundation.h>
 #import "UZAppDelegate.h"
 
-static NSString *const shareSDKModuleName = @"ShareSDKPlus";
+static NSString *const shareSDKModuleName = @"shareSDKPlus";
 
 @interface ShareSDKPlus ()
 
@@ -234,179 +234,179 @@ static NSString *const shareSDKModuleName = @"ShareSDKPlus";
         
         // key.xml 读取
         UZAppDelegate *app = [UZAppDelegate appDelegate];
-        if ([app securityValueForKey:@"ShareSDKPlus_SinaWei_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_SinaWei_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_SinaWei_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"])
         {
-            [platformsRegister setupSinaWeiboWithAppkey:[app securityValueForKey:@"ShareSDKPlus_SinaWei_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_SinaWei_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_SinaWei_RedirectUri"]];
+            [platformsRegister setupSinaWeiboWithAppkey:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_QQ_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_QQ_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] && [app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"])
         {
-            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"ShareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"ShareSDKPlus_QQ_AppSecret"]];
+            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Wechat_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"])
         {
-            [platformsRegister setupWeChatWithAppId:[app securityValueForKey:@"ShareSDKPlus_Wechat_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_Wechat_AppSecret"]];
+            [platformsRegister setupWeChatWithAppId:[app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Douyin_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Douyin_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Douyin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Douyin_AppSecret"])
         {
-            [platformsRegister setupDouyinByAppKey:[app securityValueForKey:@"ShareSDKPlus_Douyin_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_Douyin_AppSecret"]];
+            [platformsRegister setupDouyinByAppKey:[app securityValueForKey:@"shareSDKPlus_Douyin_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Douyin_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Facebook_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Facebook_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Facebook_DisplayName"])
+        if ([app securityValueForKey:@"shareSDKPlus_Facebook_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Facebook_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Facebook_DisplayName"])
         {
-            [platformsRegister setupFacebookWithAppkey:[app securityValueForKey:@"ShareSDKPlus_Facebook_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_Facebook_AppSecret"] displayName:[app securityValueForKey:@"ShareSDKPlus_Facebook_DisplayName"]];
+            [platformsRegister setupFacebookWithAppkey:[app securityValueForKey:@"shareSDKPlus_Facebook_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Facebook_AppSecret"] displayName:[app securityValueForKey:@"shareSDKPlus_Facebook_DisplayName"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Twitter_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Twitter_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Twitter_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Twitter_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Twitter_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Twitter_RedirectUri"])
         {
-            [platformsRegister setupTwitterWithKey:[app securityValueForKey:@"ShareSDKPlus_Twitter_AppKey"] secret:[app securityValueForKey:@"ShareSDKPlus_Twitter_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Twitter_RedirectUri"]];
+            [platformsRegister setupTwitterWithKey:[app securityValueForKey:@"shareSDKPlus_Twitter_AppKey"] secret:[app securityValueForKey:@"shareSDKPlus_Twitter_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Twitter_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_AliPaySocial_AppKey"])
+        if ([app securityValueForKey:@"shareSDKPlus_AliPaySocial_AppKey"])
         {
-            [platformsRegister setupAliSocialWithAppId:[app securityValueForKey:@"ShareSDKPlus_AliPaySocial_AppKey"]];
+            [platformsRegister setupAliSocialWithAppId:[app securityValueForKey:@"shareSDKPlus_AliPaySocial_AppKey"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_MeiPai_AppKey"])
+        if ([app securityValueForKey:@"shareSDKPlus_MeiPai_AppKey"])
         {
-            [platformsRegister setupMeiPaiWithAppkey:[app securityValueForKey:@"ShareSDKPlus_MeiPai_AppKey"]];
+            [platformsRegister setupMeiPaiWithAppkey:[app securityValueForKey:@"shareSDKPlus_MeiPai_AppKey"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_DingTalk_AppKey"])
+        if ([app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"])
         {
-            [platformsRegister setupDingTalkWithAppId:[app securityValueForKey:@"ShareSDKPlus_DingTalk_AppKey"]];
+            [platformsRegister setupDingTalkWithAppId:[app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_DouBan_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_DouBan_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_DouBan_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_DouBan_AppKey"] && [app securityValueForKey:@"shareSDKPlus_DouBan_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_DouBan_RedirectUri"])
         {
-            [platformsRegister setupDouBanWithApikey:[app securityValueForKey:@"ShareSDKPlus_DouBan_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_DouBan_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_DouBan_RedirectUri"]];
+            [platformsRegister setupDouBanWithApikey:[app securityValueForKey:@"shareSDKPlus_DouBan_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_DouBan_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_DouBan_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_TencentWeibo_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_TencentWeibo_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_TencentWeibo_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppKey"] && [app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_TencentWeibo_RedirectUri"])
         {
-            [platformsRegister setupTencentWeiboWithAppkey:[app securityValueForKey:@"ShareSDKPlus_TencentWeibo_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_TencentWeibo_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_TencentWeibo_RedirectUri"]];
+            [platformsRegister setupTencentWeiboWithAppkey:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_YinXiang_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_YinXiang_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_YinXiang_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YinXiang_AppSecret"])
         {
-            [platformsRegister setupEvernoteByConsumerKey:[app securityValueForKey:@"ShareSDKPlus_YinXiang_AppKey"] consumerSecret:[app securityValueForKey:@"ShareSDKPlus_YinXiang_AppSecret"] sandbox:[app securityValueForKey:@"ShareSDKPlus_YinXiang_Sandbox"]?[[app securityValueForKey:@"ShareSDKPlus_YinXiang_Sandbox"] integerValue]:1];
+            [platformsRegister setupEvernoteByConsumerKey:[app securityValueForKey:@"shareSDKPlus_YinXiang_AppKey"] consumerSecret:[app securityValueForKey:@"shareSDKPlus_YinXiang_AppSecret"] sandbox:[app securityValueForKey:@"shareSDKPlus_YinXiang_Sandbox"]?[[app securityValueForKey:@"shareSDKPlus_YinXiang_Sandbox"] integerValue]:1];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_YouDaoNote_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_YouDaoNote_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_YouDaoNote_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_YouDaoNote_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YouDaoNote_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_YouDaoNote_RedirectUri"])
         {
-            [platformsRegister setupYouDaoNoteWithConsumerKey:[app securityValueForKey:@"ShareSDKPlus_YouDaoNote_AppKey"] consumerSecret:[app securityValueForKey:@"ShareSDKPlus_YouDaoNote_AppSecret"] oauthCallback:[app securityValueForKey:@"ShareSDKPlus_YouDaoNote_RedirectUri"]];
+            [platformsRegister setupYouDaoNoteWithConsumerKey:[app securityValueForKey:@"shareSDKPlus_YouDaoNote_AppKey"] consumerSecret:[app securityValueForKey:@"shareSDKPlus_YouDaoNote_AppSecret"] oauthCallback:[app securityValueForKey:@"shareSDKPlus_YouDaoNote_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Mingdao_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Mingdao_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Mingdao_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Mingdao_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Mingdao_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Mingdao_RedirectUri"])
         {
-            [platformsRegister setupMingDaoByAppKey:[app securityValueForKey:@"ShareSDKPlus_Mingdao_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_Mingdao_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Mingdao_RedirectUri"]];
+            [platformsRegister setupMingDaoByAppKey:[app securityValueForKey:@"shareSDKPlus_Mingdao_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Mingdao_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Mingdao_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Kaixin_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Kaixin_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Kaixin_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Kaixin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Kaixin_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Kaixin_RedirectUri"])
         {
-            [platformsRegister setupKaiXinByApiKey:[app securityValueForKey:@"ShareSDKPlus_Kaixin_AppKey"] secretKey:[app securityValueForKey:@"ShareSDKPlus_Kaixin_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Kaixin_RedirectUri"]];
+            [platformsRegister setupKaiXinByApiKey:[app securityValueForKey:@"shareSDKPlus_Kaixin_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_Kaixin_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Kaixin_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Renren_AppId"] && [app securityValueForKey:@"ShareSDKPlus_Renren_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Renren_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Renren_AppId"] && [app securityValueForKey:@"shareSDKPlus_Renren_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Renren_AppSecret"])
         {
-            [platformsRegister setupRenRenWithAppId:[app securityValueForKey:@"ShareSDKPlus_Renren_AppId"] appKey:[app securityValueForKey:@"ShareSDKPlus_Renren_AppKey"] secretKey:[app securityValueForKey:@"ShareSDKPlus_Renren_AppSecret"] authType:[app securityValueForKey:@"ShareSDKPlus_Renren_AuthType"]?[[app securityValueForKey:@"ShareSDKPlus_Renren_AuthType"] integerValue]:2];
+            [platformsRegister setupRenRenWithAppId:[app securityValueForKey:@"shareSDKPlus_Renren_AppId"] appKey:[app securityValueForKey:@"shareSDKPlus_Renren_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_Renren_AppSecret"] authType:[app securityValueForKey:@"shareSDKPlus_Renren_AuthType"]?[[app securityValueForKey:@"shareSDKPlus_Renren_AuthType"] integerValue]:2];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_YiXin_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_YiXin_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_YiXin_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_YiXin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YiXin_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_YiXin_RedirectUri"])
         {
-            [platformsRegister setupYiXinByAppId:[app securityValueForKey:@"ShareSDKPlus_YiXin_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_YiXin_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_YiXin_RedirectUri"]];
+            [platformsRegister setupYiXinByAppId:[app securityValueForKey:@"shareSDKPlus_YiXin_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_YiXin_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_YiXin_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Instagram_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Instagram_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Instagram_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Instagram_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Instagram_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Instagram_RedirectUri"])
         {
-            [platformsRegister setupInstagramWithClientId:[app securityValueForKey:@"ShareSDKPlus_Instagram_AppKey"] clientSecret:[app securityValueForKey:@"ShareSDKPlus_Instagram_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Instagram_RedirectUri"]];
+            [platformsRegister setupInstagramWithClientId:[app securityValueForKey:@"shareSDKPlus_Instagram_AppKey"] clientSecret:[app securityValueForKey:@"shareSDKPlus_Instagram_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Instagram_RedirectUri"]];
         }
         
-        [platformsRegister setupLineAuthType:[app securityValueForKey:@"ShareSDKPlus_Line_AuthType"]?[[app securityValueForKey:@"ShareSDKPlus_Line_AuthType"] integerValue]:2];
+        [platformsRegister setupLineAuthType:[app securityValueForKey:@"shareSDKPlus_Line_AuthType"]?[[app securityValueForKey:@"shareSDKPlus_Line_AuthType"] integerValue]:2];
         
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Google_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Google_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Google_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Google_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Google_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Google_RedirectUri"])
         {
-            [platformsRegister setupGooglePlusByClientID:[app securityValueForKey:@"ShareSDKPlus_Google_AppKey"] clientSecret:[app securityValueForKey:@"ShareSDKPlus_Google_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Google_RedirectUri"]];
+            [platformsRegister setupGooglePlusByClientID:[app securityValueForKey:@"shareSDKPlus_Google_AppKey"] clientSecret:[app securityValueForKey:@"shareSDKPlus_Google_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Google_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Kakao_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Kakao_ApiKey"] && [app securityValueForKey:@"ShareSDKPlus_Kakao_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Kakao_ApiKey"] && [app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"])
         {
-            [platformsRegister setupKaKaoWithAppkey:[app securityValueForKey:@"ShareSDKPlus_Kakao_AppKey"] restApiKey:[app securityValueForKey:@"ShareSDKPlus_Kakao_ApiKey"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Kakao_RedirectUri"]];
+            [platformsRegister setupKaKaoWithAppkey:[app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] restApiKey:[app securityValueForKey:@"shareSDKPlus_Kakao_ApiKey"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_YouTube_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_YouTube_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_YouTube_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_YouTube_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YouTube_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_YouTube_RedirectUri"])
         {
-            [platformsRegister setupYouTubeWithClientId:[app securityValueForKey:@"ShareSDKPlus_YouTube_AppKey"] clientSecret:[app securityValueForKey:@"ShareSDKPlus_YouTube_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_YouTube_RedirectUri"]];
+            [platformsRegister setupYouTubeWithClientId:[app securityValueForKey:@"shareSDKPlus_YouTube_AppKey"] clientSecret:[app securityValueForKey:@"shareSDKPlus_YouTube_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_YouTube_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Flickr_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Flickr_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Flickr_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Flickr_AppSecret"])
         {
-            [platformsRegister setupFlickrWithApiKey:[app securityValueForKey:@"ShareSDKPlus_Flickr_AppKey"] apiSecret:[app securityValueForKey:@"ShareSDKPlus_Flickr_AppSecret"]];
+            [platformsRegister setupFlickrWithApiKey:[app securityValueForKey:@"shareSDKPlus_Flickr_AppKey"] apiSecret:[app securityValueForKey:@"shareSDKPlus_Flickr_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Dropbox_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Dropbox_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Dropbox_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Dropbox_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Dropbox_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Dropbox_RedirectUri"])
         {
-            [platformsRegister setupDropboxWithAppKey:[app securityValueForKey:@"ShareSDKPlus_Dropbox_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_Dropbox_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Dropbox_RedirectUri"]];
+            [platformsRegister setupDropboxWithAppKey:[app securityValueForKey:@"shareSDKPlus_Dropbox_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Dropbox_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Dropbox_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Evernote_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Evernote_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Evernote_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Evernote_AppSecret"])
         {
-            [platformsRegister setupEvernoteByConsumerKey:[app securityValueForKey:@"ShareSDKPlus_Evernote_AppKey"] consumerSecret:[app securityValueForKey:@"ShareSDKPlus_Evernote_AppSecret"] sandbox:[app securityValueForKey:@"ShareSDKPlus_Evernote_Sandbox"]?[[app securityValueForKey:@"ShareSDKPlus_Evernote_Sandbox"] integerValue]:1];
+            [platformsRegister setupEvernoteByConsumerKey:[app securityValueForKey:@"shareSDKPlus_Evernote_AppKey"] consumerSecret:[app securityValueForKey:@"shareSDKPlus_Evernote_AppSecret"] sandbox:[app securityValueForKey:@"shareSDKPlus_Evernote_Sandbox"]?[[app securityValueForKey:@"shareSDKPlus_Evernote_Sandbox"] integerValue]:1];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Pinterest_AppKey"])
+        if ([app securityValueForKey:@"shareSDKPlus_Pinterest_AppKey"])
         {
-            [platformsRegister setupPinterestByClientId:[app securityValueForKey:@"ShareSDKPlus_Pinterest_AppKey"]];
+            [platformsRegister setupPinterestByClientId:[app securityValueForKey:@"shareSDKPlus_Pinterest_AppKey"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Pocket_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Pocket_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Pocket_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Pocket_RedirectUri"])
         {
-            [platformsRegister setupPocketWithConsumerKey:[app securityValueForKey:@"ShareSDKPlus_Pocket_AppKey"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Pocket_RedirectUri"]];
+            [platformsRegister setupPocketWithConsumerKey:[app securityValueForKey:@"shareSDKPlus_Pocket_AppKey"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Pocket_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_LinkedIn_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_LinkedIn_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_LinkedIn_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_LinkedIn_AppKey"] && [app securityValueForKey:@"shareSDKPlus_LinkedIn_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_LinkedIn_RedirectUri"])
         {
-            [platformsRegister setupLinkedInByApiKey:[app securityValueForKey:@"ShareSDKPlus_LinkedIn_AppKey"] secretKey:[app securityValueForKey:@"ShareSDKPlus_LinkedIn_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_LinkedIn_RedirectUri"]];
+            [platformsRegister setupLinkedInByApiKey:[app securityValueForKey:@"shareSDKPlus_LinkedIn_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_LinkedIn_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_LinkedIn_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_VKontakte_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_VKontakte_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_VKontakte_AppKey"] && [app securityValueForKey:@"shareSDKPlus_VKontakte_AppSecret"])
         {
-            [platformsRegister setupVKontakteWithApplicationId:[app securityValueForKey:@"ShareSDKPlus_VKontakte_AppKey"] secretKey:[app securityValueForKey:@"ShareSDKPlus_VKontakte_AppSecret"] authType:[app securityValueForKey:@"ShareSDKPlus_VKontakte_AuthType"]?[[app securityValueForKey:@"ShareSDKPlus_VKontakte_AuthType"] integerValue]:2];
+            [platformsRegister setupVKontakteWithApplicationId:[app securityValueForKey:@"shareSDKPlus_VKontakte_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_VKontakte_AppSecret"] authType:[app securityValueForKey:@"shareSDKPlus_VKontakte_AuthType"]?[[app securityValueForKey:@"shareSDKPlus_VKontakte_AuthType"] integerValue]:2];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Instapaper_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Instapaper_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Instapaper_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Instapaper_AppSecret"])
         {
-            [platformsRegister setupInstapaperWithConsumerKey:[app securityValueForKey:@"ShareSDKPlus_Instapaper_AppKey"] consumerSecret:[app securityValueForKey:@"ShareSDKPlus_Instapaper_AppSecret"]];
+            [platformsRegister setupInstapaperWithConsumerKey:[app securityValueForKey:@"shareSDKPlus_Instapaper_AppKey"] consumerSecret:[app securityValueForKey:@"shareSDKPlus_Instapaper_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Tumblr_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Tumblr_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_Tumblr_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Tumblr_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Tumblr_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Tumblr_RedirectUri"])
         {
-            [platformsRegister setupTumblrByConsumerKey:[app securityValueForKey:@"ShareSDKPlus_Tumblr_AppKey"] consumerSecret:[app securityValueForKey:@"ShareSDKPlus_Tumblr_AppSecret"] redirectUrl:[app securityValueForKey:@"ShareSDKPlus_Tumblr_RedirectUri"]];
+            [platformsRegister setupTumblrByConsumerKey:[app securityValueForKey:@"shareSDKPlus_Tumblr_AppKey"] consumerSecret:[app securityValueForKey:@"shareSDKPlus_Tumblr_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Tumblr_RedirectUri"]];
         }
         
-        [platformsRegister setupSMSOpenCountryList:[app securityValueForKey:@"ShareSDKPlus_SMS_CountryList"]?[[app securityValueForKey:@"ShareSDKPlus_SMS_CountryList"] integerValue]:0];
+        [platformsRegister setupSMSOpenCountryList:[app securityValueForKey:@"shareSDKPlus_SMS_CountryList"]?[[app securityValueForKey:@"shareSDKPlus_SMS_CountryList"] integerValue]:0];
         
-        if ([app securityValueForKey:@"ShareSDKPlus_CMCC_AppId"] && [app securityValueForKey:@"ShareSDKPlus_CMCC_AppKey"])
+        if ([app securityValueForKey:@"shareSDKPlus_CMCC_AppId"] && [app securityValueForKey:@"shareSDKPlus_CMCC_AppKey"])
         {
-            [platformsRegister setupCMCCByAppId:[app securityValueForKey:@"ShareSDKPlus_CMCC_AppId"] appKey:[app securityValueForKey:@"ShareSDKPlus_CMCC_AppKey"] displayUI:[app securityValueForKey:@"ShareSDKPlus_CMCC_DisplayUI"]?[[app securityValueForKey:@"ShareSDKPlus_CMCC_DisplayUI"] integerValue]:YES];
+            [platformsRegister setupCMCCByAppId:[app securityValueForKey:@"shareSDKPlus_CMCC_AppId"] appKey:[app securityValueForKey:@"shareSDKPlus_CMCC_AppKey"] displayUI:[app securityValueForKey:@"shareSDKPlus_CMCC_DisplayUI"]?[[app securityValueForKey:@"shareSDKPlus_CMCC_DisplayUI"] integerValue]:YES];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Telegram_BotToken"] && [app securityValueForKey:@"ShareSDKPlus_Telegram_BotDomain"])
+        if ([app securityValueForKey:@"shareSDKPlus_Telegram_BotToken"] && [app securityValueForKey:@"shareSDKPlus_Telegram_BotDomain"])
         {
-            [platformsRegister setupTelegramByBotToken:[app securityValueForKey:@"ShareSDKPlus_Telegram_BotToken"] botDomain:[app securityValueForKey:@"ShareSDKPlus_Telegram_BotDomain"]];
+            [platformsRegister setupTelegramByBotToken:[app securityValueForKey:@"shareSDKPlus_Telegram_BotToken"] botDomain:[app securityValueForKey:@"shareSDKPlus_Telegram_BotDomain"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_Reddit_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_Reddit_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Reddit_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Reddit_RedirectUri"])
         {
-            [platformsRegister setupRedditByAppKey:[app securityValueForKey:@"ShareSDKPlus_Reddit_AppKey"] redirectUri:[app securityValueForKey:@"ShareSDKPlus_Reddit_RedirectUri"]];
+            [platformsRegister setupRedditByAppKey:[app securityValueForKey:@"shareSDKPlus_Reddit_AppKey"] redirectUri:[app securityValueForKey:@"shareSDKPlus_Reddit_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"ShareSDKPlus_ESurfing_AppKey"] && [app securityValueForKey:@"ShareSDKPlus_ESurfing_AppSecret"] && [app securityValueForKey:@"ShareSDKPlus_ESurfing_AppName"])
+        if ([app securityValueForKey:@"shareSDKPlus_ESurfing_AppKey"] && [app securityValueForKey:@"shareSDKPlus_ESurfing_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_ESurfing_AppName"])
         {
-            [platformsRegister setupESurfingByAppKey:[app securityValueForKey:@"ShareSDKPlus_ESurfing_AppKey"] appSecret:[app securityValueForKey:@"ShareSDKPlus_ESurfing_AppSecret"] appName:[app securityValueForKey:@"ShareSDKPlus_ESurfing_AppName"]];
+            [platformsRegister setupESurfingByAppKey:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppSecret"] appName:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppName"]];
         }
         
     }];
