@@ -1,9 +1,9 @@
 /*
-Title: ShareSDKPlus
+Title: shareSDKPlus
 Description: ShareSDK在APICloud平台的插件
 */
 
-<p style="color: #ccc; margin-bottom: 30px;">来自于：Mob官方<a style="background-color: #95ba20; color:#fff; padding:4px 8px;border-radius:5px;margin-left:30px; margin-bottom:0px; font-size:12px;text-decoration:none;" target="_blank" href="//www.apicloud.com/mod_detail/ShareSDKPlus">立即使用</a></p>
+<p style="color: #ccc; margin-bottom: 30px;">来自于：Mob官方<a style="background-color: #95ba20; color:#fff; padding:4px 8px;border-radius:5px;margin-left:30px; margin-bottom:0px; font-size:12px;text-decoration:none;" target="_blank" href="//www.apicloud.com/mod_detail/shareSDKPlus">立即使用</a></p>
 
 
 <div class="outline">
@@ -28,6 +28,8 @@ Description: ShareSDK在APICloud平台的插件
 
 ## 概述
 
+当前ShareSDK版本，iOS：v4.2.5、android：v3.5.2   
+
 ### ShareSDK简介
 
 ShareSDK是为iOS、Android的App提供社交分享功能的一个组件，开发者仅需10分钟即可集成到自己的App中，它不仅支持包括QQ、微信、新浪微博、腾讯微博、豆瓣、Facebook、Twitter、Google+等国内外40多家的主流社会平台，未来继续不断扩展。帮助开发者轻松实现社会分享、第三方登录、关注、获得用户资料、获取好友列表等主流的功能，还有强大的社会化统计分享分析管理后台，可以实时了解用户、分享量、回流率等数据，有效地指导移动App的日常运营与推广，同时为App引入更多的社会平台流量。
@@ -43,9 +45,9 @@ ShareSDK是为iOS、Android的App提供社交分享功能的一个组件，开�
 - 评论和点赞，用户在登录后可对你设置的主题进行评论或点赞，同时您也能在后台审核评论内容，建立良好的社区氛围。
 
 
-### ShareSDKPlus 模块概述
+### shareSDKPlus 模块概述
 
-ShareSDKPlus封装了ShareSDK,是对APICloud平台的支持，为APICloud开发的App提供社交分享功能的一个组件，支持包括QQ、微信、新浪微博等多家主流社会平台，帮助开发者轻松实现社会分享、第三方登录、关注、获得用户资料、获取好友列表等主流的功能。
+shareSDKPlus封装了ShareSDK,是对APICloud平台的支持，为APICloud开发的App提供社交分享功能的一个组件，支持包括QQ、微信、新浪微博等多家主流社会平台，帮助开发者轻松实现社会分享、第三方登录、关注、获得用户资料、获取好友列表等主流的功能。
 
 如有问题请联系技术支持:  
 
