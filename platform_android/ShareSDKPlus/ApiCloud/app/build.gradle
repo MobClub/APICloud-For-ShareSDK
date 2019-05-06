@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    signingConfigs {
+        config {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+        release {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+    }
+
+
+    defaultConfig {
+        applicationId "cn.sharesdk.demo"
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    sourceSets {
+        main{
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+
+    compile project(':ShareSDKPlus')
+}
