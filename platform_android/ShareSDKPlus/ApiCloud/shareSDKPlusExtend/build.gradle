@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+    signingConfigs {
+        config {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+        release {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
+            storeFile file('../demokey.keystore')
+            storePassword '123456'
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'lbs'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    provided files('../app/libs/apiEngine v1.1.0.jar')
+
+}
