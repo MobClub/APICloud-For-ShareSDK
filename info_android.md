@@ -14,7 +14,7 @@ ShareSDKPlus包含一个整体的工程，名称为ApiCloud。此工程是一个
 
 1.在原有的工程上（也可以自己新建一个工程）新建一个Module，如下图的操作所示。
 
-![1557216638329](C:\Users\xiangli\AppData\Roaming\Typora\typora-user-images\1557216638329.png)
+![](C:\Users\xiangli\Desktop\11111.png)
 
 2.添加所需要的依赖包，所需要的拓展平台的包可以在http://www.mob.com/download 这个地址内获取。同时拓展模块同样需要依赖apiEngine包。
 
