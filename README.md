@@ -1179,6 +1179,8 @@ iOS系统，Android系统
 [点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/blob/master/info_ios.md#a)
 
 ### android方案
+[点击此处](https://github.com/MobClub/APICloud-For-ShareSDK/blob/master/info_android.md)
+
 
 
 
