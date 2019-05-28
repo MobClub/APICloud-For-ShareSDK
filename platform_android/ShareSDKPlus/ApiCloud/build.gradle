@@ -20,7 +20,7 @@ allprojects {
         google()
         flatDir {
             dirs 'libs'
-            dirs project(':ShareSDKPlus').file('libs')
+            dirs project(':shareSDKPlus').file('libs')
         }
     }
 }

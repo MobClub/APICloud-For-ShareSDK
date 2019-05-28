@@ -1,1 +1,1 @@
-include ':app', ':ShareSDKPlus'
+include ':app', ':shareSDKPlus', ':shareSDKPlusExtend'
