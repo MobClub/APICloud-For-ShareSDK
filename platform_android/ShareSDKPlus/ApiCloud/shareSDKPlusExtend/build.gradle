@@ -50,7 +50,7 @@ android {
 
     repositories {
         flatDir {
-            dirs 'lbs'
+            dirs 'libs'
         }
     }
 
