@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ApiCloud.iml" filepath="$PROJECT_DIR$/ApiCloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShareSDKPlus/shareSDKPlus.iml" filepath="$PROJECT_DIR$/ShareSDKPlus/shareSDKPlus.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareSDKPlus/shareSDKPlus.iml" filepath="$PROJECT_DIR$/shareSDKPlus/shareSDKPlus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shareSDKPlusExtend/shareSDKPlusExtend.iml" filepath="$PROJECT_DIR$/shareSDKPlusExtend/shareSDKPlusExtend.iml" />
     </modules>
   </component>
 </project>
