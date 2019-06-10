@@ -16,6 +16,37 @@ android {
         config {
             keyAlias 'demokey.keystore'
             keyPassword '123456'
+            storeFile file('demokey.keystore')
+            storePassword '123456'
+        }
+    }
+/*    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }*/
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false //启用Proguard
+//            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true //是否启用zipAlign压缩
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false  //不启用Proguard
+//            shrinkResources false //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled false //是否启用zipAlign压缩
+            signingConfig signingConfigs.config
+        }
+    }
+
+/*    signingConfigs {
+        config {
+            keyAlias 'demokey.keystore'
+            keyPassword '123456'
             storeFile file('../demokey.keystore')
             storePassword '123456'
         }
@@ -45,7 +76,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
-    }
+    }*/
 
     sourceSets {
         main {
