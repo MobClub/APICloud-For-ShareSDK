@@ -1,10 +1,10 @@
 package cn.sharesdk.sharesdkplus;
 
-import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.mob.MobSDK;
+import com.mob.tools.utils.Hashon;
 import com.uzmap.pkg.uzcore.UZWebView;
 import com.uzmap.pkg.uzcore.uzmodule.UZModule;
 import com.uzmap.pkg.uzcore.uzmodule.UZModuleContext;
@@ -20,8 +20,6 @@ import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
-import cn.sharesdk.sina.weibo.SinaWeibo;
-import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.wechat.friends.Wechat;
 
 /**
@@ -464,12 +462,23 @@ public class APIModuleShareSDK extends UZModule{
         platform.setPlatformActionListener(new PlatformActionListener() {
             @Override
             public void onComplete(Platform platform, int action, HashMap<String, Object> res) {
+                //TODO TEST
+                Log.e("QQQ", " 授权成功 " + new Hashon().fromHashMap(res));
                 resultJsonSuccess("state", 1, moduleContext);
             }
 
             @Override
             public void onError(Platform platform, int action, Throwable t) {
-                resultJsonError("state", 2, moduleContext);
+                //resultJsonError("state", 2, moduleContext);
+                JSONObject ret = new JSONObject();
+                try {
+                    ret.put("state", 2);
+                    ret.put("data", t);
+                    Log.e("QQQ", " =========> onError  " + t);
+                } catch (JSONException e) {
+                    Log.e("QQQ", " =========> onError===> put error  " + e.getMessage());
+                }
+                moduleContext.success(ret, true);
             }
 
             @Override
@@ -502,11 +511,13 @@ public class APIModuleShareSDK extends UZModule{
         Log.e("QQQ", " =========> jsmethod_getUserInfo ");
 
         String platformStr = moduleContext.optString("platform");
+
         //初始化平台的key
         initAppKey(platformStr);
 
-        //Platform platform = ShareSDK.getPlatform(SinaWeibo.NAME);
+        //Platform platform = ShareSDK.getPlatform(Wechat.NAME);
         Platform platform = ShareSDK.getPlatform(switchPlatform(platformStr));
+
         platform.showUser(null);
         platform.setPlatformActionListener(new PlatformActionListener() {
             @Override
@@ -515,19 +526,31 @@ public class APIModuleShareSDK extends UZModule{
                 try {
                     ret.put("state", 1);
                     ret.put("data", platform.getDb().exportData());
+                    Log.e("QQQ", " =========> onComplete  " + platform.getDb().exportData());
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Log.e("QQQ", " =========> onComplete put error  " + e.getMessage());
                 }
                 moduleContext.success(ret, true);
             }
 
             @Override
             public void onError(Platform platform, int i, Throwable throwable) {
-                resultJsonError("state", 2, moduleContext);
+                Log.e("QQQ", " =========> onError  " + throwable);
+                JSONObject ret = new JSONObject();
+                try {
+                    ret.put("state", 2);
+                    ret.put("data", throwable);
+                } catch (JSONException t) {
+                    t.printStackTrace();
+                }
+                moduleContext.success(ret, true);
+                //resultJsonError("state", 2, moduleContext);
+
             }
 
             @Override
             public void onCancel(Platform platform, int i) {
+                Log.e("QQQ", " =========> onCancel  ");
                 resultJsonError("state", 3, moduleContext);
             }
         });
@@ -622,7 +645,7 @@ public class APIModuleShareSDK extends UZModule{
 
     public void jsmethod_oneKeyShareContent(final UZModuleContext moduleContext) {
         String platformStr = moduleContext.optString("platform");
-        Log.e("QQQ", " 一键分享===> " + platformStr);
+        Log.e("QQQ", " jsmethod_oneKeyShareContent===> " + platformStr);
         //初始化平台的key
         initAppKey("0");
 
@@ -637,25 +660,46 @@ public class APIModuleShareSDK extends UZModule{
         String type = getParams(json, "type");
 
         OnekeyShare oks = new OnekeyShare();
-        oks.setText("测试的文字");
-        oks.setImageUrl("http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg");
-        oks.setTitle("测试的标题");
-        oks.setTitleUrl("http://www.mob.com");
-        oks.setSite("ShareSDK");
-        oks.setSiteUrl("http://www.mob.com");
+        oks.setText(text);
+        oks.setImageUrl(imageUrl);
+        oks.setTitle(title);
+        oks.setTitleUrl(titleUrl);
+        oks.setSite(site);
+        oks.setSiteUrl(siteUrl);
         oks.setCallback(new PlatformActionListener() {
             @Override
             public void onComplete(Platform platform, int i, HashMap<String, Object> hashMap) {
-                resultJsonSuccess("state", 1, moduleContext);
+                Log.e("QQQ", " onekeyshare onComplete" + hashMap);
+                //resultJsonSuccess("state", 1, moduleContext);
+                JSONObject ret = new JSONObject();
+                try {
+                    ret.put("state", 1);
+                    ret.put("data", new Hashon().fromHashMap(hashMap));
+                    Log.e("QQQ", " =========> onComplete  " + new Hashon().fromHashMap(hashMap));
+                } catch (JSONException e) {
+                    Log.e("QQQ", " =========> onComplete put error  " + e.getMessage());
+                }
+                moduleContext.success(ret, true);
             }
 
             @Override
             public void onError(Platform platform, int i, Throwable throwable) {
-                resultJsonError("state", 2, moduleContext);
+                Log.e("QQQ", " onekeyshare onError" + throwable);
+                //resultJsonError("state", 2, moduleContext);
+                JSONObject ret = new JSONObject();
+                try {
+                    ret.put("state", 2);
+                    ret.put("data", throwable);
+                    Log.e("QQQ", " =========> onComplete  " + platform.getDb().exportData());
+                } catch (JSONException e) {
+                    Log.e("QQQ", " =========> onComplete put error  " + e.getMessage());
+                }
+                moduleContext.success(ret, true);
             }
 
             @Override
             public void onCancel(Platform platform, int i) {
+                Log.e("QQQ", " onekeyshare " + " onCancel ");
                 resultJsonError("state", 3, moduleContext);
             }
         });
