@@ -110,23 +110,23 @@ function ShareSDK()
     		Instagram : 15,			//Instagram      
     		LinkedIn : 16,			//LinkedIn       
     		Tumblr : 17,			//Tumblr         
-    		Mail : 18, 				//Mail          
+    		Email : 18, 				//Mail
     		SMS : 19,				//SMS           
     		Print : 20, 			//Print       
     		Copy : 21,				//Copy             
-    		WeChat : 22,		    //WeChat Friends    
+    		Wechat : 22,		    //WeChat Friends
     		WeChatMoments : 23,	    //WeChat Timeline   
     		QQ : 24,				//QQ              
     		Instapaper : 25,		//Instapaper       
     		Pocket : 26,			//Pocket           
-    		YouDaoNote : 27, 		//You Dao Note
+    		YouDao : 27, 		//You Dao Note
     		Pinterest : 30, 		//Pinterest    
     		Flickr : 34,			//Flickr          
     		Dropbox : 35,			//Dropbox          
     		VKontakte : 36,			//VKontakte       
     		WeChatFavorites : 37,	//WeChat Favorited        
     		Yixin : 38, 		//Yixin
-    		YiXinTimeline : 39,		//YiXin Timeline   
+    		YixinMoments : 39,		//YiXin Timeline
     		YiXinFav : 40,			//YiXin Favorited  
     		MingDao : 41,          	//明道
     		Line : 42,             	//Line
@@ -137,12 +137,12 @@ function ShareSDK()
     		Bluetooth : 48,         //Bluetooth
     		Alipay : 50,            //Alipay
             AlipayMoments : 51,//AlipayMoments
-            DingTalk:52,            //DingTalk
+            Dingding:52,            //DingTalk
             YouTube:53,             //youtube
             MeiPai:54,              //美拍
 			Cmcc : 55,              //中国移动
 			Reddit : 56,			//Reddit
-            ESurfing : 57,          //天翼
+            Telecom : 57,          //天翼
             Douyin : 58,            //抖音
             Accountkit : 59,   //FacebookAccount
             KakaoPlatform : 995,    //Kakao Series
