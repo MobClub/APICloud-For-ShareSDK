@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <security>
-    <item name="ShareSDKPlus_SinaWei_AppKey" value="568898243" />
-    <item name="ShareSDKPlus_SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
-    <item name="ShareSDKPlus_SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
+    <item name="shareSDKPlus_SinaWei_AppKey" value="568898243" />
+    <item name="shareSDKPlus_SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
+    <item name="shareSDKPlus_SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
 
-    <item name="ShareSDKPlus_QQ_AppKey" value="100371282" />
-    <item name="ShareSDKPlus_QQ_AppSecret" value="aed9b0303e3ed1e27bae87c33761161d" />
+    <item name="shareSDKPlus_QQ_AppKey" value="100371282" />
+    <item name="shareSDKPlus_QQ_AppSecret" value="aed9b0303e3ed1e27bae87c33761161d" />
 
-    <item name="ShareSDKPlus_Wechat_AppKey" value="wx617c77c82218ea2c" />
-    <item name="ShareSDKPlus_Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
+    <item name="shareSDKPlus_Wechat_AppKey" value="wx617c77c82218ea2c" />
+    <item name="shareSDKPlus_Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
 
-    <item name="ShareSDKPlus_Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
-    <item name="ShareSDKPlus_Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />
+    <item name="shareSDKPlus_Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
+    <item name="shareSDKPlus_Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />
 
-    <item name="ShareSDKPlus_Facebook_AppKey" value="1412473428822331" />
-    <item name="ShareSDKPlus_Facebook_AppSecret" value="a42f4f3f867dc947b9ed6020c2e93558" />
-    <item name="ShareSDKPlus_Facebook_DisplayName" value="shareSDK" />
+    <item name="shareSDKPlus_Facebook_AppKey" value="1412473428822331" />
+    <item name="shareSDKPlus_Facebook_AppSecret" value="a42f4f3f867dc947b9ed6020c2e93558" />
+    <item name="shareSDKPlus_Facebook_DisplayName" value="shareSDK" />
 
-    <item name="ShareSDKPlus_Twitter_AppKey" value="viOnkeLpHBKs6KXV7MPpeGyzE" />
-    <item name="ShareSDKPlus_Twitter_AppSecret" value="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" />
-    <item name="ShareSDKPlus_Twitter_RedirectUri" value="http://mob.com" />
+    <item name="shareSDKPlus_Twitter_AppKey" value="viOnkeLpHBKs6KXV7MPpeGyzE" />
+    <item name="shareSDKPlus_Twitter_AppSecret" value="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" />
+    <item name="shareSDKPlus_Twitter_RedirectUri" value="http://mob.com" />
 
-    <item name="ShareSDKPlus_Instagram_AppKey" value="ff68e3216b4f4f989121aa1c2962d058" />
-    <item name="ShareSDKPlus_Instagram_AppSecret" value="1b2e82f110264869b3505c3fe34e31a1" />
-    <item name="ShareSDKPlus_Instagram_RedirectUri" value="http://sharesdk.cn" />
+    <item name="shareSDKPlus_Instagram_AppKey" value="ff68e3216b4f4f989121aa1c2962d058" />
+    <item name="shareSDKPlus_Instagram_AppSecret" value="1b2e82f110264869b3505c3fe34e31a1" />
+    <item name="shareSDKPlus_Instagram_RedirectUri" value="http://sharesdk.cn" />
 
-    <item name="ShareSDKPlus_Google_AppKey" value="232554794995.apps.googleusercontent.com" />
-    <item name="ShareSDKPlus_Google_AppSecret" value="PEdFgtrMw97aCvf0joQj7EMk" />
-    <item name="ShareSDKPlus_Google_RedirectUri" value="http://localhost" />
+    <item name="shareSDKPlus_Google_AppKey" value="232554794995.apps.googleusercontent.com" />
+    <item name="shareSDKPlus_Google_AppSecret" value="PEdFgtrMw97aCvf0joQj7EMk" />
+    <item name="shareSDKPlus_Google_RedirectUri" value="http://localhost" />
 
-    <item name="ShareSDKPlus_Line_AuthType" value="2" />
+    <item name="shareSDKPlus_Line_AuthType" value="2" />
 
-    <item name="ShareSDKPlus_AliPaySocial_AppKey" value="2017062107540437" />
+    <item name="shareSDKPlus_AliPaySocial_AppKey" value="2017062107540437" />
 
-    <item name="ShareSDKPlus_MeiPai_AppKey" value="1089867639" />
+    <item name="shareSDKPlus_MeiPai_AppKey" value="1089867639" />
 
-    <item name="ShareSDKPlus_DingTalk_AppKey" value="dingoabcwtuab76wy0kyzo" />
+    <item name="shareSDKPlus_DingTalk_AppKey" value="dingoabcwtuab76wy0kyzo" />
 
-    <item name="ShareSDKPlus_DouBan_AppKey" value="02e2cbe5ca06de5908a863b15e149b0b" />
-    <item name="ShareSDKPlus_DouBan_AppSecret" value="9f1e7b4f71304f2f" />
-    <item name="ShareSDKPlus_DouBan_RedirectUri" value="http://www.sharesdk.cn" />
+    <item name="shareSDKPlus_DouBan_AppKey" value="02e2cbe5ca06de5908a863b15e149b0b" />
+    <item name="shareSDKPlus_DouBan_AppSecret" value="9f1e7b4f71304f2f" />
+    <item name="shareSDKPlus_DouBan_RedirectUri" value="http://www.sharesdk.cn" />
 
-    <item name="ShareSDKPlus_TencentWeibo_AppKey" value="801307650" />
-    <item name="ShareSDKPlus_TencentWeibo_AppSecret" value="ae36f4ee3946e1cbb98d6965b0b2ff5c" />
-    <item name="ShareSDKPlus_TencentWeibo_RedirectUri" value="http://www.sharesdk.cn" />
+    <item name="shareSDKPlus_TencentWeibo_AppKey" value="801307650" />
+    <item name="shareSDKPlus_TencentWeibo_AppSecret" value="ae36f4ee3946e1cbb98d6965b0b2ff5c" />
+    <item name="shareSDKPlus_TencentWeibo_RedirectUri" value="http://www.sharesdk.cn" />
 
-    <item name="ShareSDKPlus_YinXiang_AppKey" value="46131514-6903" />
-    <item name="ShareSDKPlus_YinXiang_AppSecret" value="08d7a6f3afcc888a" />
-    <item name="ShareSDKPlus_YinXiang_Sandbox" value="1" />
+    <item name="shareSDKPlus_YinXiang_AppKey" value="46131514-6903" />
+    <item name="shareSDKPlus_YinXiang_AppSecret" value="08d7a6f3afcc888a" />
+    <item name="shareSDKPlus_YinXiang_Sandbox" value="1" />
 
-    <item name="ShareSDKPlus_YouDaoNote_AppKey" value="dcde25dca105bcc36884ed4534dab940" />
-    <item name="ShareSDKPlus_YouDaoNote_AppSecret" value="d98217b4020e7f1874263795f44838fe" />
-    <item name="ShareSDKPlus_YouDaoNote_RedirectUri" value="http://www.sharesdk.cn/" />
+    <item name="shareSDKPlus_YouDaoNote_AppKey" value="dcde25dca105bcc36884ed4534dab940" />
+    <item name="shareSDKPlus_YouDaoNote_AppSecret" value="d98217b4020e7f1874263795f44838fe" />
+    <item name="shareSDKPlus_YouDaoNote_RedirectUri" value="http://www.sharesdk.cn/" />
 
-    <item name="ShareSDKPlus_Mingdao_AppKey" value="97230F25CA5C" />
-    <item name="ShareSDKPlus_Mingdao_AppSecret" value="A5DC29AF7C5A5851F28E903AE9EAC0" />
-    <item name="ShareSDKPlus_Mingdao_RedirectUri" value="http://mob.com" />
+    <item name="shareSDKPlus_Mingdao_AppKey" value="97230F25CA5C" />
+    <item name="shareSDKPlus_Mingdao_AppSecret" value="A5DC29AF7C5A5851F28E903AE9EAC0" />
+    <item name="shareSDKPlus_Mingdao_RedirectUri" value="http://mob.com" />
 
-    <item name="ShareSDKPlus_Kaixin_AppKey" value="358443394194887cee81ff5890870c7c" />
-    <item name="ShareSDKPlus_Kaixin_AppSecret" value="da32179d859c016169f66d90b6db2a23" />
-    <item name="ShareSDKPlus_Kaixin_RedirectUri" value="http://www.sharesdk.cn/" />
+    <item name="shareSDKPlus_Kaixin_AppKey" value="358443394194887cee81ff5890870c7c" />
+    <item name="shareSDKPlus_Kaixin_AppSecret" value="da32179d859c016169f66d90b6db2a23" />
+    <item name="shareSDKPlus_Kaixin_RedirectUri" value="http://www.sharesdk.cn/" />
 
-    <item name="ShareSDKPlus_Renren_AppId" value="226427" />
-    <item name="ShareSDKPlus_Renren_AppKey" value="fc5b8aed373c4c27a05b712acba0f8c3" />
-    <item name="ShareSDKPlus_Renren_AppSecret" value="f29df781abdd4f49beca5a2194676ca4" />
-    <item name="ShareSDKPlus_Renren_AuthType" value="2" />
+    <item name="shareSDKPlus_Renren_AppId" value="226427" />
+    <item name="shareSDKPlus_Renren_AppKey" value="fc5b8aed373c4c27a05b712acba0f8c3" />
+    <item name="shareSDKPlus_Renren_AppSecret" value="f29df781abdd4f49beca5a2194676ca4" />
+    <item name="shareSDKPlus_Renren_AuthType" value="2" />
 
-    <item name="ShareSDKPlus_YiXin_AppKey" value="yx0d9a9f9088ea44d78680f3274da1765f" />
-    <item name="ShareSDKPlus_YiXin_AppSecret" value="1a5bd421ae089c3" />
-    <item name="ShareSDKPlus_YiXin_RedirectUri" value="https://open.yixin.im/resource/oauth2_callback.html" />
+    <item name="shareSDKPlus_YiXin_AppKey" value="yx0d9a9f9088ea44d78680f3274da1765f" />
+    <item name="shareSDKPlus_YiXin_AppSecret" value="1a5bd421ae089c3" />
+    <item name="shareSDKPlus_YiXin_RedirectUri" value="https://open.yixin.im/resource/oauth2_callback.html" />
 
-    <item name="ShareSDKPlus_Kakao_AppKey" value="9c17eb03317e0e627ec95a400f5785fb" />
-    <item name="ShareSDKPlus_Kakao_ApiKey" value="802e551a5048c3172fc1dedaaf40fcf1" />
-    <item name="ShareSDKPlus_Kakao_RedirectUri" value="http://www.mob.com/oauth" />
+    <item name="shareSDKPlus_Kakao_AppKey" value="9c17eb03317e0e627ec95a400f5785fb" />
+    <item name="shareSDKPlus_Kakao_ApiKey" value="802e551a5048c3172fc1dedaaf40fcf1" />
+    <item name="shareSDKPlus_Kakao_RedirectUri" value="http://www.mob.com/oauth" />
 
-    <item name="ShareSDKPlus_YouTube_AppKey" value="906418427202-jinnbqal1niq4s8isbg2ofsqc5ddkcgr.apps.googleusercontent.com" />
-    <item name="ShareSDKPlus_YouTube_AppSecret" value="" />
-    <item name="ShareSDKPlus_YouTube_RedirectUri" value="http://localhost" />
+    <item name="shareSDKPlus_YouTube_AppKey" value="906418427202-jinnbqal1niq4s8isbg2ofsqc5ddkcgr.apps.googleusercontent.com" />
+    <item name="shareSDKPlus_YouTube_AppSecret" value="" />
+    <item name="shareSDKPlus_YouTube_RedirectUri" value="http://localhost" />
 
-    <item name="ShareSDKPlus_Flickr_AppKey" value="cbed81d4a1bc7417693ab7865e354717" />
-    <item name="ShareSDKPlus_Flickr_AppSecret" value="4c490343869091f2" />
+    <item name="shareSDKPlus_Flickr_AppKey" value="cbed81d4a1bc7417693ab7865e354717" />
+    <item name="shareSDKPlus_Flickr_AppSecret" value="4c490343869091f2" />
 
-    <item name="ShareSDKPlus_Dropbox_AppKey" value="us514wslpfojbxc" />
-    <item name="ShareSDKPlus_Dropbox_AppSecret" value="w0nmp4os3ngo1ja" />
-    <item name="ShareSDKPlus_Dropbox_RedirectUri" value="http://localhost" />
+    <item name="shareSDKPlus_Dropbox_AppKey" value="us514wslpfojbxc" />
+    <item name="shareSDKPlus_Dropbox_AppSecret" value="w0nmp4os3ngo1ja" />
+    <item name="shareSDKPlus_Dropbox_RedirectUri" value="http://localhost" />
 
-    <item name="ShareSDKPlus_Evernote_AppKey" value="46131514-6903" />
-    <item name="ShareSDKPlus_Evernote_AppSecret" value="08d7a6f3afcc888a" />
-    <item name="ShareSDKPlus_Evernote_Sandbox" value="1" />
+    <item name="shareSDKPlus_Evernote_AppKey" value="46131514-6903" />
+    <item name="shareSDKPlus_Evernote_AppSecret" value="08d7a6f3afcc888a" />
+    <item name="shareSDKPlus_Evernote_Sandbox" value="1" />
 
-    <item name="ShareSDKPlus_Pinterest_AppKey" value="4987008320438021391" />
+    <item name="shareSDKPlus_Pinterest_AppKey" value="4987008320438021391" />
 
-    <item name="ShareSDKPlus_Pocket_AppKey" value="11496-de7c8c5eb25b2c9fcdc2b627" />
-    <item name="ShareSDKPlus_Pocket_RedirectUri" value="pocketapp1234" />
+    <item name="shareSDKPlus_Pocket_AppKey" value="11496-de7c8c5eb25b2c9fcdc2b627" />
+    <item name="shareSDKPlus_Pocket_RedirectUri" value="pocketapp1234" />
 
-    <item name="ShareSDKPlus_LinkedIn_AppKey" value="46kic3zr7s4n" />
-    <item name="ShareSDKPlus_LinkedIn_AppSecret" value="RWw6WRl9YJOcdWsj" />
-    <item name="ShareSDKPlus_LinkedIn_RedirectUri" value="http://baidu.com" />
+    <item name="shareSDKPlus_LinkedIn_AppKey" value="46kic3zr7s4n" />
+    <item name="shareSDKPlus_LinkedIn_AppSecret" value="RWw6WRl9YJOcdWsj" />
+    <item name="shareSDKPlus_LinkedIn_RedirectUri" value="http://baidu.com" />
 
-    <item name="ShareSDKPlus_VKontakte_AppKey" value="5312801" />
-    <item name="ShareSDKPlus_VKontakte_AppSecret" value="ZHG2wGymmNUCRLG2r6CY" />
-    <item name="ShareSDKPlus_VKontakte_AuthType" value="2" />
+    <item name="shareSDKPlus_VKontakte_AppKey" value="5312801" />
+    <item name="shareSDKPlus_VKontakte_AppSecret" value="ZHG2wGymmNUCRLG2r6CY" />
+    <item name="shareSDKPlus_VKontakte_AuthType" value="2" />
 
-    <item name="ShareSDKPlus_Instapaper_AppKey" value="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA" />
-    <item name="ShareSDKPlus_Instapaper_AppSecret" value="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe" />
+    <item name="shareSDKPlus_Instapaper_AppKey" value="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA" />
+    <item name="shareSDKPlus_Instapaper_AppSecret" value="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe" />
 
-    <item name="ShareSDKPlus_Tumblr_AppKey" value="2QUXqO9fcgGdtGG1FcvML6ZunIQzAEL8xY6hIaxdJnDti2DYwM" />
-    <item name="ShareSDKPlus_Tumblr_AppSecret" value="3Rt0sPFj7u2g39mEVB3IBpOzKnM3JnTtxX2bao2JKk4VV1gtNo" />
-    <item name="ShareSDKPlus_Tumblr_RedirectUri" value="http://sharesdk.cn" />
+    <item name="shareSDKPlus_Tumblr_AppKey" value="2QUXqO9fcgGdtGG1FcvML6ZunIQzAEL8xY6hIaxdJnDti2DYwM" />
+    <item name="shareSDKPlus_Tumblr_AppSecret" value="3Rt0sPFj7u2g39mEVB3IBpOzKnM3JnTtxX2bao2JKk4VV1gtNo" />
+    <item name="shareSDKPlus_Tumblr_RedirectUri" value="http://sharesdk.cn" />
 
-    <item name="ShareSDKPlus_SMS_CountryList" value="0" />
+    <item name="shareSDKPlus_SMS_CountryList" value="0" />
 
-    <item name="ShareSDKPlus_CMCC_AppId" value="300011862498" />
-    <item name="ShareSDKPlus_CMCC_AppKey" value="38D9CA1CC280C5F207E2C343745D4A4B" />
-    <item name="ShareSDKPlus_CMCC_DisplayUI" value="1" />
+    <item name="shareSDKPlus_CMCC_AppId" value="300011862498" />
+    <item name="shareSDKPlus_CMCC_AppKey" value="38D9CA1CC280C5F207E2C343745D4A4B" />
+    <item name="shareSDKPlus_CMCC_DisplayUI" value="1" />
 
-    <item name="ShareSDKPlus_Telegram_BotToken" value="646009290:AAGSonNPZqyjl0MUER8MdM8pwSPritFVNgI" />
-    <item name="ShareSDKPlus_Telegram_BotDomain" value="http://www.mob.com" />
+    <item name="shareSDKPlus_Telegram_BotToken" value="646009290:AAGSonNPZqyjl0MUER8MdM8pwSPritFVNgI" />
+    <item name="shareSDKPlus_Telegram_BotDomain" value="http://www.mob.com" />
 
-    <item name="ShareSDKPlus_Reddit_AppKey" value="ObzXn50T7Cg0Xw" />
-    <item name="ShareSDKPlus_Reddit_RedirectUri" value="https://www.mob.com/reddit_callback" />
+    <item name="shareSDKPlus_Reddit_AppKey" value="ObzXn50T7Cg0Xw" />
+    <item name="shareSDKPlus_Reddit_RedirectUri" value="https://www.mob.com/reddit_callback" />
 
-    <item name="ShareSDKPlus_ESurfing_AppKey" value="8148612606" />
-    <item name="ShareSDKPlus_ESurfing_AppSecret" value="mCltrhUqwshFa86egDTs0491ibaAulKA" />
-    <item name="ShareSDKPlus_ESurfing_AppName" value="shareSDK" />
+    <item name="shareSDKPlus_ESurfing_AppKey" value="8148612606" />
+    <item name="shareSDKPlus_ESurfing_AppSecret" value="mCltrhUqwshFa86egDTs0491ibaAulKA" />
+    <item name="shareSDKPlus_ESurfing_AppName" value="shareSDK" />
 </security>
