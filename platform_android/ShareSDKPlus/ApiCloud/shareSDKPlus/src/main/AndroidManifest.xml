@@ -61,13 +61,19 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true" />
 
-        <!--&lt;!&ndash; 填写您从Mob开发者后台中得到的Appkey和AppSecret &ndash;&gt;
-        <meta-data
-            android:name="Mob-AppKey"
-            android:value="moba6b6c6d6" />
-        <meta-data
-            android:name="Mob-AppSecret"
-            android:value="b89d2427a3bc7ad1aea1e1e8c1d36bf3" />-->
+
+        <!-- QQ平台新增的配置 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
     </application>
 

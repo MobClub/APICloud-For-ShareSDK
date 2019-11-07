@@ -23,6 +23,7 @@
 
         <param name="Wechat_AppKey" value="wx617c77c82218ea2c" />
         <param name="Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
+        <param name="Wechat_AppUniversalLink" value="https://www.sandslee.com/" />
 
         <param name="Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
         <param name="Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />

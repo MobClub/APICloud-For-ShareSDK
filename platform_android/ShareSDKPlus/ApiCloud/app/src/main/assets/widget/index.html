@@ -92,7 +92,7 @@
     function cancelAuthBtnClickHandler() {
         var shareApi = api.require('shareSDKPlus');
         shareApi.cancelAuthorize({
-            "platform": $sharesdk.PlatformID.SinaWeibo
+            "platform": $sharesdk.PlatformID.Wechat
         },function(ret, err){
             var state = ret.state;
             switch(state)
@@ -312,11 +312,13 @@
         <a class="button" tapmode="active" onclick="userInfoBtnClickHandler()">获取用户信息</a>
         <a class="button" tapmode="active" onclick="shareContentClickHandler()">分享内容</a>
         <a class="button" tapmode="active" onclick="oneKeyShareContentClickHandler()">一键分享内容</a>
-        <a class="button" tapmode="active" onclick="oneSinaLinkCardShareContentClickHandler()">新浪微博LinkCard卡片类型链接分享</a>
     </div>
 </div>
 </body>
 <script>
+
+
+<!--<a class="button" tapmode="active" onclick="oneSinaLinkCardShareContentClickHandler()">新浪微博LinkCard卡片类型链接分享</a>-->
 
 function apiready() {
     var header = document.getElementById('header');

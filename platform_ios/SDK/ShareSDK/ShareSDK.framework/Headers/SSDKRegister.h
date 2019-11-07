@@ -29,9 +29,11 @@
  
  @param appId 应用标识
  @param appSecret 应用密钥
+ @param universalLink 应用深度连接
  */
 - (void)setupWeChatWithAppId:(NSString *)appId
-                   appSecret:(NSString *)appSecret;
+                   appSecret:(NSString *)appSecret
+               universalLink:(NSString *)universalLink;
 
 /**
  设置QQ分享平台（QQ空间，QQ好友分享）应用信息
@@ -365,6 +367,19 @@
  @param appSecret 应用密钥
  */
 - (void)setupDouyinByAppKey:(NSString *)appKey
+                  appSecret:(NSString *)appSecret;
+
+/**
+ 设置企业微信应用信息
+ 
+ @param appSchema 应用schema
+ @param corpId 企业ID
+ @param agentId 应用编号
+ @param appSecret 应用密钥
+ */
+- (void)setupWeWorkByAppKey:(NSString *)appKey
+                     corpId:(NSString *)corpId
+                    agentId:(NSString *)agentId
                   appSecret:(NSString *)appSecret;
 
 @end

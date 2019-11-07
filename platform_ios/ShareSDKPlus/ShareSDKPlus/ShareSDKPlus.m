@@ -64,9 +64,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupQQWithAppId:params[@"QQ_AppKey"] appkey:params[@"QQ_AppSecret"]];
         }
         
-        if (params[@"Wechat_AppKey"] && params[@"Wechat_AppSecret"])
+        if (params[@"Wechat_AppKey"] && params[@"Wechat_AppSecret"] && params[@"Wechat_AppUniversalLink"])
         {
-            [platformsRegister setupWeChatWithAppId:params[@"Wechat_AppKey"] appSecret:params[@"Wechat_AppSecret"]];
+            [platformsRegister setupWeChatWithAppId:params[@"Wechat_AppKey"] appSecret:params[@"Wechat_AppSecret"] universalLink:params[@"Wechat_AppUniversalLink"]];
         }
         
         if (params[@"Douyin_AppKey"] && params[@"Douyin_AppSecret"])
@@ -244,9 +244,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]];
         }
         
-        if ([app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"])
+        if ([app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppUniversalLink"])
         {
-            [platformsRegister setupWeChatWithAppId:[app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"]];
+            [platformsRegister setupWeChatWithAppId:[app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"] universalLink:[app securityValueForKey:@"shareSDKPlus_Wechat_AppUniversalLink"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_Douyin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Douyin_AppSecret"])

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SSDKTypeDefine.h"
 
 @interface NSMutableDictionary (SSDKShare)
 
@@ -140,6 +141,30 @@
                          images:(id)images
                            type:(SSDKContentType)type
              forPlatformSubType:(SSDKPlatformType)platformSubType;
+
+/**
+ v4.3.0 为QQ平台支持小程序分享增加，使用小程序分享 请在白名单中(LSApplicationQueriesSchemes)添加mqqopensdkminiapp
+ 
+ @param title 标题
+ @param description 详细说明
+ @param webpageUrl 网址
+ @param hdThumbImage 高清缩略图
+ @param miniAppID 必填，小程序的AppId（注：必须在QQ互联平台中，将该小程序与分享的App绑定）
+ @param miniPath 必填，小程序的展示路径
+ @param miniWebpageUrl 必填，兼容低版本的网页链接
+ @param miniProgramType 非必填，小程序的类型，默认正式版(3)，可选测试版(1)、预览版(4)
+ @param platformSubType 分享自平台 小程序暂只支持 SSDKPlatformSubTypeQQFriend（QQ好友分享)
+ */
+- (void)SSDKSetupQQMiniProgramShareParamsByTitle:(NSString *)title
+                                     description:(NSString *)description
+                                      webpageUrl:(NSURL *)webpageUrl
+                                    hdThumbImage:(id)hdThumbImage
+                                       miniAppID:(NSString *)miniAppID
+                                        miniPath:(NSString *)miniPath
+                                  miniWebpageUrl:(NSString *)miniWebpageUrl
+                                 miniProgramType:(NSUInteger)miniProgramType
+                              forPlatformSubType:(SSDKPlatformType)platformSubType;
+
 
 - (void)SSDKSetupQQParamsByText:(NSString *)text
                           title:(NSString *)title
@@ -685,7 +710,7 @@
  *  @param url        分享链接
  *  @param title      标题
  *  @param urlDesc    链接的相关描述
- *  @param visibility 可见性，可以传入anyone或者connections-only，默认为anyone
+ *  @param visibility 可见性，可以传入PUBLIC、CONNECTIONS，默认Text分享使用PUBLIC，默认WebPage分享使用CONNECTIONS
  *  @param type       分享类型,仅支持Text和WebPage
  */
 - (void)SSDKSetupLinkedInParamsByText:(NSString *)text
@@ -885,6 +910,25 @@
                      menuDisplayPoint:(CGPoint)point
                                  type:(SSDKContentType)type;
 
+/**
+ *  设置WhatsApp分享参数
+ *
+ *  @param text  分享文本
+ *  @param image 分享图片，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage。
+ *  @param audio 分享音频, 可以为NSData、NSString、NSURL（文件路径）、SSDKData、注：只允许指定本地资源
+ *  @param video 分享视频, 可以为NSData、NSString、NSURL（文件路径）、SSDKData、注：只允许指定本地资源
+ *  @param point 分享菜单的显示位置，仅用于iPad版
+ *  @param useSystem 是否使用系统提供的分享模块只针对分享文本，其他类型目前只有系统提供分享
+ *  @param type  分享类型，仅支持Text、Image、Audio、Video
+ */
+- (void)SSDKSetupWhatsAppParamsByText:(NSString *)text
+                                image:(id)image
+                                audio:(id)audio
+                                video:(id)video
+                     menuDisplayPoint:(CGPoint)point
+                            useSystem:(BOOL)useSystem
+                                 type:(SSDKContentType)type;
+
 
 #pragma mark - TencentWeibo
 
@@ -992,6 +1036,42 @@
  */
 - (void)SSDKSetupDouyinParamesByAssetLocalIds:(NSArray<NSString *> *)assetLocalIds
                                          type:(SSDKContentType)type;
+
+/**
+ *  设置企业微信分享参数
+ *
+ *  @param text                 文本
+ *  @param title                标题
+ *  @param url                  分享链接
+ *  @param thumbImage           缩略图，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage
+ *  @param image                图片，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage，如为图片路径只支持本地沙盒路径
+ *  @param fileData             文件数据，可以为NSData、UIImage、NSString、NSURL（文件路径）、SSDKData、SSDKImage，文件路径只支持本地沙盒路径
+ *  @param type                 分享类型，支持SSDKContentTypeText、SSDKContentTypeImage、SSDKContentTypeWebPage、SSDKContentTypeFile和SSDKContentTypeVideo
+ *
+ *  分享文本时：
+ *  设置type为SSDKContentTypeText, 并填入text参数
+ *
+ *  分享图片时：
+ *  设置type为SSDKContentTypeImage, 填入title(自定义图片名称及后缀)和image参数
+ *
+ *  分享网页时：
+ *  设置type为SSDKContentTypeWebPage, 并设置text、title、url以及thumbImage参数，如果尚未设置thumbImage则会从image参数中读取图片并对图片进行缩放操作。
+ *
+ *  分享视频时：
+ *  设置type为SSDKContentTypeVideo，并设置title(自定义视频名称及后缀)、video参数
+ *
+ *  分享文件时：
+ *  设置type为SSDKContentTypeFile， 并设置title(自定义文件名称及后缀)、fileData参数
+ 
+ */
+- (void)SSDKSetupWeWorkParamsByText:(NSString *)text
+                              title:(NSString *)title
+                                url:(NSURL *)url
+                         thumbImage:(id)thumbImage
+                              image:(id)image
+                              video:(id)video
+                           fileData:(id)fileData
+                               type:(SSDKContentType)type;
 
 #pragma mark - Deprecated
 

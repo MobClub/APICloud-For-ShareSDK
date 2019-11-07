@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.mob.MobSDK;
+import com.mob.commons.SHARESDK;
 import com.mob.tools.utils.Hashon;
 import com.uzmap.pkg.uzcore.UZWebView;
 import com.uzmap.pkg.uzcore.uzmodule.UZModule;
@@ -31,6 +32,7 @@ public class APIModuleShareSDK extends UZModule{
     public APIModuleShareSDK(UZWebView webView) {
         super(webView);
         initDevice();
+        MobSDK.setChannel(new SHARESDK(), MobSDK.CHANNEL_APICLOUD);
     }
 
     private void checkParam(String mapKey, String featureKey, HashMap<String, Object> platMap) {
@@ -194,6 +196,7 @@ public class APIModuleShareSDK extends UZModule{
     }
 
     private void initAppKey(String platNumber) {
+        setMobAppKeyAndSecret();
         int casedId = Integer.valueOf(platNumber);
         switch (casedId) {
             case 0: {
@@ -364,6 +367,20 @@ public class APIModuleShareSDK extends UZModule{
             default:
                 break;
         }
+    }
+
+    //set MobAppKey and MobAppSecret
+    private void setMobAppKeyAndSecret() {
+        String mobAppkey = getFeature("MOBAppKey");
+        String mobAppSecret = getFeature("MOBAppSecret");
+        if ((!TextUtils.isEmpty(mobAppkey)) && (!TextUtils.isEmpty(mobAppSecret))) {
+            MobSDK.init(context(), mobAppkey, mobAppSecret);
+            Log.e("WWW", "MobSDK.init is ok ===> mobAppkey " + mobAppkey + " mobAppSecret " + mobAppSecret);
+        } else {
+            Log.e("WWW", "MobSdk mobAppkey or mobAppSecret is null");
+        }
+
+
     }
 
     //新浪
