@@ -1,0 +1,8 @@
+shareSDKPlus 模块 1.1.1版本更新note:
+
+iOS:
+1.ShareSDK适配iOS13和ipadOS
+2.Pinterest支持跳转进Pinterest客户端分享
+3.更新微博sdk、微信sdk
+android:
+1.更新Facebook、QQ、QQ空间、微信、Twitter、新浪、到3.6.8版本
