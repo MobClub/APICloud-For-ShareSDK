@@ -45,11 +45,12 @@
 
     <script src="../script/ShareSDK.js"></script>
     <script>
+        
         // 授权
         function authBtnClickHandler() {
             var shareApi = api.require('shareSDKPlus');
             shareApi.authorize({
-                "platform": $sharesdk.PlatformID.SinaWeibo
+                "platform": $sharesdk.PlatformID.WeChat
             },function(ret, err){
                 var state = ret.state;
                 switch(state)
@@ -287,6 +288,90 @@
 
             });
         }
+    
+        function isInstallPlatform(){
+            var shareApi = api.require('shareSDKPlus');
+               shareApi.isInstallPlatform({
+                   "platform": $sharesdk.PlatformID.SinaWeibo,
+               },function(ret, err){
+                    api.toast({
+                        msg: ret.state,
+                        location: 'middle'
+                    });
+
+               });
+        }
+    
+        function shareShareLink(){
+            var shareParams =
+                {
+                "text" : "测试的文字",
+                "imageUrl" : "http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg",
+                "title" : "测试的标题",
+                "titleUrl" : "http://m.93lj.com/sharelink?mobid=ziqMNf",
+                "description" : "测试的描述",
+                "site" : "ShareSDK",
+                "siteUrl" : "http://www.mob.com",
+                "type" : $sharesdk.ContentType.WebPage
+            };
+
+        var shareApi = api.require('shareSDKPlus');
+            shareApi.shareContent({
+            "platform": $sharesdk.PlatformID.WeChat,
+            "shareParams": shareParams
+        },function(ret, err){
+            var state = ret.state;
+            switch(state)
+            {
+                case $sharesdk.ResponseState.Success://1
+                    api.toast({
+                        msg: "成功",
+                        location: 'middle'
+                    });
+                    break;
+                case $sharesdk.ResponseState.Fail://2
+                    api.toast({
+                        msg: "失败",
+                        location: 'middle'
+                    });
+                    break;
+                case $sharesdk.ResponseState.Cancel://3
+                    api.toast({
+                        msg: "取消",
+                        location: 'middle'
+                    });
+                    break;
+                default:
+            }
+        });
+    }
+    
+        apiready = function (){
+            
+            
+            var shareLinkApi = api.require('shareSDKLinkPlus');
+             
+            shareLinkApi.shareLinkSceneRestore({
+        
+            },function(ret, err){
+                setTimeout(function() {
+                    
+                if (ret != null) {
+                   api.toast({
+                      msg: JSON.stringify(ret),
+                      location: 'middle'
+                    });
+                 }
+                if (err != null) {
+                    api.toast({
+                       msg: JSON.stringify(err),
+                       location: 'middle'
+                    });
+                }}, 2000);
+               
+        });
+    }
+    
     </script>
 
 </head>
@@ -299,7 +384,8 @@
             <a class="button" tapmode="active" onclick="userInfoBtnClickHandler()">获取用户信息</a>
             <a class="button" tapmode="active" onclick="shareContentClickHandler()">分享内容</a>
             <a class="button" tapmode="active" onclick="oneKeyShareContentClickHandler()">一键分享内容</a>
-            <a class="button" tapmode="active" onclick="oneSinaLinkCardShareContentClickHandler()">新浪微博LinkCard卡片类型链接分享</a>
+            <a class="button" tapmode="active" onclick="isInstallPlatform()">是否安装平台</a>
+            <a class="button" tapmode="active" onclick="shareShareLink()">分享闭环分享链接</a>
     </div>
 </body>
 

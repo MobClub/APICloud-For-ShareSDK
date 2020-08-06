@@ -35,6 +35,10 @@
 
 /* Begin PBXBuildFile section */
 		0BA9C0DF22643AA200C17D58 /* ShareSDKPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */; };
+		D54AA496242C4EE9000D99AA /* ShareSDKLinkPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = D54AA495242C4EE9000D99AA /* ShareSDKLinkPlus.m */; };
+		D54AA49F242C52C8000D99AA /* ShareSDKLinkRestoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D54AA49E242C52C8000D99AA /* ShareSDKLinkRestoreManager.m */; };
+		D571BD7124D25F5B0057ECFA /* NSObject+SSDKHBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D571BD6F24D25F590057ECFA /* NSObject+SSDKHBModel.m */; };
+		D571BD7424D25F610057ECFA /* SSDKHBClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D571BD7224D25F5F0057ECFA /* SSDKHBClassInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +71,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSDKPlus.m; sourceTree = "<group>"; };
+		0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareSDKPlus.m; sourceTree = "<group>"; wrapsLines = 0; };
 		0BA9C0D722643AA200C17D58 /* ShareSDKPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareSDKPlus.h; sourceTree = "<group>"; };
 		528608281A596B0600587EC2 /* libShareSDKPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareSDKPlus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54AA494242C4EE9000D99AA /* ShareSDKLinkPlus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareSDKLinkPlus.h; sourceTree = "<group>"; };
+		D54AA495242C4EE9000D99AA /* ShareSDKLinkPlus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareSDKLinkPlus.m; sourceTree = "<group>"; };
+		D54AA49D242C52C8000D99AA /* ShareSDKLinkRestoreManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareSDKLinkRestoreManager.h; sourceTree = "<group>"; };
+		D54AA49E242C52C8000D99AA /* ShareSDKLinkRestoreManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareSDKLinkRestoreManager.m; sourceTree = "<group>"; };
+		D571BD6F24D25F590057ECFA /* NSObject+SSDKHBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SSDKHBModel.m"; sourceTree = "<group>"; };
+		D571BD7024D25F5B0057ECFA /* NSObject+SSDKHBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SSDKHBModel.h"; sourceTree = "<group>"; };
+		D571BD7224D25F5F0057ECFA /* SSDKHBClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDKHBClassInfo.m; sourceTree = "<group>"; };
+		D571BD7324D25F610057ECFA /* SSDKHBClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDKHBClassInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,14 @@
 			children = (
 				0BA9C0D722643AA200C17D58 /* ShareSDKPlus.h */,
 				0BA9C0D622643AA200C17D58 /* ShareSDKPlus.m */,
+				D54AA494242C4EE9000D99AA /* ShareSDKLinkPlus.h */,
+				D54AA495242C4EE9000D99AA /* ShareSDKLinkPlus.m */,
+				D54AA49D242C52C8000D99AA /* ShareSDKLinkRestoreManager.h */,
+				D54AA49E242C52C8000D99AA /* ShareSDKLinkRestoreManager.m */,
+				D571BD7324D25F610057ECFA /* SSDKHBClassInfo.h */,
+				D571BD7224D25F5F0057ECFA /* SSDKHBClassInfo.m */,
+				D571BD7024D25F5B0057ECFA /* NSObject+SSDKHBModel.h */,
+				D571BD6F24D25F590057ECFA /* NSObject+SSDKHBModel.m */,
 			);
 			path = ShareSDKPlus;
 			sourceTree = "<group>";
@@ -155,6 +175,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 5286081F1A596B0600587EC2;
@@ -185,7 +206,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n#要build的target名\nTARGET_NAME=${PROJECT_NAME}\n#echo \"target_Name=${TARGET_NAME}\"\n\nModuleName=shareSDKPlus\n\n#要build的target名\nINSTALL_DIR=${SRCROOT}/../UZModules/${ModuleName}\nINSTALL_DIR_A=${INSTALL_DIR}/lib${TARGET_NAME}.a\n\n\n#模块打包\nEXPORT_ROOT=${SRCROOT}/../Export_Modules/${ModuleName}\nEXPORT_DIR=${EXPORT_ROOT}/target\nEXPORT_DIR_A=${EXPORT_DIR}/lib${TARGET_NAME}.a\n\n#SDK\nSDK_DIR=${SRCROOT}/../SDK\n\nif [ -d \"${EXPORT_DIR}\" ]\nthen\nrm -rf \"${EXPORT_DIR}\"\nfi\nmkdir -p \"${EXPORT_DIR}\"\n\ncp \"${INSTALL_DIR_A}\" \"${EXPORT_DIR}/\"\n\n#添加必要的ShareSDK相关包\n#SDK/Required/MOBFoundation.framework\ncp -R \"${SDK_DIR}/Required/MOBFoundation.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/ShareSDK.framework\ncp -R \"${SDK_DIR}/ShareSDK/ShareSDK.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Required\ncp -R \"${SDK_DIR}/ShareSDK/Support/Required/\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Optional\ncp -R \"${SDK_DIR}/ShareSDK/Support/Optional/\" \"${EXPORT_DIR}/\"\n\n\n#SDK/ShareSDK/Support/PlatformConnector\n#SDK/ShareSDK/Support/PlatformSDK\n#如下：store模块只提供QQ平台、新浪平台、微信平台，其他平台可通过ExportModule_ShareSDKPlusExtend 添加平台打包成自定义模块上传使用\n# QQ\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/QQConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework\" \"${EXPORT_DIR}/\"\n# Sina\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/libWeiboSDK.a\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle\" \"${EXPORT_DIR}/\"\n# Wechat\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/WechatConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/WeChatSDK/libWeChatSDK.a\" \"${EXPORT_DIR}/\"\n# Twitter\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/TwitterConnector.framework\" \"${EXPORT_DIR}/\"\n# Facebook\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/FacebookConnector.framework\" \"${EXPORT_DIR}/\"\n\ncd ${EXPORT_ROOT}/../\nzip -rq ${ModuleName}.zip ${ModuleName}\n\n\nopen ${EXPORT_ROOT}\n";
+			shellScript = "\n#要build的target名\nTARGET_NAME=${PROJECT_NAME}\n#echo \"target_Name=${TARGET_NAME}\"\n\nModuleName=shareSDKPlus\n\n#要build的target名\nINSTALL_DIR=${SRCROOT}/../UZModules/${ModuleName}\nINSTALL_DIR_A=${INSTALL_DIR}/lib${TARGET_NAME}.a\n\n\n#模块打包\nEXPORT_ROOT=${SRCROOT}/../Export_Modules/${ModuleName}\nEXPORT_DIR=${EXPORT_ROOT}/target\nEXPORT_DIR_A=${EXPORT_DIR}/lib${TARGET_NAME}.a\n\n#SDK\nSDK_DIR=${SRCROOT}/../SDK\n\nif [ -d \"${EXPORT_DIR}\" ]\nthen\nrm -rf \"${EXPORT_DIR}\"\nfi\nmkdir -p \"${EXPORT_DIR}\"\n\ncp \"${INSTALL_DIR_A}\" \"${EXPORT_DIR}/\"\n\n#添加必要的ShareSDK相关包\n#SDK/Required/MOBFoundation.framework\ncp -R \"${SDK_DIR}/Required/MOBFoundation.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/ShareSDK.framework\ncp -R \"${SDK_DIR}/ShareSDK/ShareSDK.framework\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Required\ncp -R \"${SDK_DIR}/ShareSDK/Support/Required/\" \"${EXPORT_DIR}/\"\n\n#SDK/ShareSDK/Support/Optional\ncp -R \"${SDK_DIR}/ShareSDK/Support/Optional/\" \"${EXPORT_DIR}/\"\n\n\n#SDK/ShareSDK/Support/PlatformConnector\n#SDK/ShareSDK/Support/PlatformSDK\n#如下：store模块只提供QQ平台、新浪平台、微信平台，其他平台可通过ExportModule_ShareSDKPlusExtend 添加平台打包成自定义模块上传使用\n# QQ\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/QQConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework\" \"${EXPORT_DIR}/\"\n# Sina\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/libWeiboSDK.a\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle\" \"${EXPORT_DIR}/\"\n# Wechat\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/WechatConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/WeChatSDK/libWeChatSDK.a\" \"${EXPORT_DIR}/\"\n# Twitter\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/TwitterConnector.framework\" \"${EXPORT_DIR}/\"\n# Facebook\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/FacebookConnector.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/FacebookSDK/FacebookSDKStrings.bundle\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/FacebookSDK/FBSDKCoreKit.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/FacebookSDK/FBSDKLoginKit.framework\" \"${EXPORT_DIR}/\"\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformSDK/FacebookSDK/FBSDKShareKit.framework\" \"${EXPORT_DIR}/\"\n# Apple\ncp -R \"${SDK_DIR}/ShareSDK/Support/PlatformConnector/AppleAccountConnector.framework\" \"${EXPORT_DIR}/\"\ncd ${EXPORT_ROOT}/../\nzip -rq ${ModuleName}.zip ${ModuleName}\n\n\nopen ${EXPORT_ROOT}\n";
 		};
 		0BA9C0EB22645E3100C17D58 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -211,6 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D571BD7124D25F5B0057ECFA /* NSObject+SSDKHBModel.m in Sources */,
+				D54AA496242C4EE9000D99AA /* ShareSDKLinkPlus.m in Sources */,
+				D54AA49F242C52C8000D99AA /* ShareSDKLinkRestoreManager.m in Sources */,
+				D571BD7424D25F610057ECFA /* SSDKHBClassInfo.m in Sources */,
 				0BA9C0DF22643AA200C17D58 /* ShareSDKPlus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

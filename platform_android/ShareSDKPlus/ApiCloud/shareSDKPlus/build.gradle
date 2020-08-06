@@ -1,11 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -93,12 +93,33 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api(name:'OneKeyShare-3.6.8', ext:'aar')
-    api(name:'ShareSDK-3.6.8', ext:'aar')
+    implementation files('libs/OneKeyShare-3.7.9.aar')
+    implementation files('libs/ShareSDK-3.7.9.aar')
+    implementation files('libs/ShareSDK-Facebook-3.7.9.jar')
+    implementation files('libs/ShareSDK-FacebookMessenger-3.7.9.jar')
+    implementation files('libs/ShareSDK-QQ-3.7.9.jar')
+    implementation files('libs/ShareSDK-QZone-3.7.9.jar')
+    implementation files('libs/ShareSDK-SinaWeibo-3.7.9.jar')
+    implementation files('libs/ShareSDK-Twitter-3.7.9.jar')
+    implementation files('libs/ShareSDK-Wechat-3.7.9.jar')
+    implementation files('libs/ShareSDK-Wechat-Core-3.7.9.jar')
+    implementation files('libs/ShareSDK-Wechat-Favorite-3.7.9.jar')
+    implementation files('libs/ShareSDK-Wechat-Moments-3.7.9.jar')
+    compileOnly  files('libs/MobGUI-2019.0306.1850.jar')
+    compileOnly  files('libs/MobCommons-2020.0730.1133.jar')
+    compileOnly  files('libs/MobTools-2020.0730.1131.jar')
+//    implementation files('libs/MobGUI-2019.0306.1850.jar')
+//    implementation files('libs/ShareSDK-Douyin-3.7.9.jar')
+//    implementation files('libs/ShareSDK-Douyin-Core-3.7.9.jar')
+    implementation files('libs/ShareSDK-GooglePlus-3.7.9.jar')
+    implementation files('libs/ShareSDK-SinaWeibo-3.7.9.jar')
+//    implementation files('libs/ShareSDK-Alipay-3.7.9.jar')
+//    implementation files('libs/ShareSDK-Alipay-Core-3.7.9.jar')
+//    implementation files('libs/ShareSDK-Alipay-Moments-3.7.9.jar')
 
     compileOnly files('../app/libs/apiEngine v1.1.0.jar')
+
 }
 
 

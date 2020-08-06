@@ -10,7 +10,9 @@
 #import <ShareSDKUI/ShareSDKUI.h>
 #import <MOBFoundation/MOBFoundation.h>
 #import "UZAppDelegate.h"
-
+#import <objc/message.h>
+#import <AuthenticationServices/AuthenticationServices.h>
+#import <ShareSDKExtension/ShareSDK+Extension.h>
 static NSString *const shareSDKModuleName = @"shareSDKPlus";
 
 @interface ShareSDKPlus ()
@@ -20,6 +22,17 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
 @end
 
 @implementation ShareSDKPlus
+
++ (void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        SEL sel = sel_registerName("addChannelWithSdkName:channel:");
+        Method method = class_getClassMethod([MobSDK class],sel) ;
+        if (method && method_getImplementation(method) != _objc_msgForward) {
+        ((void (*)(id, SEL,id,id))objc_msgSend)([MobSDK class],sel,@"SHARESDK",@"5");
+        }
+    });
+}
 
 #pragma mark - Override
 + (void)onAppLaunch:(NSDictionary *)launchOptions {
@@ -61,7 +74,7 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         if (params[@"QQ_AppKey"] && params[@"QQ_AppSecret"])
         {
-            [platformsRegister setupQQWithAppId:params[@"QQ_AppKey"] appkey:params[@"QQ_AppSecret"]];
+            [platformsRegister setupQQWithAppId:params[@"QQ_AppKey"] appkey:params[@"QQ_AppSecret"] enableUniversalLink:YES universalLink:nil];
         }
         
         if (params[@"Wechat_AppKey"] && params[@"Wechat_AppSecret"] && params[@"Wechat_AppUniversalLink"])
@@ -241,7 +254,7 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         if ([app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] && [app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"])
         {
-            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]];
+            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]enableUniversalLink:YES universalLink:nil];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppUniversalLink"])
@@ -552,6 +565,20 @@ JS_METHOD(shareContent:(UZModuleMethodContext *)context)
      }];
 }
 
+JS_METHOD(isInstallPlatform:(UZModuleMethodContext *)context)
+{
+    NSDictionary *params = context.param;
+    SSDKPlatformType type = SSDKPlatformTypeAny;
+    
+    if ([[params objectForKey:@"platform"] isKindOfClass:[NSNumber class]])
+    {
+        type = [[params objectForKey:@"platform"] unsignedIntegerValue];
+    }
+    NSMutableDictionary *responseDict = [NSMutableDictionary dictionary];
+    responseDict[@"state"] = @([ShareSDK isClientInstalled:type]);
+    [context callbackWithRet:responseDict err:nil delete:YES];
+}
+
 JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
 {
     NSDictionary *params = context.param;
@@ -580,20 +607,20 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
         y = [[params objectForKey:@"y"] floatValue];
     }
     
-    UIViewController *vc = [MOBFViewController currentViewController];
-    if ([MOBFDevice isPad])
-    {
-        if (!_refView)
-        {
-            _refView = [[UIView alloc] initWithFrame:CGRectMake(x, y, 1, 1)];
-        }
-        else
-        {
-            _refView.frame = CGRectMake(x, y, 1, 1);
-        }
-        
-        [vc.view addSubview:_refView];
-    }
+//    UIViewController *vc = [MOBFViewController currentViewController];
+//    if ([MOBFDevice isPad])
+//    {
+//        if (!_refView)
+//        {
+//            _refView = [[UIView alloc] initWithFrame:CGRectMake(x, y, 1, 1)];
+//        }
+//        else
+//        {
+//            _refView.frame = CGRectMake(x, y, 1, 1);
+//        }
+//
+//        [vc.view addSubview:_refView];
+//    }
     
     [ShareSDK showShareActionSheet:_refView customItems:types shareParams:content sheetConfiguration:nil onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
         //返回

@@ -167,7 +167,16 @@
 - (void)setupInstagramWithClientId:(NSString *)clientId
                       clientSecret:(NSString *)clientSecret
                        redirectUrl:(NSString *)redirectUrl;
+/**
+设置Instagram应用信息
 
+@param clientId 应用标识
+@param clientSecret 应用密钥
+@param redirectUrl 回调地址
+*/
+- (void)setupInstagramInFBWithClientId:(NSString *)clientId
+                      clientSecret:(NSString *)clientSecret
+                       redirectUrl:(NSString *)redirectUrl;
 /**
  设置LinkedIn应用信息
  
@@ -369,10 +378,11 @@
 - (void)setupDouyinByAppKey:(NSString *)appKey
                   appSecret:(NSString *)appSecret;
 
+
 /**
  设置企业微信应用信息
  
- @param appSchema 应用schema
+ @param appKey 应用appKey
  @param corpId 企业ID
  @param agentId 应用编号
  @param appSecret 应用密钥
@@ -381,5 +391,12 @@
                      corpId:(NSString *)corpId
                     agentId:(NSString *)agentId
                   appSecret:(NSString *)appSecret;
+
+/**
+设置绿洲appKey
+ 
+@param appKey 应用标识
+ */
+- (void)setOasisByAppkey:(NSString *)appKey;
 
 @end

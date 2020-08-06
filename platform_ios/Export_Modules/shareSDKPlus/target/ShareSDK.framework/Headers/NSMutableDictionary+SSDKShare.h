@@ -14,7 +14,7 @@
 
 /**
  设置分享标识
-
+ 
  @param flags 标识
  */
 - (void)SSDKSetShareFlags:(NSArray <NSString *>*)flags;
@@ -207,9 +207,8 @@
 
 /**
  新浪微博设置linkcard分享方式
-
+ 
  @param text 描述
- @param title 标题
  @param cardTitle 卡片标题
  @param cardSummary 卡片摘要
  @param images 图片，只支持网络图片
@@ -291,15 +290,18 @@
  分享类型为WebPage类型时,为链,仅在非客户端分享时生效
  
  *  @param hashtag 话题标签
- 开发者指定的话题标签，将添加至分享内容中。用户可决定是否在分享对话框中移除这种话题标签。话题标签应包含#符号，例如#facebook
+ 开发者指定的话题标签，将添加至分享内容中。用户可决定是否在分享对话框中移除这种话题标签。话题标签应包含#符号，例如#facebook，不能是纯数字
  
  *  @param quote 话题标签
  随分享的链接一同显示的引文由用户自行高亮选择，也可由开发者预先定义(例如文章的醒目引文) 此参数只适用于链接分享类型
+ 
+ *  @param shareType 包含facebooksdk
  
  *  @param type             分享类型
  当使用客户端分享时,支持Image、WebPage,Video类型
  当不适用客户端分享是,支持Text、Image、WebPage、App(应用邀请)类型
  */
+
 - (void)SSDKSetupFacebookParamsByText:(NSString *)text
                                 image:(id)image
                                   url:(NSURL *)url
@@ -308,9 +310,18 @@
                        attachementUrl:(NSURL *)attachementUrl
                               hashtag:(NSString *)hashtag
                                 quote:(NSString *)quote
+                            shareType:(SSDKFacebookShareType)shareType
                                  type:(SSDKContentType)type;
 
+/**
+ Facebook 分享参数 SSDKSetupFacebookParamsByText:image:url:urlTitle:urlName:attachementUrl:hashtag:quote:shareType:type的扩展
+ imageAsset 设置分享图片的PHAsset，为一个数组
+ videoAsset  设置分享视频的PHAsset，或localIdentifier
+ 此方法可以将图片与视频的分享内容改为PHAsset 或localIdentifier
+ */
 
+- (void)SSDKSetupFacebookParamsByImagePHAsset:(NSArray*)imageAsset
+                                 videoPHAsset:(id)videoAsset;
 
 #pragma mark - Facebook Messenger
 
@@ -358,7 +369,7 @@
 
 /**
  设置Twitter分享参数
-
+ 
  @param text 分享内容
  @param images 分享图片列表,传入参数可以为单张图片信息，也可以为一个NSArray，数组元素可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage。如: @"http://www.mob.com/images/logo_black.png" 或 @[@"http://www.mob.com/images/logo_black.png"]
  @param video 本地文件地址
@@ -669,7 +680,7 @@
 
 /**
  设置KaKaoTalk分享参数，支持链接分享和本地文件分享
-
+ 
  @param url 链接地址，为本地地址时默认分享文件形式，网络链接默认分享链接形式
  @param templateId 模板id,需要Kakao后台配置
  @param templateArgs 模板参数
@@ -681,7 +692,7 @@
 
 /**
  设置KaKaoStory分享参数,客户端分享时只支持文本链接分享，不支持图片单独分享，需要配置白名单：storylink
-
+ 
  @param content 分享内容
  @param title 标题,仅客户端分享链接时有效
  @param images 图片数据，元素类型支持:UIImage,NSData(gif或图片),SSDKImage,NSString,NSArray
@@ -1033,8 +1044,12 @@
  *  @param assetLocalIds 分享图片/视频集合, 注：只允许为相册资源且集合传对应的资源localIdentifier，非相册路径
  *       如相册路径为“assets-library://asset/asset.mp4?id=E7BEC1A7-D60C-4B41-85AB-B8A1606AB338&ext=mp4”，assetLocalIds为@[@"E7BEC1A7-D60C-4B41-85AB-B8A1606AB338"]
  *  @param type  分享类型，仅支持Image、Video
+ *  @param hashtag 唯一标识
+ *  @param extraInfo 额外的数据
  */
 - (void)SSDKSetupDouyinParamesByAssetLocalIds:(NSArray<NSString *> *)assetLocalIds
+                                      hashtag:(NSString *)hashtag
+                                    extraInfo:(NSDictionary *)extraInfo
                                          type:(SSDKContentType)type;
 
 /**
@@ -1071,6 +1086,34 @@
                               image:(id)image
                               video:(id)video
                            fileData:(id)fileData
+                               type:(SSDKContentType)type;
+
+
+/** 设置绿洲分享参数
+ 
+ 
+ * @param title 标题
+ 
+ * @param text 内容
+ 
+ * @param assetLocalIds 相册资源，注：只允许为相册资源且集合传对应的资源localIdentifier，非相册路径
+ 如相册路径为“assets-library://asset/asset.mp4?id=E7BEC1A7-D60C-4B41-85AB-B8A1606AB338&ext=mp4”，assetLocalIds为@[@"E7BEC1A7-D60C-4B41-85AB-B8A1606AB338"]
+ assetLocalIds优先级低于image和video
+ 
+ * @param image  图片，可以为NSString、NSURL、UIImage、NSData、或着以上类型的数组，注：  图片大小限制为10M,  图片最多传12张
+ 
+ * @param video 视频资源，可以使NSData（大小不能超过20M，需提供后缀类型)， 视频最多1个，图片与视频不能混合添加
+ 
+ * @param fileExtension data类型的标识符
+ 
+ * @param type 分享的类型
+ */
+- (void)SSDKSetupOasisParamsByTitle:(NSString *)title
+                               text:(NSString *)text
+                      assetLocalIds:(NSArray <NSString *>*)assetLocalIds
+                              image:(id)image
+                              video:(NSData *)video
+                      fileExtension:(NSString *)fileExtension
                                type:(SSDKContentType)type;
 
 #pragma mark - Deprecated

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface UZAppUtils : NSObject
-
 #pragma mark - Device info
 + (BOOL)isSimulator;
 + (BOOL)popoverSupported;

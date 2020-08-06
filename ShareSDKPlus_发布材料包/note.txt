@@ -1,8 +1,8 @@
 shareSDKPlus 模块 1.1.1版本更新note:
 
 iOS:
-1.ShareSDK适配iOS13和ipadOS
-2.Pinterest支持跳转进Pinterest客户端分享
-3.更新微博sdk、微信sdk
+1.支持苹果登录及登录状态的监听
+2.微信添加打开小程序功能，小程序可携带参数打开app
+3.更新抖音sdk
 android:
 1.更新Facebook、QQ、QQ空间、微信、Twitter、新浪、到3.6.8版本

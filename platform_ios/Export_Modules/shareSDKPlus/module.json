@@ -1,4 +1,10 @@
- {
-    "name":"shareSDKPlus",
-    "class":"ShareSDKPlus"
- }
+ [
+  {
+     "name":"shareSDKPlus",
+     "class":"ShareSDKPlus"
+  },
+  {
+      "name":"shareSDKLinkPlus",
+      "class":"ShareSDKLinkPlus"
+  }
+ ]

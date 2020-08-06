@@ -12,12 +12,14 @@
     <!-- 短信验证登陆功能需要添加次权限来自动填充验证码，用不到可以去掉 -->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
-    <application android:name="com.uzmap.pkg.uzapp.UZApplication">
+    <application
+        android:name="com.uzmap.pkg.uzapp.UZApplication"
+        android:usesCleartextTraffic="true">
 
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
             <!-- 调用新浪原生SDK，需要注册的回调activity -->
@@ -34,6 +36,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+
 
         </activity>
 
@@ -54,23 +58,23 @@
 
         <activity
             android:name="cn.sharesdk.demo.wxapi.WXEntryActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
 
         <!-- QQ平台新增的配置 -->
-        <activity
-            android:name="com.tencent.tauth.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true" >
-        </activity>
+        <!--        <activity-->
+        <!--            android:name="com.tencent.tauth.AuthActivity"-->
+        <!--            android:launchMode="singleTask"-->
+        <!--            android:noHistory="true" >-->
+        <!--        </activity>-->
 
-        <activity
-            android:name="com.tencent.connect.common.AssistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="behind"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--        <activity-->
+        <!--            android:name="com.tencent.connect.common.AssistActivity"-->
+        <!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
+        <!--            android:screenOrientation="behind"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
 
     </application>
 

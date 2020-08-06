@@ -114,7 +114,7 @@ function ShareSDK()
     		SMS : 19,				//SMS           
     		Print : 20, 			//Print       
     		Copy : 21,				//Copy             
-    		Wechat : 22,		    //WeChat Friends
+    		WeChat : 22,		    //WeChat Friends
     		WeChatMoments : 23,	    //WeChat Timeline   
     		QQ : 24,				//QQ              
     		Instapaper : 25,		//Instapaper       

@@ -1,4 +1,4 @@
-<widget id="A123456789"  version="0.0.1">
+<widget id="A6034076357783"  version="0.0.1">
     <name>ShareSDK模块开发</name>
     <description>
         模块开发示例应用.
@@ -9,8 +9,6 @@
     <content src="index.html" />
     <preference name="debug" value="true"/>
 
-    <meta-data name="Mob-AppKey" value="moba0b0c0d0"/>
-    <meta-data name="Mob-AppSecret" value="5713f0d88511f9f4cf100cade0610a34"/>
 
     <feature name="shareSDKPlus">
 

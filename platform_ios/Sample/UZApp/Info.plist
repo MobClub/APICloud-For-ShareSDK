@@ -235,6 +235,22 @@
 			<key>CFBundleURLSchemes</key>
 			<array/>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx7197a8ccee8bce73</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ssdkmoba0b0c0d0</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -244,11 +260,21 @@
 	<string>9c17eb03317e0e627ec95a400f5785fb</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>lineauth2</string>
+		<string>oasis</string>
+		<string>fbshareextension</string>
+		<string>fbapi20160328</string>
+		<string>fbapi20150629</string>
+		<string>mqqopensdkminiapp</string>
+		<string>snssdk1180</string>
+		<string>snssdk1233</string>
+		<string>snssdk1128</string>
 		<string>weixinULAPI</string>
 		<string>kakaotalk-5.9.7</string>
 		<string>pinterestsdk.v1</string>
 		<string>vkauthorize</string>
 		<string>storylink</string>
+		<string>kakao9c17eb03317e0e627ec95a400f5785fb</string>
 		<string>kakaolink</string>
 		<string>storykompassauth</string>
 		<string>kakaokompassauth</string>
@@ -302,11 +328,14 @@
 		<string>mqq</string>
 		<string>mqqOpensdkSSoLogin</string>
 		<string>mqqapi</string>
+		<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 		<string>lineauth</string>
 		<string>line</string>
 		<string>instagram</string>
 		<string>fbauth</string>
 		<string>fb-messenger-platform-20150714</string>
+		<string>fb-messenger-api20140430</string>
+		<string>fb-messenger-share-api</string>
 		<string>fb-messenger</string>
 		<string>fbauth2</string>
 		<string>fbapi</string>
@@ -319,6 +348,11 @@
 		<string>renreniphone</string>
 		<string>douyinsharesdk</string>
 		<string>douyinopensdk</string>
+		<string>tiktokopensdk</string>
+		<string>tiktoksharesdk</string>
+		<string>wxwork</string>
+		<string>wxworkrdm</string>
+		<string>mqqopensdkminiapp</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -326,11 +360,13 @@
 	<dict>
 		<key>ChannelID</key>
 		<string>1521201864</string>
+		<key>UniversalLink</key>
+		<string>https://ybpre.share2dlink.com/line-auth/</string>
 	</dict>
 	<key>MOBAppKey</key>
-	<string>moba6b6c6d6</string>
+	<string>moba0b0c0d0</string>
 	<key>MOBAppSecret</key>
-	<string>b89d2427a3bc7ad1aea1e1e8c1d36bf3</string>
+	<string>5713f0d88511f9f4cf100cade0610a34</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

@@ -9,7 +9,7 @@
 
     <item name="shareSDKPlus_Wechat_AppKey" value="wx617c77c82218ea2c" />
     <item name="shareSDKPlus_Wechat_AppSecret" value="c7253e5289986cf4c4c74d1ccc185fb1" />
-    <item name="shareSDKPlus_Wechat_AppUniversalLink" value="https://www.sandslee.com/" />
+    <item name="shareSDKPlus_Wechat_AppUniversalLink" value="https://ybpre.share2dlink.com/" />
 
     <item name="shareSDKPlus_Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
     <item name="shareSDKPlus_Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />

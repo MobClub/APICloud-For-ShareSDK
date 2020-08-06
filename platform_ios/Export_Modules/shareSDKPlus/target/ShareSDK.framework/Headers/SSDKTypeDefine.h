@@ -213,9 +213,23 @@ typedef NS_ENUM(NSUInteger, SSDKPlatformType){
      */
     SSDKPlatformTypeDouyin              = 59,
     /**
+     * 抖音
+     */
+    SSDKPlatformTypeTikTokChina         = SSDKPlatformTypeDouyin,
+    /**
      * 企业微信
      */
     SSDKPlatformTypeWework              = 60,
+    /**
+     * Apple
+     */
+    SSDKPlatformTypeAppleAccount        = 61,
+   
+    
+    /**
+     * 绿洲
+     */
+    SSDKPlatformTypeOasis               = 64,
     /**
      *  易信
      */
@@ -412,6 +426,16 @@ typedef NS_ENUM(NSUInteger, SSDKPrivacyStatus){
 
 };
 
+typedef NS_ENUM(NSUInteger, SSDKFacebookShareType){
+    /**
+     * FacebookApp分享
+     */
+    SSDKFacebookShareTypeNative = 1,
+    /**
+      在app内分享
+     */
+    SSDKFacebookShareTypeShareSheet,
+};
 /**
  *  授权状态变化回调处理器
  *

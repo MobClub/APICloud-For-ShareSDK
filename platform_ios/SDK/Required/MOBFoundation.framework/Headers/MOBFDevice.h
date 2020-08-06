@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 extern NSString *kMOBFReachabilityChangedNotification;
 
@@ -59,6 +60,14 @@ typedef NS_ENUM(NSUInteger, MOBFIPVersion)
  *  设备工具类
  */
 @interface MOBFDevice : NSObject
+
+
+/**
+ *  获取单例的 CTTelephonyNetworkInfo
+ *
+ *  @return CTTelephonyNetworkInfo
+ */
++ (CTTelephonyNetworkInfo *)networkInfo;
 
 /**
  *  获取网卡物理地址
@@ -215,5 +224,12 @@ typedef NS_ENUM(NSUInteger, MOBFIPVersion)
  *  @return 强度 3: 强 ，2：中， 1：弱 ，无
  */
 + (int)wifiLevel;
+
+/**
+ *  获取原始当前网络类型
+ *
+ *  @return 网络类型
+ */
++ (NSString *)currentDataNetworkType;
 
 @end
