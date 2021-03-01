@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+        versionCode Integer.parseInt(project.ANDROID_BUILD_VERSION_CODE)
+        versionName project.ANDROID_BUILD_VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    task copyAar(type: Copy) {
+        delete '../packageHelper/ShareSDKPlusInstagram.aar'
+        from 'build/outputs/aar/'
+        into '../packageHelper/ShareSDKPlusInstagram/'
+        include "ShareSDKPlusInstagram-release.aar"
+        rename('ShareSDKPlusInstagram-release.aar', 'ShareSDKPlusInstagram.aar')
+
+        from '../'
+        into '../packageHelper/ShareSDKPlusInstagram/'
+        include "module.json"
+    }
+
+    task zipAar(type: Zip,dependsOn:copyAar) {
+        delete '../packageHelper/ShareSDKPlusInstagram.zip'
+        from '../packageHelper/'
+        include '**/ShareSDKPlusInstagram/**'
+        destinationDir file('../packageHelper/')
+        baseName 'ShareSDKPlusInstagram'
+        doLast {
+            delete '../packageHelper/ShareSDKPlusInstagram/'
+        }
+    }
+
+    tasks.whenTaskAdded { task ->
+        println("-----------   "+task)
+        if (task.name == 'assembleRelease') {
+            task.dependsOn zipAar
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
+}
+
+

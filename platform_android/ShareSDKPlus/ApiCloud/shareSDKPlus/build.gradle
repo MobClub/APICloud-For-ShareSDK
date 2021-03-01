@@ -1,125 +1,84 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+}
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+        versionCode Integer.parseInt(project.ANDROID_BUILD_VERSION_CODE)
+        versionName project.ANDROID_BUILD_VERSION_NAME
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
-    signingConfigs {
-        config {
-            keyAlias 'demokey.keystore'
-            keyPassword '123456'
-            storeFile file('demokey.keystore')
-            storePassword '123456'
-        }
-    }
-/*    buildTypes {
-        debug {
-            signingConfig signingConfigs.config
-        }
-    }*/
     buildTypes {
         release {
-            debuggable true
             minifyEnabled false //启用Proguard
-//            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
-            zipAlignEnabled true //是否启用zipAlign压缩
-            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
-        debug {
-            debuggable true
-            minifyEnabled false  //不启用Proguard
-//            shrinkResources false //是否清理无用资源,依赖于minifyEnabled
-            zipAlignEnabled false //是否启用zipAlign压缩
-            signingConfig signingConfigs.config
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    task copyAar(type: Copy) {
+        delete '../packageHelper/shareSDKPlus/shareSDKPlus.aar'
+        from 'build/outputs/aar/'
+        into '../packageHelper/shareSDKPlus/'
+        include "shareSDKPlus-release.aar"
+        rename('shareSDKPlus-release.aar', 'shareSDKPlus.aar')
+
+        from '/'
+        into '../packageHelper/shareSDKPlus/'
+        include "module.json"
+
+        from 'libs/'
+        into '../packageHelper/shareSDKPlus/'
+        include 'OneKeyShare-3.8.5.aar', 'ShareSDK-3.8.5.aar'
+    }
+
+    task zipAar(type: Zip, dependsOn: copyAar) {
+        delete '../packageHelper/shareSDKPlus.zip'
+        from '../packageHelper/'
+        include '**/shareSDKPlus/**'
+        destinationDir file('../packageHelper/')
+        baseName 'shareSDKPlus'
+        doLast {
+            delete '../packageHelper/shareSDKPlus/'
         }
     }
 
-/*    signingConfigs {
-        config {
-            keyAlias 'demokey.keystore'
-            keyPassword '123456'
-            storeFile file('../demokey.keystore')
-            storePassword '123456'
-        }
-        release {
-            keyAlias 'demokey.keystore'
-            keyPassword '123456'
-            storeFile file('../demokey.keystore')
-            storePassword '123456'
-        }
-        debug {
-            keyAlias 'demokey.keystore'
-            keyPassword '123456'
-            storeFile file('../demokey.keystore')
-            storePassword '123456'
+    tasks.whenTaskAdded { task ->
+        if (task.name == 'assembleRelease') {
+            task.dependsOn zipAar
         }
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-    }*/
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
-
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
-
 }
 
 dependencies {
+    compileOnly fileTree(dir: 'libs', include: ['*.aar'])
 
-    implementation files('libs/OneKeyShare-3.7.9.aar')
-    implementation files('libs/ShareSDK-3.7.9.aar')
-    implementation files('libs/ShareSDK-Facebook-3.7.9.jar')
-    implementation files('libs/ShareSDK-FacebookMessenger-3.7.9.jar')
-    implementation files('libs/ShareSDK-QQ-3.7.9.jar')
-    implementation files('libs/ShareSDK-QZone-3.7.9.jar')
-    implementation files('libs/ShareSDK-SinaWeibo-3.7.9.jar')
-    implementation files('libs/ShareSDK-Twitter-3.7.9.jar')
-    implementation files('libs/ShareSDK-Wechat-3.7.9.jar')
-    implementation files('libs/ShareSDK-Wechat-Core-3.7.9.jar')
-    implementation files('libs/ShareSDK-Wechat-Favorite-3.7.9.jar')
-    implementation files('libs/ShareSDK-Wechat-Moments-3.7.9.jar')
-    compileOnly  files('libs/MobGUI-2019.0306.1850.jar')
-    compileOnly  files('libs/MobCommons-2020.0730.1133.jar')
-    compileOnly  files('libs/MobTools-2020.0730.1131.jar')
-//    implementation files('libs/MobGUI-2019.0306.1850.jar')
-//    implementation files('libs/ShareSDK-Douyin-3.7.9.jar')
-//    implementation files('libs/ShareSDK-Douyin-Core-3.7.9.jar')
-    implementation files('libs/ShareSDK-GooglePlus-3.7.9.jar')
-    implementation files('libs/ShareSDK-SinaWeibo-3.7.9.jar')
-//    implementation files('libs/ShareSDK-Alipay-3.7.9.jar')
-//    implementation files('libs/ShareSDK-Alipay-Core-3.7.9.jar')
-//    implementation files('libs/ShareSDK-Alipay-Moments-3.7.9.jar')
+    compileOnly project(path: ':ShareSDKPlusQQ')
+    compileOnly project(path: ':ShareSDKPlusWechat')
+    compileOnly project(path: ':ShareSDKPlusAlipay')
+    compileOnly project(path: ':ShareSDKPlusSinaWeibo')
+    compileOnly project(path: ':ShareSDKPlusTwitter')
+    compileOnly project(path: ':ShareSDKPlusFacebook')
+    compileOnly project(path: ':ShareSDKPlusLine')
+    compileOnly project(path: ':ShareSDKPlusDingding')
+    compileOnly project(path: ':ShareSDKPlusGooglePlus')
+    compileOnly project(path: ':ShareSDKPlusWhatsApp')
+    compileOnly project(path: ':ShareSDKPlusInstagram')
+    compileOnly project(path: ':ShareSDKPlusQZone')
+    compileOnly project(path: ':ShareSDKPlusKakao')
+    compileOnly project(path: ':ShareSDKPlusTelegram')
 
-    compileOnly files('../app/libs/apiEngine v1.1.0.jar')
-
+    compileOnly fileTree(dir: '../app/libs', include: ['*.jar'])
 }
 
 

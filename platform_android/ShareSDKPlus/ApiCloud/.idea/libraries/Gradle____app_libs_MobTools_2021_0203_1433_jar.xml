@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/MobTools-2021.0203.1433.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/MobTools-2021.0203.1433.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

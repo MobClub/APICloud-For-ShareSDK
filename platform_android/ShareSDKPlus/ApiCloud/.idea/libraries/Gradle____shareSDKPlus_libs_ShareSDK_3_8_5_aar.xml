@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: ./shareSDKPlus/libs/ShareSDK-3.8.5.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ec628677697eadbb3b068b514d9ae43/jetified-ShareSDK-3.8.5/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ec628677697eadbb3b068b514d9ae43/jetified-ShareSDK-3.8.5/jars/libs/ShareSDK-Core-3.8.5.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ec628677697eadbb3b068b514d9ae43/jetified-ShareSDK-3.8.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0ec628677697eadbb3b068b514d9ae43/jetified-ShareSDK-3.8.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -7,7 +7,7 @@
 //
 
 #import <MOBFoundation/MOBFDataModel.h>
-#import "SSDKTypeDefine.h"
+#import <ShareSDK/SSDKTypeDefine.h>
 
 @interface SSDKRegister : NSObject
 
@@ -19,10 +19,12 @@
  @param appkey 应用标识
  @param appSecret 应用密钥
  @param redirectUrl 回调地址
+ @param universalLink ul地址
  */
 - (void)setupSinaWeiboWithAppkey:(NSString *)appkey
                        appSecret:(NSString *)appSecret
-                     redirectUrl:(NSString *)redirectUrl;
+                     redirectUrl:(NSString *)redirectUrl
+                   universalLink:(NSString *)universalLink;
 
 /**
  设置微信(微信好友，微信朋友圈、微信收藏)应用信息
@@ -40,9 +42,15 @@
  
  @param appId 应用id
  @param appkey 应用Key
+ @param enableUniversalLink 只支持universallink， 手Q版本>=8.1.3,  可选
+ @param universalLink universallink链接 ，手Q版本 >=8.1.8， 可选
+ 
  */
 - (void)setupQQWithAppId:(NSString *)appId
-                  appkey:(NSString *)appkey;
+                  appkey:(NSString *)appkey
+     enableUniversalLink:(BOOL)enableUniversalLink
+           universalLink:(NSString *)universalLink;
+                  
 
 
 /**
@@ -67,16 +75,6 @@
                       appSecret:(NSString *)appSecret
                     displayName:(NSString *)displayName;
 
-/**
- 设置腾讯微博应用信息
- 
- @param appkey 应用标识
- @param appSecret 应用密钥
- @param redirectUrl 回调地址
- */
-- (void)setupTencentWeiboWithAppkey:(NSString *)appkey
-                          appSecret:(NSString *)appSecret
-                        redirectUrl:(NSString *)redirectUrl;
 
 
 /**
@@ -101,30 +99,7 @@
                     consumerSecret:(NSString *)consumerSecret
                            sandbox:(BOOL)sandbox;
 
-/**
- 设置豆瓣应用信息
- 
- @param apikey 应用标识
- @param appSecret 应用密钥
- @param redirectUrl 回调地址
- */
-- (void)setupDouBanWithApikey:(NSString *)apikey
-                    appSecret:(NSString *)appSecret
-                  redirectUrl:(NSString *)redirectUrl;
 
-
-/**
- 设置人人网应用信息
- 
- @param appId 应用标识
- @param appKey 应用Key
- @param secretKey 应用密钥
- @param authType 授权方式。值可以是：SSO、Web、Both，分别代表SSO、网页授权、SSO＋网页授权。
- */
-- (void)setupRenRenWithAppId:(NSString *)appId
-                      appKey:(NSString *)appKey
-                   secretKey:(NSString *)secretKey
-                    authType:(SSDKAuthorizeType)authType;
 
 /**
  设置开心网应用信息
@@ -276,18 +251,23 @@
                         consumerSecret:(NSString *)consumerSecret;
 
 /**
- 设置钉钉应用信息
+ 设置钉钉应用信息 适用于分享
  
  @param appId 应用标识
  */
 - (void)setupDingTalkWithAppId:(NSString *)appId;
 
 /**
- 设置美拍应用信息
+ 设置钉钉应用信息 适用于授权
  
- @param appkey 应用标识
+ @param appId 授权应用标识
+ @param appSecret 授权应用密钥
+ @param redirectUrl 授权回调地址
  */
-- (void)setupMeiPaiWithAppkey:(NSString *)appkey;
+- (void)setupDingTalkAuthWithAppId:(NSString *)appId
+                         appSecret:(NSString *)appSecret
+                       redirectUrl:(NSString *)redirectUrl;
+
 
 /**
  设置youtube应用信息
@@ -315,6 +295,7 @@
 - (void)setupSMSOpenCountryList:(BOOL)open;
 
 
+
 /**
  设置明道应用信息
 
@@ -325,17 +306,6 @@
 - (void)setupMingDaoByAppKey:(NSString *)appKey
                    appSecret:(NSString *)appSecret
                  redirectUrl:(NSString *)redirectUrl;
-
-/**
- 设置CMCC应用信息
- 
- @param appid 应用标识
- @param appkey 应用密钥
- @param displayUI 是否显示SDK的授权界面
- */
-- (void)setupCMCCByAppId:(NSString *)appid
-                  appKey:(NSString *)appkey
-               displayUI:(BOOL)displayUI;
 
 
 /**
@@ -357,16 +327,6 @@
 - (void)setupRedditByAppKey:(NSString *)appkey
                 redirectUri:(NSString *)redirectUri;
 
-/**
- 设置天翼应用信息
-
- @param appkey 应用标识
- @param appSecret 应用密钥
- @param appName 应用名称
- */
-- (void)setupESurfingByAppKey:(NSString *)appkey
-                    appSecret:(NSString *)appSecret
-                      appName:(NSString *)appName;
 
 
 /**
@@ -378,6 +338,14 @@
 - (void)setupDouyinByAppKey:(NSString *)appKey
                   appSecret:(NSString *)appSecret;
 
+/**
+ 设置TikTok应用信息
+ 
+ @param appKey 应用标识
+ @param appSecret 应用密钥
+ */
+- (void)setupTikTokByAppKey:(NSString *)appKey
+                  appSecret:(NSString *)appSecret;
 
 /**
  设置企业微信应用信息
@@ -393,10 +361,31 @@
                   appSecret:(NSString *)appSecret;
 
 /**
-设置绿洲appKey
+设置绿洲appKey,与新浪的appkey相同
  
 @param appKey 应用标识
  */
 - (void)setOasisByAppkey:(NSString *)appKey;
 
+
+/**
+设置SnapChat应用信息
+ 
+@param cliendId 应用标识
+@param redirectUrl 回传地址，需要在urlTypes设置此scheme
+ */
+- (void)setSnapChatClientId:(NSString *)cliendId    
+               clientSecret:(NSString *)clientSecret
+                redirectUrl:(NSString *)redirectUrl;
+
+/**
+ 设置快手应用信息
+ 
+ @param appId 应用标识
+ @param universalLink 应用深度连接
+ */
+- (void)setupKuaiShouWithAppId:(NSString *)appId
+                     appSecret:(NSString *)appSecret
+               universalLink:(NSString *)universalLink
+                      delegate:(id)delegate;
 @end

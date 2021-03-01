@@ -9,12 +9,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <!-- 短信验证登陆功能需要添加次权限来自动填充验证码，用不到可以去掉 -->
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-
     <application
-        android:name="com.uzmap.pkg.uzapp.UZApplication"
-        android:usesCleartextTraffic="true">
+        android:name="com.uzmap.pkg.uzapp.UZApplication">
 
         <activity
             android:name="com.mob.tools.MobUIShell"
@@ -22,60 +18,27 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
-            <!-- 调用新浪原生SDK，需要注册的回调activity -->
-            <intent-filter>
-                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
 
             <!--集成line客户端登录授权，需要添如下格式的过滤器-->
-            <intent-filter>
-                <data android:scheme="line.1477692153" />
-                <action android:name="android.intent.action.VIEW" />
+<!--            <intent-filter>-->
+<!--                <data android:scheme="line.1477692153" />-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
 
 
 
         </activity>
 
 
-        <activity
-            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="tencent100371282" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="cn.sharesdk.demo.wxapi.WXEntryActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-
-        <!-- QQ平台新增的配置 -->
-        <!--        <activity-->
-        <!--            android:name="com.tencent.tauth.AuthActivity"-->
-        <!--            android:launchMode="singleTask"-->
-        <!--            android:noHistory="true" >-->
-        <!--        </activity>-->
-
-        <!--        <activity-->
-        <!--            android:name="com.tencent.connect.common.AssistActivity"-->
-        <!--            android:configChanges="orientation|keyboardHidden|screenSize"-->
-        <!--            android:screenOrientation="behind"-->
-        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
-
+        <provider
+            android:name="cn.sharesdk.framework.utils.ShareSDKFileProvider"
+            android:authorities="${applicationId}.cn.sharesdk.ShareSDKFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
     </application>
 
 </manifest>

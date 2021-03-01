@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mob.sharesdkplusline">
+    <application>
+        <activity
+            android:name="cn.sharesdk.line.LineHandlerActivity"
+            android:exported="true"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="lineauth" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name=".lineapi.LineAuthenticationCallbackActivity"
+            android:exported="true"
+            android:targetActivity="cn.sharesdk.line.LineHandlerActivity" />
+    </application>
+</manifest>

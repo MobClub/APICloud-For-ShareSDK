@@ -5,17 +5,32 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="testRunner" value="PLATFORM" />
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusAlipay" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusDingding" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusFacebook" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusGooglePlus" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusInstagram" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusKakao" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusLine" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusQQ" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusQZone" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusSinaWeibo" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusTelegram" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusTwitter" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusWechat" />
+            <option value="$PROJECT_DIR$/ShareSDKPlusWhatsApp" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/shareSDKPlus" />
-            <option value="$PROJECT_DIR$/shareSDKPlusExtend" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mob.sharesdkplusalipay">
+    <application>
+        <activity
+            android:name="cn.sharesdk.alipay.utils.AlipayHandlerActivity"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <activity-alias
+            android:name="${applicationId}.apshare.ShareEntryActivity"
+            android:exported="true"
+            android:targetActivity="cn.sharesdk.alipay.utils.AlipayHandlerActivity" />
+    </application>
+</manifest>

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "SSDKTypeDefine.h"
+#import <ShareSDK/SSDKTypeDefine.h>
 
+/// <#Description#>
 @interface NSMutableDictionary (SSDKShare)
 
 /**
@@ -34,6 +35,14 @@
                              title:(NSString *)title
                               type:(SSDKContentType)type;
 
+
+
+/// 设置系统分享-相册图片/视频分享参数
+/// @param imageAsset 图片
+/// @param videoAsset 视频
+- (void)SSDKSetupShareParamsByImageAsset:(NSArray *)imageAsset
+                              videoAsset:(id)videoAsset
+                          completeHandle:(void(^)(BOOL complete))completeHandle;
 
 #pragma mark - Wechat
 
@@ -314,6 +323,55 @@
                                  type:(SSDKContentType)type;
 
 /**
+*  设置Facebook分享参数
+*
+*  @param text             分享内容
+分享类型为Text类型时,作为文字主体内容
+分享类型为WebPage类型时,作为连接描述
+
+*  @param image            图片，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage
+分享类型为Image类型时,若使用客户端分享,可传入 单张/多张 的 本地/网络 图片;如果不使用客户端分享,仅支持单张的本地/网络图片
+分享类型为App（应用邀请）时 只支持网络图片链接
+*【Facebook通过客户端分享图片,可不需依赖任何权限;否则需要申请publish_actions权限】*
+分享类型为WebPage类型时,无论是否使用客户端,仅支持单张的网络图片
+
+*  @param url              链接
+分享类型为WebPage类型时,为链接地址
+[如果分享的连接是AppStore/GooglePlay/Facebook个人/公共主页,所对应的图片,标题,描述等参数可能不会生效,而实际生效的是FB通过爬虫网络根据连接搜刮而来的信息]
+分享类型为Video类型时,需传入视频地址且但必须是相册地址
+
+*  @param title            链接标题
+分享类型为WebPage类型时,为链接标题
+
+*  @param urlName          连接名称
+分享类型为WebPage类型时,为链接名称,仅在非客户端分享时生效
+
+*  @param attachementUrl   附件链接(附加的媒体文件（SWF 或 MP3）的网址。如果是 SWF，还必须指定image以提供视频的缩略图)
+分享类型为WebPage类型时,为链,仅在非客户端分享时生效
+
+*  @param hashtag 话题标签
+开发者指定的话题标签，将添加至分享内容中。用户可决定是否在分享对话框中移除这种话题标签。话题标签应包含#符号，例如#facebook，不能是纯数字
+
+*  @param quote 话题标签
+随分享的链接一同显示的引文由用户自行高亮选择，也可由开发者预先定义(例如文章的醒目引文) 此参数只适用于链接分享类型
+
+*  @param sortShareTypes 设置分享优先级顺序，如sheet->native->web， 传@[@(SSDKFacebookShareTypeShareSheet),@(SSDKFacebookShareTypeNative),@(SSDKFacebookShareTypeBrowser)  ]或sheet->web->native,@[@(SSDKFacebookShareTypeShareSheet),@(SSDKFacebookShareTypeBrowser),@(SSDKFacebookShareTypeNative)  ],如果数组的最后一个元素为-1, 则在分享链结束仍然是分享失败的情况下，会默认执行接下来内部的优先级顺序，否则就停止执行
+
+*  @param type             分享类型
+当使用客户端分享时,支持Image、WebPage,Video类型
+当不适用客户端分享是,支持Text、Image、WebPage、App(应用邀请)类型
+*/
+- (void)SSDKSetupFacebookParamsByText:(NSString *)text
+                                image:(id)image
+                                  url:(NSURL *)url
+                             urlTitle:(NSString *)title
+                              urlName:(NSString *)urlName
+                       attachementUrl:(NSURL *)attachementUrl
+                              hashtag:(NSString *)hashtag
+                                quote:(NSString *)quote
+                        sortShareTypes:(NSArray <NSNumber *>*)sortShareTypes
+                                 type:(SSDKContentType)type;
+/**
  Facebook 分享参数 SSDKSetupFacebookParamsByText:image:url:urlTitle:urlName:attachementUrl:hashtag:quote:shareType:type的扩展
  imageAsset 设置分享图片的PHAsset，为一个数组
  videoAsset  设置分享视频的PHAsset，或localIdentifier
@@ -476,25 +534,6 @@
                               boardName:(NSString *)boardName;
 
 
-#pragma mark - 豆瓣
-
-/**
- *  设置豆瓣分享参数
- *
- *  @param text  文本
- *  @param image 分享图片，当type为Image时，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage。当type为WebPage时，只能为网络图片，可以传入NSString（图片路径）、NSURL（图片路径）。
- *  @param title 网页标题，仅在type为WebPage时有效。
- *  @param url   网页链接，仅在type为WebPage时有效。
- *  @param urlDesc 网页描述，仅在type为WebPage时有效。
- *  @param type  分享类型，仅支持Text、Image、WebPage类型
- */
-- (void)SSDKSetupDouBanParamsByText:(NSString *)text
-                              image:(id)image
-                              title:(NSString *)title
-                                url:(NSURL *)url
-                            urlDesc:(NSString *)urlDesc
-                               type:(SSDKContentType)type;
-
 
 #pragma mark - Dropbox
 /**
@@ -547,8 +586,12 @@
                         thumbImage:(id)thumbImage
                              image:(id)image
                       musicFileURL:(NSURL *)musicFileURL
+                   musicLowBandUrl:(id)musicLowBandUrl
+                      musicDataUrl:(id)musicDataUrl
+               musicLowBandDataUrl:(id)musicLowBandDataUrl
                            extInfo:(NSString *)extInfo
                           fileData:(id)fileData
+                   videoLowBandUrl:(id)videoLowBandUrl
                            comment:(NSString *)comment
                           toUserId:(NSString *)userId
                               type:(SSDKContentType)type
@@ -701,6 +744,8 @@
  @param sharable 是否允许共享
  @param androidExecParam 安卓扩展参数
  @param iosExecParam iOS扩展参数
+ @param type 分享类型
+
  */
 - (void)SSDKSetupKakaoStoryParamsByContent:(NSString *)content
                                      title:(NSString *)title
@@ -709,7 +754,8 @@
                                 permission:(int)permission
                                   sharable:(BOOL)sharable
                           androidExecParam:(NSDictionary *)androidExecParam
-                              iosExecParam:(NSDictionary *)iosExecParam;
+                              iosExecParam:(NSDictionary *)iosExecParam
+                                      type:(SSDKContentType)type;
 
 
 #pragma mark - LinkedIn
@@ -752,18 +798,6 @@
                                type:(SSDKContentType)type;
 
 
-#pragma mark - 美拍
-
-/**
- 设置 美拍分享参数
- 
- @param url  相册地址 或 本地图片 视频 路径
- @param type 内容类型 只支持图片 和 视频格式，请确认url和对应的type类型一致
- */
-- (void)SSDKSetupMeiPaiParamsByUrl:(NSURL *)url contentType:(SSDKContentType)type;
-
-- (void)SSDKSetupMeiPaiParamsByUrl:(NSURL *)url type:(SSDKContentType)type __deprecated_msg("Discard form v4.2.0");
-
 #pragma mark - Pocket
 
 /**
@@ -778,7 +812,6 @@
                              title:(NSString *)title
                               tags:(id)tags
                            tweetId:(NSString *)tweetId;
-
 
 #pragma mark - SMS
 
@@ -941,22 +974,6 @@
                                  type:(SSDKContentType)type;
 
 
-#pragma mark - TencentWeibo
-
-/**
- *  设置腾讯微博分享参数
- *
- *  @param text      文本
- *  @param images    分享图片列表,传入参数可以为单张图片信息，也可以为一个NSArray，数组元素可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage。如: @"http://www.mob.com/images/logo_black.png" 或 @[@"http://www.mob.com/images/logo_black.png"]
- *  @param latitude  纬度
- *  @param longitude 经度
- *  @param type      分享类型, 仅支持Text、Image类型
- */
-- (void)SSDKSetupTencentWeiboShareParamsByText:(NSString *)text
-                                        images:(id)images
-                                      latitude:(double)latitude
-                                     longitude:(double)longitude
-                                          type:(SSDKContentType)type;
 
 #pragma mark - 邮件 Mail
 /**
@@ -980,22 +997,6 @@
                     bccRecipients:(NSArray *)bccRecipients
                              type:(SSDKContentType)type;
 
-
-#pragma mark - 人人网
-/**
- *  设置人人网分享参数
- *
- *  @param text    文本
- *  @param image   分享图片，可以为UIImage、NSString（图片路径）、NSURL（图片路径）、SSDKImage，仅在type为Image时有效。
- *  @param url     网页链接，仅在type为WebPage时有效。
- *  @param albumId 相册ID，指定分享的图片要放入哪个相册，默认为nil，仅在type为Image时有效。
- *  @param type    分享类型，仅支持Image、WebPage类型
- */
-- (void)SSDKSetupRenRenParamsByText:(NSString *)text
-                              image:(id)image
-                                url:(NSURL *)url
-                            albumId:(NSString *)albumId
-                               type:(SSDKContentType)type;
 
 #pragma mark - 有道云笔记
 /**
@@ -1048,6 +1049,20 @@
  *  @param extraInfo 额外的数据
  */
 - (void)SSDKSetupDouyinParamesByAssetLocalIds:(NSArray<NSString *> *)assetLocalIds
+                                      hashtag:(NSString *)hashtag
+                                    extraInfo:(NSDictionary *)extraInfo
+                                         type:(SSDKContentType)type;
+
+/**
+ *  设置TikTok分享参数
+ *
+ *  @param assetLocalIds 分享图片/视频集合, 注：只允许为相册资源且集合传对应的资源localIdentifier，非相册路径
+ *       如相册路径为“assets-library://asset/asset.mp4?id=E7BEC1A7-D60C-4B41-85AB-B8A1606AB338&ext=mp4”，assetLocalIds为@[@"E7BEC1A7-D60C-4B41-85AB-B8A1606AB338"]
+ *  @param type  分享类型，仅支持Image、Video
+ *  @param hashtag 唯一标识
+ *  @param extraInfo 额外的数据
+ */
+- (void)SSDKSetupTikTokParamesByAssetLocalIds:(NSArray<NSString *> *)assetLocalIds
                                       hashtag:(NSString *)hashtag
                                     extraInfo:(NSDictionary *)extraInfo
                                          type:(SSDKContentType)type;
@@ -1115,6 +1130,70 @@
                               video:(NSData *)video
                       fileExtension:(NSString *)fileExtension
                                type:(SSDKContentType)type;
+/** 设置SnapChat分享参数
+
+
+ * @param caption 标题
+
+ * @param attachmentUrl 网页链接
+
+ * @param image 可以为UIImage、NSString、NSURL、SSDKImage
+
+ * @param video  视频，不可与图片混合，可以为NSString、NSURL、NSData
+
+ * @param sticker 贴纸，可以为UIImage、NSString、NSURL、SSDKImage
+
+ * @param stickerAnimated 贴纸是否是动画
+ 
+ * @param stickerRotation 贴纸旋转的角度
+ 
+ * @param cameraViewState 只有在没有视频或图片时有效 0. unknow 1.Front 2.Back
+ 
+ * @param type 分享的类型
+*/
+- (void)SSDKSetupSnapChatParamsByCaption:(NSString *)caption
+                           attachmentUrl:(NSString *)attachmentUrl
+                                   image:(id)image
+                                   video:(id)video
+                                sticker:(id)sticker
+                        stickerAnimated:(BOOL)stickerAnimated
+                        stickerRotation:(CGFloat)stickerRotation
+                         cameraViewState:(NSInteger)cameraViewState
+                                    type:(SSDKContentType)type;
+
+#pragma mark - 快手
+
+/** 设置快手分享参数
+
+
+ * @param title 标题
+
+ * @param desc 描述
+
+ * @param linkURL 私信-点击的链接地址
+
+ * @param thumbImage  私信-缩略图（不能超过1M）
+
+ * @param openID 要查看的用户的openID，可选
+
+ * @param receiverOpenID 接收方 openid , 可选，当不填时，快手 APP 会调启选择好友界面来确定接收方
+ 
+ * @param localIdentifier 分享的相册图片/视频的相册标识（此参数和path互斥，如同时存在以localIdentifier为准）
+  
+ * @param tags 视频分享-标签数组
+ 
+ * @param type 分享的类型
+*/
+- (void)SSDKSetupKuaiShouShareParamsByTitle:(NSString *)title
+                                       desc:(NSString *)desc
+                                    linkURL:(NSString *)linkURL
+                                 thumbImage:(id)thumbImage
+                                     openID:(NSString *)openID
+                             receiverOpenID:(NSString *)receiverOpenID
+                            localIdentifier:(NSString *)localIdentifier
+                                       tags:(NSArray<NSString *> *)tags
+                                  extraInfo:(NSString *)extraInfo
+                                       type:(SSDKContentType)type;
 
 #pragma mark - Deprecated
 

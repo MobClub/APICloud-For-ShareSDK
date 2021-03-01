@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./ShareSDKPlusInstagram/libs/ShareSDK-Instagram-3.8.5.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ShareSDKPlusInstagram/libs/ShareSDK-Instagram-3.8.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

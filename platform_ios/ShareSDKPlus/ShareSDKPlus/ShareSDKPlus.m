@@ -67,9 +67,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         // config.xml 读取
         
-        if (params[@"SinaWei_AppKey"] && params[@"SinaWei_AppSecret"] && params[@"SinaWei_RedirectUri"])
+        if (params[@"SinaWei_AppKey"] && params[@"SinaWei_AppSecret"] && params[@"SinaWei_RedirectUri"] && params[@"SinaWei_AppUniversalLink"])
         {
-            [platformsRegister setupSinaWeiboWithAppkey:params[@"SinaWei_AppKey"] appSecret:params[@"SinaWei_AppSecret"] redirectUrl:params[@"SinaWei_RedirectUri"]];
+            [platformsRegister setupSinaWeiboWithAppkey:params[@"SinaWei_AppKey"] appSecret:params[@"SinaWei_AppSecret"] redirectUrl:params[@"SinaWei_RedirectUri"] universalLink:params[@"SinaWei_AppUniversalLink"]];
         }
         
         if (params[@"QQ_AppKey"] && params[@"QQ_AppSecret"])
@@ -102,24 +102,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupAliSocialWithAppId:params[@"AliPaySocial_AppKey"]];
         }
         
-        if (params[@"MeiPai_AppKey"])
-        {
-            [platformsRegister setupMeiPaiWithAppkey:params[@"MeiPai_AppKey"]];
-        }
-        
         if (params[@"DingTalk_AppKey"])
         {
             [platformsRegister setupDingTalkWithAppId:params[@"DingTalk_AppKey"]];
-        }
-        
-        if (params[@"DouBan_AppKey"] && params[@"DouBan_AppSecret"] && params[@"DouBan_RedirectUri"])
-        {
-            [platformsRegister setupDouBanWithApikey:params[@"DouBan_AppKey"] appSecret:params[@"DouBan_AppSecret"] redirectUrl:params[@"DouBan_RedirectUri"]];
-        }
-        
-        if (params[@"TencentWeibo_AppKey"] && params[@"TencentWeibo_AppSecret"] && params[@"TencentWeibo_RedirectUri"])
-        {
-            [platformsRegister setupTencentWeiboWithAppkey:params[@"TencentWeibo_AppKey"] appSecret:params[@"TencentWeibo_AppSecret"] redirectUrl:params[@"TencentWeibo_RedirectUri"]];
         }
         
         if (params[@"YinXiang_AppKey"] && params[@"YinXiang_AppSecret"])
@@ -140,11 +125,6 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         if (params[@"Kaixin_AppKey"] && params[@"Kaixin_AppSecret"] && params[@"Kaixin_RedirectUri"])
         {
             [platformsRegister setupKaiXinByApiKey:params[@"Kaixin_AppKey"] secretKey:params[@"Kaixin_AppSecret"] redirectUrl:params[@"Kaixin_RedirectUri"]];
-        }
-        
-        if (params[@"Renren_AppId"] && params[@"Renren_AppKey"] && params[@"Renren_AppSecret"])
-        {
-            [platformsRegister setupRenRenWithAppId:params[@"Renren_AppId"] appKey:params[@"Renren_AppKey"] secretKey:params[@"Renren_AppSecret"] authType:params[@"Renren_AuthType"]?[params[@"Renren_AuthType"] integerValue]:2];
         }
         
         if (params[@"YiXin_AppKey"] && params[@"YiXin_AppSecret"] && params[@"YiXin_RedirectUri"])
@@ -221,11 +201,6 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         }
 
         [platformsRegister setupSMSOpenCountryList:params[@"SMS_CountryList"]?[params[@"SMS_CountryList"] integerValue]:0];
-
-        if (params[@"CMCC_AppId"] && params[@"CMCC_AppKey"])
-        {
-            [platformsRegister setupCMCCByAppId:params[@"CMCC_AppId"] appKey:params[@"CMCC_AppKey"] displayUI:params[@"CMCC_DisplayUI"]?[params[@"CMCC_DisplayUI"] integerValue]:YES];
-        }
         
         if (params[@"Telegram_BotToken"] && params[@"Telegram_BotDomain"])
         {
@@ -237,19 +212,14 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupRedditByAppKey:params[@"Reddit_AppKey"] redirectUri:params[@"Reddit_RedirectUri"]];
         }
         
-        if (params[@"ESurfing_AppKey"] && params[@"ESurfing_AppSecret"] && params[@"ESurfing_AppName"])
-        {
-            [platformsRegister setupESurfingByAppKey:params[@"ESurfing_AppKey"] appSecret:params[@"ESurfing_AppSecret"] appName:params[@"ESurfing_AppName"]];
-        }
-        
         
         
         
         // key.xml 读取
         UZAppDelegate *app = [UZAppDelegate appDelegate];
-        if ([app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"] && [app securityValueForKey:@"shareSDKPlus_SinaWei_AppUniversalLink"])
         {
-            [platformsRegister setupSinaWeiboWithAppkey:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"]];
+            [platformsRegister setupSinaWeiboWithAppkey:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_SinaWei_RedirectUri"] universalLink:[app securityValueForKey:@"shareSDKPlus_SinaWei_AppUniversalLink"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] && [app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"])
@@ -282,24 +252,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupAliSocialWithAppId:[app securityValueForKey:@"shareSDKPlus_AliPaySocial_AppKey"]];
         }
         
-        if ([app securityValueForKey:@"shareSDKPlus_MeiPai_AppKey"])
-        {
-            [platformsRegister setupMeiPaiWithAppkey:[app securityValueForKey:@"shareSDKPlus_MeiPai_AppKey"]];
-        }
-        
         if ([app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"])
         {
             [platformsRegister setupDingTalkWithAppId:[app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"]];
-        }
-        
-        if ([app securityValueForKey:@"shareSDKPlus_DouBan_AppKey"] && [app securityValueForKey:@"shareSDKPlus_DouBan_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_DouBan_RedirectUri"])
-        {
-            [platformsRegister setupDouBanWithApikey:[app securityValueForKey:@"shareSDKPlus_DouBan_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_DouBan_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_DouBan_RedirectUri"]];
-        }
-        
-        if ([app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppKey"] && [app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_TencentWeibo_RedirectUri"])
-        {
-            [platformsRegister setupTencentWeiboWithAppkey:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_TencentWeibo_RedirectUri"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_YinXiang_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YinXiang_AppSecret"])
@@ -320,11 +275,6 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         if ([app securityValueForKey:@"shareSDKPlus_Kaixin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Kaixin_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Kaixin_RedirectUri"])
         {
             [platformsRegister setupKaiXinByApiKey:[app securityValueForKey:@"shareSDKPlus_Kaixin_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_Kaixin_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Kaixin_RedirectUri"]];
-        }
-        
-        if ([app securityValueForKey:@"shareSDKPlus_Renren_AppId"] && [app securityValueForKey:@"shareSDKPlus_Renren_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Renren_AppSecret"])
-        {
-            [platformsRegister setupRenRenWithAppId:[app securityValueForKey:@"shareSDKPlus_Renren_AppId"] appKey:[app securityValueForKey:@"shareSDKPlus_Renren_AppKey"] secretKey:[app securityValueForKey:@"shareSDKPlus_Renren_AppSecret"] authType:[app securityValueForKey:@"shareSDKPlus_Renren_AuthType"]?[[app securityValueForKey:@"shareSDKPlus_Renren_AuthType"] integerValue]:2];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_YiXin_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YiXin_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_YiXin_RedirectUri"])
@@ -402,11 +352,6 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         [platformsRegister setupSMSOpenCountryList:[app securityValueForKey:@"shareSDKPlus_SMS_CountryList"]?[[app securityValueForKey:@"shareSDKPlus_SMS_CountryList"] integerValue]:0];
         
-        if ([app securityValueForKey:@"shareSDKPlus_CMCC_AppId"] && [app securityValueForKey:@"shareSDKPlus_CMCC_AppKey"])
-        {
-            [platformsRegister setupCMCCByAppId:[app securityValueForKey:@"shareSDKPlus_CMCC_AppId"] appKey:[app securityValueForKey:@"shareSDKPlus_CMCC_AppKey"] displayUI:[app securityValueForKey:@"shareSDKPlus_CMCC_DisplayUI"]?[[app securityValueForKey:@"shareSDKPlus_CMCC_DisplayUI"] integerValue]:YES];
-        }
-        
         if ([app securityValueForKey:@"shareSDKPlus_Telegram_BotToken"] && [app securityValueForKey:@"shareSDKPlus_Telegram_BotDomain"])
         {
             [platformsRegister setupTelegramByBotToken:[app securityValueForKey:@"shareSDKPlus_Telegram_BotToken"] botDomain:[app securityValueForKey:@"shareSDKPlus_Telegram_BotDomain"]];
@@ -415,11 +360,6 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         if ([app securityValueForKey:@"shareSDKPlus_Reddit_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Reddit_RedirectUri"])
         {
             [platformsRegister setupRedditByAppKey:[app securityValueForKey:@"shareSDKPlus_Reddit_AppKey"] redirectUri:[app securityValueForKey:@"shareSDKPlus_Reddit_RedirectUri"]];
-        }
-        
-        if ([app securityValueForKey:@"shareSDKPlus_ESurfing_AppKey"] && [app securityValueForKey:@"shareSDKPlus_ESurfing_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_ESurfing_AppName"])
-        {
-            [platformsRegister setupESurfingByAppKey:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppKey"] appSecret:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppSecret"] appName:[app securityValueForKey:@"shareSDKPlus_ESurfing_AppName"]];
         }
         
     }];
@@ -565,6 +505,53 @@ JS_METHOD(shareContent:(UZModuleMethodContext *)context)
      }];
 }
 
+JS_METHOD(shareByActivityWithContent:(UZModuleMethodContext *)context)
+{
+    NSDictionary *params = context.param;
+    
+    SSDKPlatformType type = SSDKPlatformTypeAny;
+    
+    if ([[params objectForKey:@"platform"] isKindOfClass:[NSNumber class]])
+    {
+        type = [[params objectForKey:@"platform"] unsignedIntegerValue];
+    }
+    
+    NSMutableDictionary *content = nil;
+    if ([[params objectForKey:@"shareParams"] isKindOfClass:[NSDictionary class]])
+    {
+        content = [self _contentWithDict:[params objectForKey:@"shareParams"]];
+    }
+    
+    [ShareSDK shareByActivityViewController:type
+         parameters:content
+     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+         
+         //返回
+         NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                              [NSNumber numberWithInteger:state],
+                                              @"state",
+                                              nil];
+         if (error)
+         {
+             NSLog(@"%@",error);
+             [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                      [NSNumber numberWithInteger:[error code]],
+                                      @"error_code",
+                                      [error userInfo],
+                                      @"error_msg",
+                                      nil]
+                              forKey:@"error"];
+         }
+         
+         if ([contentEntity rawData])
+         {
+             [responseDict setObject:[contentEntity rawData] forKey:@"data"];
+         }
+         
+         [context callbackWithRet:responseDict err:nil delete:YES];
+     }];
+}
+
 JS_METHOD(isInstallPlatform:(UZModuleMethodContext *)context)
 {
     NSDictionary *params = context.param;
@@ -677,6 +664,8 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
             return SSDKContentTypeAuto;
         case 10:
             return SSDKContentTypeMiniProgram;
+        case 11:
+            return SSDKContentTypeMessage;
         default:
             return SSDKContentTypeAuto;
             break;
@@ -686,10 +675,20 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
 - (NSMutableDictionary *)_contentWithDict:(NSDictionary *)dict
 {
     NSString *message = nil;
-    id image = nil;
+    NSURL *attachementUrl = nil;
+    NSString *hashtag = nil;
+    NSString *quote = nil;
+    NSString *urlName = nil;
     NSString *title = nil;
     NSString *url = nil;
     NSString *desc = nil;
+    NSString *quoteText = nil;
+    
+    id gif = nil;
+    id audio = nil;
+    id video = nil;
+    id images = nil;
+
     SSDKContentType type = SSDKContentTypeAuto;
     BOOL clientShare = NO;
     BOOL advancedShare = NO;
@@ -707,10 +706,28 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
             message = [dict objectForKey:@"text"];
         }
         
-        if ([dict objectForKey:@"imageUrl"])
+        //Facebook相关
+        if ([[dict objectForKey:@"urlName"] isKindOfClass:[NSString class]])
         {
-            image = [dict objectForKey:@"imageUrl"];
+            urlName = [dict objectForKey:@"urlName"];
         }
+        
+        if ([[dict objectForKey:@"attachementUrl"] isKindOfClass:[NSString class]])
+        {
+            attachementUrl = [NSURL URLWithString:[dict objectForKey:@"attachementUrl"]];
+        }
+        
+        if ([[dict objectForKey:@"hashtag"] isKindOfClass:[NSString class]])
+        {
+            hashtag = [dict objectForKey:@"hashtag"];
+        }
+        
+        if ([[dict objectForKey:@"quote"] isKindOfClass:[NSString class]])
+        {
+            quote = [dict objectForKey:@"quote"];
+        }
+        
+        //Facebook相关
         
         if ([[dict objectForKey:@"title"] isKindOfClass:[NSString class]])
         {
@@ -725,6 +742,26 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
         if ([[dict objectForKey:@"description"] isKindOfClass:[NSString class]])
         {
             desc = [dict objectForKey:@"description"];
+        }
+        
+        if ([dict objectForKey:@"gif"])
+        {
+            gif = [dict objectForKey:@"gif"];
+        }
+        
+        if ([dict objectForKey:@"audio"])
+        {
+            audio = [dict objectForKey:@"audio"];
+        }
+        
+        if ([dict objectForKey:@"video"])
+        {
+            video = [dict objectForKey:@"video"];
+        }
+        
+        if ([dict objectForKey:@"images"])
+        {
+            images = [dict objectForKey:@"images"];
         }
         
         if ([[dict objectForKey:@"client_share"] isKindOfClass:[NSNumber class]])
@@ -758,13 +795,67 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
         }
         
     }
-    
     [para SSDKSetupShareParamsByText:message
-                              images:image
+                              images:images
                                  url:[NSURL URLWithString:url]
                                title:title
                                 type:type];
     
+    //Facebook
+    if ([dict objectForKey:@"FacebookShareType"])
+    {
+        id shareType = [dict objectForKey:@"FacebookShareType"];
+        [para SSDKSetupFacebookParamsByText:message
+                                      image:images
+                                        url:[NSURL URLWithString:url]
+                                   urlTitle:title
+                                    urlName:urlName
+                             attachementUrl:attachementUrl
+                                    hashtag:hashtag
+                                      quote:quote
+                                  shareType:[shareType integerValue]
+                                       type:type];
+    }
+    
+    //Ins
+    if ([dict objectForKey:@"insDisplayPointX"] && [dict objectForKey:@"insDisplayPointY"])
+    {
+
+        id displayPointX = [dict objectForKey:@"insDisplayPointX"];
+        id displayPointY = [dict objectForKey:@"insDisplayPointY"];
+
+        [para SSDKSetupInstagramByImage:images menuDisplayPoint:CGPointMake([displayPointX floatValue], [displayPointY floatValue])];
+    }
+    
+    //WhatsApp
+    if ([dict objectForKey:@"whatsAppDisplayPointX"] && [dict objectForKey:@"whatsAppDisplayPointY"])
+    {
+        id displayPointX = [dict objectForKey:@"whatsAppDisplayPointX"];
+        id displayPointY = [dict objectForKey:@"whatsAppDisplayPointY"];
+
+        [para SSDKSetupWhatsAppParamsByText:message
+                                      image:images
+                                      audio:(id)audio
+                                      video:video
+                           menuDisplayPoint:CGPointMake([displayPointX floatValue], [displayPointY floatValue])
+                                       type:type];
+    }
+    
+    //FacebookMessenger
+    if ([[dict objectForKey:@"quoteText"] isKindOfClass:[NSString class]])
+    {
+        quoteText = [dict objectForKey:@"quoteText"];
+        [para SSDKSetupFacebookMessengerParamsByTitle:title
+                                                  url:[NSURL URLWithString: url]
+                                            quoteText:quoteText
+                                               images:images
+                                                  gif:gif
+                                                audio:audio
+                                                video:video
+                                                 type:type];
+    }
+    
+    //sina
     if (sina_linkCard == YES)
     {
         [para setObject:@(sina_linkCard) forKey:@"sina_linkCard"];

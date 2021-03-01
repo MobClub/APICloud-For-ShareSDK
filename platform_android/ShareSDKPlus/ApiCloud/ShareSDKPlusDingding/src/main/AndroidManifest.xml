@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mob.sharesdkplusdingding">
+    <application>
+        <activity
+            android:name="cn.sharesdk.dingding.utils.DingdingHandlerActivity"
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <activity-alias
+            android:name="cn.sharesdk.demo.ddshare.DDShareActivity"
+            android:exported="true"
+            android:targetActivity="cn.sharesdk.dingding.utils.DingdingHandlerActivity" />
+    </application>
+</manifest>

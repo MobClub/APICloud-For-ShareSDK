@@ -402,169 +402,71 @@ key.xml 文件需要放在 widget://res 文件目录下，格式如下：
 > 配置ATS（App Transport Security），在info.plist文件中，APP可以使用http协议访问。配置方法参考[iOS修改Info.plist之配置ATS](https://community.apicloud.com/bbs/forum.php?mod=viewthread&tid=20). 
 
 
-    
+​    
 <div id="p2"></div>
-    
-### Android配置：  
-Mob-AppKey/Mob-AppSecret的配置：
-这两个参数的配置在config.xml文件里，以meta-data标签的形式来配置，例如：
 
-    <meta-data name="Mob-AppKey" value="moba6b6c6d6"/>
-    <meta-data name="Mob-AppSecret" value="b89d2427a3bc7ad1aea1e1e8c1d36bf3"/>
-    
+### Android配置：  
 Android配置第三方平台的AppKey等信息遵循APICloud的惯例是在config.xml中配置。
 在name为"ShareSDKPlus"的<feature>标签内，配置<param>标签来填充AppKey等属性的值。
 下面是配置各个平台AppKey/AppSecret/RedirectUrl的例子，实际的使用中需要开发者填写自己在第三方网站申请的值（只需要改变值，不要改变AppKey/AppSecret/RedirectUrl的名称，否则将会读取不到）
 	
-	<feature name="ShareSDKPlus">
+	<feature name="shareSDKPlus">
+	     <param name="Mob-AppKey" value="moba0b0c0d0" />
+	     <param name="Mob-AppSecret" value="5713f0d88511f9f4cf100cade0610a34" />
+	
+	     <param name="WeChat-AppId" value="wx4868b35061f87885" />
+	     <param name="WeChat-AppSecret" value="64020361b8ec4c99936c0e3999a9f249" />
+	     <param name="WeChat-WithShareTicket" value="true" />
+	     <param name="WeChat-BypassApproval" value="false" />
+	
+	     <param name="SinaWeibo-AppKey" value="568898243" />
+	     <param name="SinaWeibo-AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
+	     <param name="SinaWeibo-ShareByAppClient" value="true" />
+	     <param name="SinaWeibo-RedirectUrl" value="http://www.sharesdk.cn" />
+	
+	     <param name="QQ-AppId" value="100371282" />
+	     <param name="QQ-AppKey" value="aed9b0303e3ed1e27bae87c33761161d" />
+	     <param name="QQ-ShareByAppClient" value="true" />
+	     <param name="QQ-BypassApproval" value="false" />
+	
+	     <param name="Google-ClientID" value="232554794995.apps.googleusercontent.com" />
+	     <param name="Google-RedirectUri" value="http://localhost" />
+	     <param name="Google-ShareByAppClient" value="true" />
+	
+	     <param name="Facebook-ConsumerKey" value="1412473428822331" />
+	     <param name="Facebook-ConsumerSecret" value="a42f4f3f867dc947b9ed6020c2e93558" />
+	     <param name="Facebook-RedirectUrl" value="https://mob.com" />
+	     <param name="Facebook-ShareByAppClient" value="true" />
+	
+	     <param name="Twitter-ConsumerKey" value="viOnkeLpHBKs6KXV7MPpeGyzE" />
+	     <param name="Twitter-ConsumerSecret" value="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" />
+	     <param name="Twitter-CallbackUrl" value="http://mob.com" />
+	     <param name="Twitter-ShareByAppClient" value="true" />
+	     <param name="Twitter-BypassApproval" value="true" />
+	
+	     <param name="Instagram-ClientId" value="ff68e3216b4f4f989121aa1c2962d058" />
+	     <param name="Instagram-ClientSecret" value="1b2e82f110264869b3505c3fe34e31a1" />
+	     <param name="Instagram-RedirectUri" value="http://sharesdk.cn" />
+	     <param name="Instagram-ShareByAppClient" value="true" />
+	
+	     <param name="Alipay-AppId" value="2015072400185895" />
+	
+	     <param name="Kakao-AppKey" value="48d3f524e4a636b08d81b3ceb50f1003" />
+	
+	     <param name="Telegram-AppKey" value="782826033" />
+	     <param name="Telegram-RedirectUrl" value="http://www.mob.com" />
+	
+	     <param name="Line-ChannelID" value="1639219273" />
+	     <param name="Line-ChannelSecret" value="58faad55ffce8bf8f63b59fe6fb702ae" />
+	     <param name="Line-RedirectUri" value="https://www.mob.com/" />
+	
+	     <param name="Dingding-AppId" value="dingoanxyrpiscaovl4qlw" />
+	     <param name="Dingding-BypassApproval" value="false" />
+	     <param name="Dingding-RedirectUrl" value="http://localhost" />
+	  </feature>
 
-        <param name="SinaWei_AppKey" value="568898243" />
-        <param name="SinaWei_AppSecret" value="38a4f8204cc784f81f9f0daaf31e02e3" />
-        <param name="SinaWei_RedirectUri" value="http://www.sharesdk.cn" />
 
-        <param name="QQ_AppKey" value="100371282" />
-        <param name="QQ_AppSecret" value="aed9b0303e3ed1e27bae87c33761161d" />
-
-        <param name="Wechat_AppKey" value="wx4868b35061f87885" />
-        <param name="Wechat_AppSecret" value="64020361b8ec4c99936c0e3999a9f249" />
-
-        <param name="Douyin_AppKey" value="aw9ivykfjvi4hpwo" />
-        <param name="Douyin_AppSecret" value="42b4caa6bda60bd49f05f06d0a4956e1" />
-
-        <param name="Facebook_AppKey" value="1412473428822331" />
-        <param name="Facebook_AppSecret" value="a42f4f3f867dc947b9ed6020c2e93558" />
-        <param name="Facebook_RedirectUrl" value="https://mob.com"/>
-        <param name="Facebook_DisplayName" value="shareSDK" />
-
-        <param name="FacebookMessage_AppKey" value="107704292745179" />
-
-        <param name="Twitter_AppKey" value="viOnkeLpHBKs6KXV7MPpeGyzE" />
-        <param name="Twitter_AppSecret" value="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" />
-        <param name="Twitter_RedirectUri" value="http://mob.com" />
-
-        <param name="Instagram_AppKey" value="ff68e3216b4f4f989121aa1c2962d058" />
-        <param name="Instagram_AppSecret" value="1b2e82f110264869b3505c3fe34e31a1" />
-        <param name="Instagram_RedirectUri" value="http://sharesdk.cn" />
-
-        <param name="Google_AppKey" value="232554794995.apps.googleusercontent.com" />
-        <param name="Google_AppSecret" value="PEdFgtrMw97aCvf0joQj7EMk" />
-        <param name="Google_RedirectUri" value="http://localhost" />
-
-        <param name="Line_AppKey" value="1639219273" />
-        <param name="Line_AppSecret" value="58faad55ffce8bf8f63b59fe6fb702ae" />
-        <param name="Line_RedirectUri" value="https://www.mob.com/"/>
-        <param name="Line_AuthType" value="2" />
-
-        <param name="AliPaySocial_AppKey" value="2015072400185895" />
-
-        <param name="MeiPai_AppKey" value="1089867596" />
-        <param name="MeiPai_AppSecret" value="y9ym6rrjjijtkt23qtsc" />
-
-        <param name="DingTalk_AppKey" value="dingoanxyrpiscaovl4qlw" />
-
-        <param name="DouBan_AppKey" value="031a96a3aa8b28af094fc3eaffa17a0d" />
-        <param name="DouBan_AppSecret" value="2e675e730571b75d" />
-        <param name="DouBan_RedirectUri" value="http://mob.com" />
-
-        <param name="TencentWeibo_AppKey" value="801307650" />
-        <param name="TencentWeibo_AppSecret" value="ae36f4ee3946e1cbb98d6965b0b2ff5c" />
-        <param name="TencentWeibo_RedirectUri" value="http://sharesdk.cn" />
-
-        <param name="YinXiang_AppKey" value="sharesdk-7807" />
-        <param name="YinXiang_AppSecret" value="d05bf86993836004" />
-        <param name="YinXiang_HostType" value="sandbox" />
-        <param name="YinXiang_Sandbox" value="1" />
-
-        <param name="YouDaoNote_AppKey" value="dcde25dca105bcc36884ed4534dab940" />
-        <param name="YouDaoNote_AppSecret" value="d98217b4020e7f1874263795f44838fe" />
-        <param name="YouDaoNote_RedirectUri" value="http://www.sharesdk.cn/" />
-        <param name="YouDaoNote_HostType" value="product" />
-
-        <param name="Mingdao_AppKey" value="97230F25CA5C" />
-        <param name="Mingdao_AppSecret" value="A5DC29AF7C5A5851F28E903AE9EAC0" />
-        <param name="Mingdao_RedirectUri" value="http://mob.com" />
-
-        <param name="Kaixin_AppKey" value="358443394194887cee81ff5890870c7c" />
-        <param name="Kaixin_AppSecret" value="da32179d859c016169f66d90b6db2a23" />
-        <param name="Kaixin_RedirectUri" value="http://www.sharesdk.cn/" />
-
-        <param name="Renren_AppId" value="226427" />
-        <param name="Renren_AppKey" value="fc5b8aed373c4c27a05b712acba0f8c3" />
-        <param name="Renren_AppSecret" value="f29df781abdd4f49beca5a2194676ca4" />
-        <param name="Renren_AuthType" value="2" />
-
-        <param name="YiXin_AppKey" value="yx0d9a9f9088ea44d78680f3274da1765f" />
-        <param name="YiXin_AppSecret" value="1a5bd421ae089c3" />
-        <param name="YiXin_RedirectUri" value="https://open.yixin.im/resource/oauth2_callback.html" />
-
-        <param name="Kakao_AppKey" value="48d3f524e4a636b08d81b3ceb50f1003" />
-        <param name="Kakao_ApiKey" value="802e551a5048c3172fc1dedaaf40fcf1" />
-        <param name="Kakao_RedirectUri" value="http://www.mob.com/oauth" />
-
-        <param name="YouTube_AppKey" value="370141748022-bicrnsjfiije93bvdt63dh3728m4shas.apps.googleusercontent.com" />
-        <param name="YouTube_AppSecret" value="AIzaSyAO06g-0TDpHcsXXO918a7QE3Zdct2bB5E" />
-        <param name="YouTube_RedirectUri" value="http://localhost" />
-
-        <param name="Flickr_ApiKey" value="33d833ee6b6fca49943363282dd313dd" />
-        <param name="Flickr_ApiSecrett" value="3a2c5b42a8fbb8bb" />
-        <param name="Flickr_RedirectUri" value="http://www.sharesdk.cn" />
-
-        <param name="FourSquare_ApiKey" value="G0ZI20FM30SJAJTX2RIBGD05QV1NE2KVIM2SPXML2XUJNXEU" />
-        <param name="FourSquare_ApiSecrett" value="3XHQNSMMHIFBYOLWEPONNV4DOTCDBQH0AEMVGCBG0MZ32XNU" />
-        <param name="FourSquare_RedirectUri" value="http://www.sharesdk.cn" />
-
-        <param name="Dropbox_AppKey" value="i5vw2mex1zcgjcj" />
-        <param name="Dropbox_AppSecret" value="3i9xifsgb4omr0s" />
-        <param name="Dropbox_RedirectUri" value="https://www.sharesdk.cn" />
-
-        <param name="Evernote_AppKey" value="46131514-6903" />
-        <param name="Evernote_AppSecret" value="08d7a6f3afcc888a" />
-        <param name="Evernote_Sandbox" value="1" />
-
-        <param name="Pinterest_AppKey" value="4987008320438021391" />
-
-        <param name="Pocket_AppKey" value="11496-de7c8c5eb25b2c9fcdc2b627" />
-        <param name="Pocket_RedirectUri" value="pocketapp1234" />
-
-        <param name="LinkedIn_AppKey" value="46kic3zr7s4n" />
-        <param name="LinkedIn_AppSecret" value="RWw6WRl9YJOcdWsj" />
-        <param name="LinkedIn_RedirectUri" value="http://baidu.com" />
-
-        <param name="VKontakte_AppKey" value="3921561" />
-        <param name="VKontakte_AppSecret" value="ZHG2wGymmNUCRLG2r6CY" />
-        <param name="VKontakte_AuthType" value="2" />
-
-        <param name="Instapaper_AppKey" value="4rDJORmcOcSAZL1YpqGHRI605xUvrLbOhkJ07yO0wWrYrc61FA" />
-        <param name="Instapaper_AppSecret" value="GNr1GespOQbrm8nvd7rlUsyRQsIo3boIbMguAl9gfpdL0aKZWe" />
-
-        <param name="Tumblr_AppKey" value="2QUXqO9fcgGdtGG1FcvML6ZunIQzAEL8xY6hIaxdJnDti2DYwM" />
-        <param name="Tumblr_AppSecret" value="3Rt0sPFj7u2g39mEVB3IBpOzKnM3JnTtxX2bao2JKk4VV1gtNo" />
-        <param name="Tumblr_RedirectUri" value="http://www.sharesdk.cn" />
-
-        <param name="SMS_CountryList" value="0" />
-
-        <param name="CMCC_AppId" value="300011860247" />
-        <param name="CMCC_AppKey" value="2D464D8BFCE73A44B4F9DF95A2FDBE1C" />
-        <param name="CMCC_DisplayUI" value="1" />
-
-        <param name="Telegram_BotToken" value="782826033" />
-        <param name="Telegram_BotDomain" value="http://www.mob.com" />
-
-        <param name="Reddit_AppKey" value="MExDxPuTCtFiRw" />
-        <param name="Reddit_RedirectUri" value="http://www.sharesdk.cn" />
-
-        <param name="Accountkit_AppKey" value="579465512480462" />
-        <param name="Accountkit_AppSecret" value="8a6383652dd9f23fb0994f03d350d0ca" />
-        <param name="Accountkit_RedirectUri" value="http://www.sharesdk.cn/" />
-
-        <param name="ESurfing_AppKey" value="8148612606" />
-        <param name="ESurfing_AppSecret" value="mCltrhUqwshFa86egDTs0491ibaAulKA" />
-        <param name="ESurfing_RedirectUrl" value="http://www.sharesdk.cn"/>
-        <param name="ESurfing_AppName" value="shareSDK" />
-
-    </feature>
-    
-    
+​    
 ## **模块接口**
 
 <div id="a0"></div>
@@ -758,7 +660,7 @@ var $sharesdk = new ShareSDK();
 ```
 
 添加ShareSDK.js目的主要是提供平台号，回调状态等一些常量
- 
+
 <div id="b0"></div>
 
 ### **引入模块**
@@ -767,7 +669,7 @@ var $sharesdk = new ShareSDK();
 var shareApi = api.require('ShareSDKPlus');
 ```
 
- 
+
 <div id="a1"></div>
 
 ### **authorize**

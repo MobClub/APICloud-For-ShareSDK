@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION
+        versionCode Integer.parseInt(project.ANDROID_BUILD_VERSION_CODE)
+        versionName project.ANDROID_BUILD_VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    task copyAar(type: Copy) {
+        delete '../packageHelper/ShareSDKPlusFacebook.aar'
+        from 'build/outputs/aar/'
+        into '../packageHelper/ShareSDKPlusFacebook/'
+        include "ShareSDKPlusFacebook-release.aar"
+        rename('ShareSDKPlusFacebook-release.aar', 'ShareSDKPlusFacebook.aar')
+
+        from '../'
+        into '../packageHelper/ShareSDKPlusFacebook/'
+        include "module.json"
+
+//        from 'libs/'
+//        into '../packageHelper/ShareSDKPlusFacebook/'
+//        include '*.aar'
+    }
+
+    task zipAar(type: Zip,dependsOn:copyAar) {
+        delete '../packageHelper/ShareSDKPlusFacebook.zip'
+        from '../packageHelper/'
+        include '**/ShareSDKPlusFacebook/**'
+        destinationDir file('../packageHelper/')
+        baseName 'ShareSDKPlusFacebook'
+        doLast {
+            delete '../packageHelper/ShareSDKPlusFacebook/'
+        }
+    }
+
+    tasks.whenTaskAdded { task ->
+        if (task.name == 'assembleRelease') {
+            task.dependsOn zipAar
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
+}
+
+

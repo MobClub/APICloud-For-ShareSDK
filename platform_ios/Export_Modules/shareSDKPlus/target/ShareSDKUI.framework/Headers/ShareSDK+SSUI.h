@@ -8,6 +8,7 @@
 
 #import <ShareSDK/ShareSDK.h>
 #import "ShareSDK+SSUIDeprecated.h"
+#import "SSUITypeDef.h"
 @class SSUIShareSheetConfiguration;
 @class SSUIEditorConfiguration;
 
@@ -21,12 +22,6 @@
  @param error 错误信息
  @param end 是否已经结束本次分享标识
  */
-typedef void (^SSUIShareStateChangedHandler) (SSDKResponseState state,
-                                              SSDKPlatformType platformType,
-                                              NSDictionary *userData,
-                                              SSDKContentEntity *contentEntity,
-                                              NSError *error,
-                                              BOOL end);
 
 @interface ShareSDK (SSUI)
 
@@ -45,6 +40,19 @@ typedef void (^SSUIShareStateChangedHandler) (SSDKResponseState state,
                customItems:(NSArray *)items
                shareParams:(NSMutableDictionary *)shareParams
         sheetConfiguration:(SSUIShareSheetConfiguration *)configuration
+            onStateChanged:(SSUIShareStateChangedHandler)stateChangedHandler;
+
+/**
+  显示分享菜单（此方式只通过openurl跳转，不进行分享参数设置）
+ 
+  @param view view
+  @param items items
+  @param configuration 分享菜单的设置
+
+  */
++ (id)showShareActionSheet:(UIView *)view
+       customItems:(NSArray *)items
+        sheetConfiguration:(SSUIShareSheetConfiguration *)config
             onStateChanged:(SSUIShareStateChangedHandler)stateChangedHandler;
 
 /**
@@ -79,5 +87,12 @@ typedef void (^SSUIShareStateChangedHandler) (SSDKResponseState state,
  */
 + (void)dismissShareController:(id)controller;
 
+
+/**
+设置暗黑模式样式
+
+@param style 暗黑模式样式
+*/
++ (void)setUserInterfaceStyle:(SSUIUserInterfaceStyle)style;
 
 @end
