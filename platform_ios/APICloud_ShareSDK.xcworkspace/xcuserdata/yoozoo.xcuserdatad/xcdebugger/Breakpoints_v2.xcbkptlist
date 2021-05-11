@@ -7,112 +7,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "026305E9-384A-48A5-8118-3725925B6558"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "530"
-            endingLineNumber = "530"
-            landmarkName = "JS_METHOD(context)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ACF5BD75-3092-49DE-84ED-F420E9584E69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "525"
-            endingLineNumber = "525"
-            landmarkName = "JS_METHOD(context)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D2633632-1CC1-421B-A312-A5F48A6CCD76"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../sharesdk/ShareSDKConnector/TwitterConnector/SSCTwitterProxy.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-shareByActivityVC:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4DB0DC0F-0DBD-4271-9345-423936E76123"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../sharesdk/ShareSDK/ShareSDK/ShareSDK.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "+shareByActivityViewController:parameters:onStateChanged:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6B051BBA-7DD3-4A51-B99C-072D5778258B"
+            uuid = "BB6DD090-8017-42D8-9FBD-B3031CDF1216"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sharesdk/ShareSDK/ShareSDK/Context/SSDKContext.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
-            landmarkName = "-shareWithContent:platform:isActivityVC:stateChanged:"
+            startingLineNumber = "853"
+            endingLineNumber = "853"
+            landmarkName = "-_getUserInfoSession:platformType:condition:stateChanged:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F34F6E71-D70B-404F-B7D2-E865389E253A"
+            uuid = "F49B1854-378F-4DEF-A6C7-69D061775C3F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+            filePath = "../../sharesdk/ShareSDK/ShareSDK/Context/SSDKContext.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "483"
-            endingLineNumber = "483"
-            landmarkName = "JS_METHOD(context)"
-            landmarkType = "9">
+            startingLineNumber = "745"
+            endingLineNumber = "745"
+            landmarkName = "-_authorizeSession:platformType:settings:stateChanged:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "23F384A0-221D-4AB1-845F-EBAA2A192B40"
+            uuid = "BAD3CFFB-023B-4E7C-8EC7-B32539989723"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sharesdk/ShareSDK/ShareSDK/Context/SSDKContext.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
+            landmarkName = "-_shareWithContentSession:parameters:platform:isActivityVC:stateChanged:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18B1C847-605B-493A-AA6D-1FFC30759CBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sharesdk/ShareSDK/ShareSDK/Context/SSDKContext.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
+            landmarkName = "-_shareWithContentSession:parameters:platform:isActivityVC:stateChanged:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E4D1127-E802-4DCD-8393-CA1F0A3ECAB4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "845"
-            endingLineNumber = "845"
-            landmarkName = "-_contentWithDict:"
+            startingLineNumber = "1603"
+            endingLineNumber = "1603"
+            landmarkName = "-_contentWithDict:platforms:completeHandle:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

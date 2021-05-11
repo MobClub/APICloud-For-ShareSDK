@@ -13,6 +13,8 @@
 #import <objc/message.h>
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <ShareSDKExtension/ShareSDK+Extension.h>
+#import <WechatConnector/WeChatConnector.h>
+#import <MOBFoundation/MobSDK+Privacy.h>
 static NSString *const shareSDKModuleName = @"shareSDKPlus";
 
 @interface ShareSDKPlus ()
@@ -74,7 +76,7 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         if (params[@"QQ_AppKey"] && params[@"QQ_AppSecret"])
         {
-            [platformsRegister setupQQWithAppId:params[@"QQ_AppKey"] appkey:params[@"QQ_AppSecret"] enableUniversalLink:YES universalLink:nil];
+            [platformsRegister setupQQWithAppId:params[@"QQ_AppKey"] appkey:params[@"QQ_AppSecret"] enableUniversalLink:NO universalLink:params[@"QQ_AppUniversalLink"]];
         }
         
         if (params[@"Wechat_AppKey"] && params[@"Wechat_AppSecret"] && params[@"Wechat_AppUniversalLink"])
@@ -105,6 +107,11 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         if (params[@"DingTalk_AppKey"])
         {
             [platformsRegister setupDingTalkWithAppId:params[@"DingTalk_AppKey"]];
+        }
+        
+        if (params[@"DingTalkAuth_AppKey"] && params[@"DingTalkAuth_AppSecret"] && params[@"DingTalkAuth_RedirectUri"])
+        {
+            [platformsRegister setupDingTalkAuthWithAppId:params[@"DingTalkAuth_AppKey"] appSecret:params[@"DingTalkAuth_AppSecret"] redirectUrl:params[@"DingTalkAuth_RedirectUri"]];
         }
         
         if (params[@"YinXiang_AppKey"] && params[@"YinXiang_AppSecret"])
@@ -145,9 +152,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupGooglePlusByClientID:params[@"Google_AppKey"] clientSecret:params[@"Google_AppSecret"] redirectUrl:params[@"Google_RedirectUri"]];
         }
         
-        if (params[@"Kakao_AppKey"] && params[@"Kakao_ApiKey"] && params[@"Kakao_RedirectUri"])
+        if (params[@"Kakao_AppKey"] && params[@"Kakao_AppSecret"] && params[@"Kakao_RedirectUri"])
         {
-            [platformsRegister setupKaKaoWithAppkey:params[@"Kakao_AppKey"] restApiKey:params[@"Kakao_ApiKey"] redirectUrl:params[@"Kakao_RedirectUri"]];
+            [platformsRegister setupKaKaoWithAppkey:params[@"Kakao_AppKey"] restApiKey:params[@"Kakao_AppSecret"] redirectUrl:params[@"Kakao_RedirectUri"]];
         }
         
         if (params[@"YouTube_AppKey"] && params[@"YouTube_AppSecret"] && params[@"YouTube_RedirectUri"])
@@ -212,7 +219,30 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupRedditByAppKey:params[@"Reddit_AppKey"] redirectUri:params[@"Reddit_RedirectUri"]];
         }
         
+        if (params[@"TikTok_AppKey"] && params[@"TikTok_AppSecret"])
+        {
+            [platformsRegister setupTikTokByAppKey:params[@"TikTok_AppKey"] appSecret:params[@"TikTok_AppSecret"]];
+        }
         
+        if (params[@"KuaiShou_AppKey"] && params[@"KuaiShou_AppSecret"] && params[@"KuaiShou_AppUniversalLink"])
+        {
+            [platformsRegister setupKuaiShouWithAppId:params[@"KuaiShou_AppKey"] appSecret:params[@"KuaiShou_AppSecret"] universalLink:params[@"KuaiShou_AppUniversalLink"] delegate:[UZAppDelegate appDelegate]];
+        }
+        
+        if (params[@"WeWork_AppKey"] && params[@"WeWork_CorpId"] && params[@"WeWork_AgentId"] && params[@"WeWork_AppSecret"])
+        {
+            [platformsRegister setupWeWorkByAppKey:params[@"WeWork_AppKey"] corpId:params[@"WeWork_CorpId"] agentId:params[@"WeWork_AgentId"] appSecret:params[@"WeWork_AppSecret"]];
+        }
+        
+        if (params[@"Oasis_AppKey"])
+        {
+            [platformsRegister setOasisByAppkey:params[@"Oasis_AppKey"]];
+        }
+        
+        if (params[@"Snapchat_ClientId"] && params[@"Snapchat_ClientSecret"] && params[@"Snapchat_RedirectUrl"])
+        {
+            [platformsRegister setSnapChatClientId:params[@"Snapchat_ClientId"] clientSecret:params[@"Snapchat_ClientSecret"] redirectUrl:params[@"Snapchat_RedirectUrl"]];
+        }
         
         
         // key.xml 读取
@@ -224,7 +254,7 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         
         if ([app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] && [app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"])
         {
-            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]enableUniversalLink:YES universalLink:nil];
+            [platformsRegister setupQQWithAppId:[app securityValueForKey:@"shareSDKPlus_QQ_AppKey"] appkey:[app securityValueForKey:@"shareSDKPlus_QQ_AppSecret"]enableUniversalLink:NO universalLink:[app securityValueForKey:@"shareSDKPlus_QQ_AppUniversalLink"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_Wechat_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Wechat_AppUniversalLink"])
@@ -255,6 +285,11 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
         if ([app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"])
         {
             [platformsRegister setupDingTalkWithAppId:[app securityValueForKey:@"shareSDKPlus_DingTalk_AppKey"]];
+        }
+        
+        if (params[@"shareSDKPlus_DingTalkAuth_AppKey"] && params[@"shareSDKPlus_DingTalkAuth_AppSecret"] && params[@"shareSDKPlus_DingTalkAuth_RedirectUri"])
+        {
+            [platformsRegister setupDingTalkAuthWithAppId:params[@"shareSDKPlus_DingTalkAuth_AppKey"] appSecret:params[@"shareSDKPlus_DingTalkAuth_AppSecret"] redirectUrl:params[@"shareSDKPlus_DingTalkAuth_RedirectUri"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_YinXiang_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YinXiang_AppSecret"])
@@ -295,9 +330,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupGooglePlusByClientID:[app securityValueForKey:@"shareSDKPlus_Google_AppKey"] clientSecret:[app securityValueForKey:@"shareSDKPlus_Google_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Google_RedirectUri"]];
         }
         
-        if ([app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Kakao_ApiKey"] && [app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"])
+        if ([app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] && [app securityValueForKey:@"shareSDKPlus_Kakao_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"])
         {
-            [platformsRegister setupKaKaoWithAppkey:[app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] restApiKey:[app securityValueForKey:@"shareSDKPlus_Kakao_ApiKey"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"]];
+            [platformsRegister setupKaKaoWithAppkey:[app securityValueForKey:@"shareSDKPlus_Kakao_AppKey"] restApiKey:[app securityValueForKey:@"shareSDKPlus_Kakao_AppSecret"] redirectUrl:[app securityValueForKey:@"shareSDKPlus_Kakao_RedirectUri"]];
         }
         
         if ([app securityValueForKey:@"shareSDKPlus_YouTube_AppKey"] && [app securityValueForKey:@"shareSDKPlus_YouTube_AppSecret"] && [app securityValueForKey:@"shareSDKPlus_YouTube_RedirectUri"])
@@ -362,8 +397,97 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupRedditByAppKey:[app securityValueForKey:@"shareSDKPlus_Reddit_AppKey"] redirectUri:[app securityValueForKey:@"shareSDKPlus_Reddit_RedirectUri"]];
         }
         
+        if (params[@"shareSDKPlus_TikTok_AppKey"] && params[@"shareSDKPlus_TikTok_AppSecret"])
+        {
+            [platformsRegister setupTikTokByAppKey:params[@"shareSDKPlus_TikTok_AppKey"] appSecret:params[@"shareSDKPlus_TikTok_AppSecret"]];
+        }
+        
+        if (params[@"shareSDKPlus_KuaiShou_AppKey"] && params[@"shareSDKPlus_KuaiShou_AppSecret"] && params[@"shareSDKPlus_KuaiShou_AppUniversalLink"])
+        {
+            [platformsRegister setupKuaiShouWithAppId:params[@"shareSDKPlus_KuaiShou_AppKey"] appSecret:params[@"shareSDKPlus_KuaiShou_AppSecret"] universalLink:params[@"shareSDKPlus_KuaiShou_AppUniversalLink"] delegate:[UZAppDelegate appDelegate]];
+        }
+        
+        if (params[@"shareSDKPlus_WeWork_AppKey"] && params[@"shareSDKPlus_WeWork_CorpId"] && params[@"shareSDKPlus_WeWork_AgentId"] && params[@"shareSDKPlus_WeWork_AppSecret"])
+        {
+            [platformsRegister setupWeWorkByAppKey:params[@"shareSDKPlus_WeWork_AppKey"] corpId:params[@"shareSDKPlus_WeWork_CorpId"] agentId:params[@"shareSDKPlus_WeWork_AgentId"] appSecret:params[@"shareSDKPlus_WeWork_AppSecret"]];
+        }
+        
+        if (params[@"shareSDKPlus_Oasis_AppKey"])
+        {
+            [platformsRegister setOasisByAppkey:params[@"shareSDKPlus_Oasis_AppKey"]];
+        }
+        
+        if (params[@"shareSDKPlus_Snapchat_ClientId"] && params[@"shareSDKPlus_Snapchat_ClientSecret"] && params[@"shareSDKPlus_Snapchat_RedirectUrl"])
+        {
+            [platformsRegister setSnapChatClientId:params[@"shareSDKPlus_Snapchat_ClientId"] clientSecret:params[@"shareSDKPlus_Snapchat_ClientSecret"] redirectUrl:params[@"shareSDKPlus_Snapchat_RedirectUrl"]];
+        }
+        
     }];
 }
+JS_METHOD(getPrivacyPolicy:(UZModuleMethodContext *)context)
+{
+    NSDictionary *params = context.param;
+    BOOL isUrl = YES;
+    if ([[params objectForKey:@"isUrl"] isKindOfClass:[NSNumber class]])
+    {
+        isUrl = [[params objectForKey:@"isUrl"] boolValue];
+    }
+    NSString *language = @"en-CN";
+    if ([[params objectForKey:@"language"] isKindOfClass:[NSString class]])
+    {
+        language = [params objectForKey:@"language"];
+    }
+    [MobSDK getPrivacyPolicy:isUrl?@"1":@"2" language:language compeletion:^(NSDictionary * _Nullable data, NSError * _Nullable error) {
+        //返回
+        NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                             [NSNumber numberWithInteger:error?2:1],
+                                             @"state",
+                                             data?:@{},
+                                             @"data",
+                                             nil];
+        if (error)
+        {
+            [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                     [NSNumber numberWithInteger:2],
+                                     @"error_code",
+                                     [error userInfo],
+                                     @"error_msg",
+                                     nil]
+                             forKey:@"error"];
+        }
+        
+        [context callbackWithRet:responseDict err:nil delete:YES];
+
+    }];
+}
+JS_METHOD(uploadPrivacyPermissionStatus:(UZModuleMethodContext *)context)
+{
+    NSDictionary *params = context.param;
+    BOOL status = 0;
+    if ([[params objectForKey:@"permissionStatus"] isKindOfClass:[NSNumber class]])
+    {
+        status = [[params objectForKey:@"permissionStatus"] boolValue];
+    }
+    [MobSDK uploadPrivacyPermissionStatus:status onResult:^(BOOL success) {
+        //返回
+        NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                             [NSNumber numberWithInteger:success?1:2],
+                                             @"state",
+                                             nil];
+        if (!success)
+        {
+            [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                     [NSNumber numberWithInteger:2],
+                                     @"error_code",
+                                     nil]
+                             forKey:@"error"];
+        }
+        
+        [context callbackWithRet:responseDict err:nil delete:YES];
+    }];
+}
+
+
 
 JS_METHOD(authorize:(UZModuleMethodContext *)context)
 {
@@ -469,40 +593,41 @@ JS_METHOD(shareContent:(UZModuleMethodContext *)context)
         type = [[params objectForKey:@"platform"] unsignedIntegerValue];
     }
     
-    NSMutableDictionary *content = nil;
     if ([[params objectForKey:@"shareParams"] isKindOfClass:[NSDictionary class]])
     {
-        content = [self _contentWithDict:[params objectForKey:@"shareParams"]];
+        [self _contentWithDict:[params objectForKey:@"shareParams"] platforms:@[@(type)] completeHandle:^(NSMutableDictionary *content, BOOL complete) {
+            [ShareSDK share:type
+                 parameters:content
+             onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+                 
+                 //返回
+                 NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                      [NSNumber numberWithInteger:state],
+                                                      @"state",
+                                                      nil];
+                 if (error)
+                 {
+                     NSLog(@"%@",error);
+                     [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                              [NSNumber numberWithInteger:[error code]],
+                                              @"error_code",
+                                              [error userInfo],
+                                              @"error_msg",
+                                              nil]
+                                      forKey:@"error"];
+                 }
+                 
+                 if ([contentEntity rawData])
+                 {
+                     [responseDict setObject:[contentEntity rawData] forKey:@"data"];
+                 }
+                if(state != 4){
+                    //upload状态时不返回回调
+                    [context callbackWithRet:responseDict err:nil delete:YES];
+                }
+             }];
+        }];
     }
-    
-    [ShareSDK share:type
-         parameters:content
-     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-         
-         //返回
-         NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                              [NSNumber numberWithInteger:state],
-                                              @"state",
-                                              nil];
-         if (error)
-         {
-             NSLog(@"%@",error);
-             [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                      [NSNumber numberWithInteger:[error code]],
-                                      @"error_code",
-                                      [error userInfo],
-                                      @"error_msg",
-                                      nil]
-                              forKey:@"error"];
-         }
-         
-         if ([contentEntity rawData])
-         {
-             [responseDict setObject:[contentEntity rawData] forKey:@"data"];
-         }
-         
-         [context callbackWithRet:responseDict err:nil delete:YES];
-     }];
 }
 
 JS_METHOD(shareByActivityWithContent:(UZModuleMethodContext *)context)
@@ -516,40 +641,41 @@ JS_METHOD(shareByActivityWithContent:(UZModuleMethodContext *)context)
         type = [[params objectForKey:@"platform"] unsignedIntegerValue];
     }
     
-    NSMutableDictionary *content = nil;
     if ([[params objectForKey:@"shareParams"] isKindOfClass:[NSDictionary class]])
     {
-        content = [self _contentWithDict:[params objectForKey:@"shareParams"]];
+        [self _contentWithDict:[params objectForKey:@"shareParams"] platforms:@[@(type)] completeHandle:^(NSMutableDictionary *content, BOOL complete) {
+            if(complete){
+                [ShareSDK shareByActivityViewController:type
+                     parameters:content
+                 onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+                     
+                     //返回
+                     NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                          [NSNumber numberWithInteger:state],
+                                                          @"state",
+                                                          nil];
+                     if (error)
+                     {
+                         NSLog(@"%@",error);
+                         [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                  [NSNumber numberWithInteger:[error code]],
+                                                  @"error_code",
+                                                  [error userInfo],
+                                                  @"error_msg",
+                                                  nil]
+                                          forKey:@"error"];
+                     }
+                     
+                     if ([contentEntity rawData])
+                     {
+                         [responseDict setObject:[contentEntity rawData] forKey:@"data"];
+                     }
+                     
+                     [context callbackWithRet:responseDict err:nil delete:YES];
+                 }];
+            }
+        }];
     }
-    
-    [ShareSDK shareByActivityViewController:type
-         parameters:content
-     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-         
-         //返回
-         NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                              [NSNumber numberWithInteger:state],
-                                              @"state",
-                                              nil];
-         if (error)
-         {
-             NSLog(@"%@",error);
-             [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                      [NSNumber numberWithInteger:[error code]],
-                                      @"error_code",
-                                      [error userInfo],
-                                      @"error_msg",
-                                      nil]
-                              forKey:@"error"];
-         }
-         
-         if ([contentEntity rawData])
-         {
-             [responseDict setObject:[contentEntity rawData] forKey:@"data"];
-         }
-         
-         [context callbackWithRet:responseDict err:nil delete:YES];
-     }];
 }
 
 JS_METHOD(isInstallPlatform:(UZModuleMethodContext *)context)
@@ -576,68 +702,69 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
         types = [params objectForKey:@"platforms"];
     }
     
-    NSMutableDictionary *content = nil;
     if ([[params objectForKey:@"shareParams"] isKindOfClass:[NSDictionary class]])
     {
-        content = [self _contentWithDict:[params objectForKey:@"shareParams"]];
+        [self _contentWithDict:[params objectForKey:@"shareParams"] platforms:types completeHandle:^(NSMutableDictionary *content, BOOL complete) {
+            if(complete){
+                CGFloat x = 0;
+                if ([[params objectForKey:@"x"] isKindOfClass:[NSNumber class]])
+                {
+                    x = [[params objectForKey:@"x"] floatValue];
+                }
+                
+                CGFloat y = 0;
+                if ([[params objectForKey:@"y"] isKindOfClass:[NSNumber class]])
+                {
+                    y = [[params objectForKey:@"y"] floatValue];
+                }
+                
+            //    UIViewController *vc = [MOBFViewController currentViewController];
+            //    if ([MOBFDevice isPad])
+            //    {
+            //        if (!_refView)
+            //        {
+            //            _refView = [[UIView alloc] initWithFrame:CGRectMake(x, y, 1, 1)];
+            //        }
+            //        else
+            //        {
+            //            _refView.frame = CGRectMake(x, y, 1, 1);
+            //        }
+            //
+            //        [vc.view addSubview:_refView];
+            //    }
+                
+                [ShareSDK showShareActionSheet:_refView customItems:types shareParams:content sheetConfiguration:nil onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
+                    //返回
+                    NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                                         [NSNumber numberWithInteger:state],
+                                                         @"state",
+                                                         nil];
+                    if (error)
+                    {
+                        [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                 [NSNumber numberWithInteger:[error code]],
+                                                 @"error_code",
+                                                 [error userInfo],
+                                                 @"error_msg",
+                                                 nil]
+                                         forKey:@"error"];
+                    }
+                    
+                    if ([contentEntity rawData])
+                    {
+                        [responseDict setObject:[contentEntity rawData] forKey:@"data"];
+                    }
+                    
+                    [context callbackWithRet:responseDict err:nil delete:YES];
+                    
+                    if (_refView)
+                    {
+                        [_refView removeFromSuperview];
+                    }
+                }];
+            }
+        }];
     }
-    
-    CGFloat x = 0;
-    if ([[params objectForKey:@"x"] isKindOfClass:[NSNumber class]])
-    {
-        x = [[params objectForKey:@"x"] floatValue];
-    }
-    
-    CGFloat y = 0;
-    if ([[params objectForKey:@"y"] isKindOfClass:[NSNumber class]])
-    {
-        y = [[params objectForKey:@"y"] floatValue];
-    }
-    
-//    UIViewController *vc = [MOBFViewController currentViewController];
-//    if ([MOBFDevice isPad])
-//    {
-//        if (!_refView)
-//        {
-//            _refView = [[UIView alloc] initWithFrame:CGRectMake(x, y, 1, 1)];
-//        }
-//        else
-//        {
-//            _refView.frame = CGRectMake(x, y, 1, 1);
-//        }
-//
-//        [vc.view addSubview:_refView];
-//    }
-    
-    [ShareSDK showShareActionSheet:_refView customItems:types shareParams:content sheetConfiguration:nil onStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
-        //返回
-        NSMutableDictionary *responseDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                             [NSNumber numberWithInteger:state],
-                                             @"state",
-                                             nil];
-        if (error)
-        {
-            [responseDict setObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithInteger:[error code]],
-                                     @"error_code",
-                                     [error userInfo],
-                                     @"error_msg",
-                                     nil]
-                             forKey:@"error"];
-        }
-        
-        if ([contentEntity rawData])
-        {
-            [responseDict setObject:[contentEntity rawData] forKey:@"data"];
-        }
-        
-        [context callbackWithRet:responseDict err:nil delete:YES];
-        
-        if (_refView)
-        {
-            [_refView removeFromSuperview];
-        }
-    }];
 }
 
 
@@ -672,7 +799,7 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
     }
 }
 
-- (NSMutableDictionary *)_contentWithDict:(NSDictionary *)dict
+- (void)_contentWithDict:(NSDictionary *)dict platforms:(NSArray *)platforms completeHandle:(void(^)(NSMutableDictionary *content,BOOL complete))completeHandle
 {
     NSString *message = nil;
     NSURL *attachementUrl = nil;
@@ -682,12 +809,84 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
     NSString *title = nil;
     NSString *url = nil;
     NSString *desc = nil;
-    NSString *quoteText = nil;
+    NSString *musicFileURL = nil;
+    NSString *extInfo = nil;
+    NSString *sourceFileExtension = nil;
+    NSString *fileData = nil;
+    NSString *path = nil;
+    NSString *userName = nil;
+    NSString *extMsg = nil;
+    NSDictionary *extDic = nil;
+    NSString *audioFlashURL = nil;
+    NSString *videoFlashURL = nil;
+    NSString *miniAppID = nil;
+    NSString *miniPath = nil;
+    NSString *miniWebpageUrl = nil;
+    NSString *templateId = nil;
+    NSDictionary *templateArgs = nil;
+    NSString *attachmentName = nil;
+    NSString *attachmentType = nil;
+    NSString *imageUrl = nil;
+    NSString *boardName = nil;
+    NSString *linkURL = nil;
+    NSString *openID = nil;
+    NSString *receiverOpenID = nil;
+    NSString *localIdentifier = nil;
+    NSArray *tags = nil;
+    NSString *visibility = nil;
+    NSString *audioName = nil;
+    NSString *audioType = nil;
+    NSString *videoName = nil;
+    NSString *videoType = nil;
+    NSString *fileName = nil;
+    NSString *fileType = nil;
+    int menuDisplayPointX = 0;
+    int menuDisplayPointY = 0;
+    NSString *musicLowBandUrl = nil;
+    NSString *musicDataUrl = nil;
+    NSString *musicLowBandDataUrl = nil;
+    NSString *videoLowBandUrl = nil;
+    NSString *comment = nil;
+    NSString *toUserId = nil;
+    NSString *caption = nil;
+    NSString *attachmentUrl = nil;
+    NSString *fileExtension = nil;
+
+    
+    
+    
+    int permission = 0;
+    BOOL sharable = NO;
+    NSDictionary *androidExecParam = nil;
+    NSDictionary *iosExecParam = nil;
+    
+    
+    BOOL withShareTicket = NO;
+    BOOL shareToMini = NO;
+    BOOL shareToQQMini = NO;
+    BOOL openMini = NO;
+
+    NSUInteger miniProgramType = 0;
+   
+    id assetLocalIds = nil;
+    id imageAssets = nil;
+    id videoAsset = nil;
+
+    
     
     id gif = nil;
     id audio = nil;
     id video = nil;
     id images = nil;
+    id emoticonData = nil;
+    id thumbImage = nil;
+    id hdThumbImage = nil;
+    id sourceFileData = nil;
+    id sticker = nil;
+    BOOL stickerAnimated = NO;
+    CGFloat stickerRotation = 0;
+    NSInteger cameraViewState = 0;
+
 
     SSDKContentType type = SSDKContentTypeAuto;
     BOOL clientShare = NO;
@@ -734,9 +933,9 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
             title = [dict objectForKey:@"title"];
         }
         
-        if ([[dict objectForKey:@"titleUrl"] isKindOfClass:[NSString class]])
+        if ([[dict objectForKey:@"url"] isKindOfClass:[NSString class]])
         {
-            url = [dict objectForKey:@"titleUrl"];
+            url = [dict objectForKey:@"url"];
         }
         
         if ([[dict objectForKey:@"description"] isKindOfClass:[NSString class]])
@@ -744,25 +943,348 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
             desc = [dict objectForKey:@"description"];
         }
         
-        if ([dict objectForKey:@"gif"])
+        if ([dict objectForKey:@"gif"] && ![[dict objectForKey:@"gif"] isKindOfClass:[NSNull class]])
         {
             gif = [dict objectForKey:@"gif"];
         }
         
-        if ([dict objectForKey:@"audio"])
+        if ([dict objectForKey:@"audio"] && ![[dict objectForKey:@"audio"] isKindOfClass:[NSNull class]])
         {
             audio = [dict objectForKey:@"audio"];
         }
         
-        if ([dict objectForKey:@"video"])
+        if ([dict objectForKey:@"video"] && ![[dict objectForKey:@"video"] isKindOfClass:[NSNull class]])
         {
             video = [dict objectForKey:@"video"];
         }
         
-        if ([dict objectForKey:@"images"])
+        if ([dict objectForKey:@"images"] && ![[dict objectForKey:@"images"] isKindOfClass:[NSNull class]])
         {
             images = [dict objectForKey:@"images"];
         }
+        
+        if ([dict objectForKey:@"audioName"])
+        {
+            audioName = [dict objectForKey:@"audioName"];
+        }
+        
+        if ([dict objectForKey:@"audioType"])
+        {
+            audioType = [dict objectForKey:@"audioType"];
+        }
+        
+        if ([dict objectForKey:@"videoName"])
+        {
+            videoName = [dict objectForKey:@"videoName"];
+        }
+        
+        if ([dict objectForKey:@"videoType"])
+        {
+            videoType = [dict objectForKey:@"videoType"];
+        }
+        
+        if ([dict objectForKey:@"fileName"])
+        {
+            fileName = [dict objectForKey:@"fileName"];
+        }
+        
+        if ([dict objectForKey:@"fileType"])
+        {
+            fileType = [dict objectForKey:@"fileType"];
+        }
+        
+        //wechat相关
+        if ([dict objectForKey:@"emoticonData"] && ![[dict objectForKey:@"emoticonData"] isKindOfClass:[NSNull class]])
+        {
+            emoticonData = [dict objectForKey:@"emoticonData"];
+        }
+        
+        if ([dict objectForKey:@"thumbImage"] && ![[dict objectForKey:@"thumbImage"] isKindOfClass:[NSNull class]])
+        {
+            thumbImage = [dict objectForKey:@"thumbImage"];
+        }
+        
+        if ([dict objectForKey:@"musicFileURL"])
+        {
+            musicFileURL = [dict objectForKey:@"musicFileURL"];
+        }
+        
+        if ([dict objectForKey:@"extInfo"])
+        {
+            extInfo = [dict objectForKey:@"extInfo"];
+        }
+        
+        if ([[dict objectForKey:@"fileData"] isKindOfClass:[NSString class]])
+        {
+            fileData = [dict objectForKey:@"fileData"];
+        }
+        
+        if ([dict objectForKey:@"sourceFileExtension"])
+        {
+            sourceFileExtension = [dict objectForKey:@"sourceFileExtension"];
+        }
+        
+        if ([dict objectForKey:@"sourceFileData"] && ![[dict objectForKey:@"sourceFileData"] isKindOfClass:[NSNull class]])
+        {
+            sourceFileData = [dict objectForKey:@"sourceFileData"];
+        }
+        
+        if ([[dict objectForKey:@"shareToMini"] isKindOfClass:[NSNumber class]])
+        {
+            shareToMini = [[dict objectForKey:@"shareToMini"] boolValue];
+        }
+        
+        if ([dict objectForKey:@"path"])
+        {
+            path = [dict objectForKey:@"path"];
+        }
+        
+        if ([dict objectForKey:@"userName"])
+        {
+            userName = [dict objectForKey:@"userName"];
+        }
+        
+        if ([dict objectForKey:@"hdThumbImage"] && ![[dict objectForKey:@"hdThumbImage"] isKindOfClass:[NSNull class]])
+        {
+            hdThumbImage = [dict objectForKey:@"hdThumbImage"];
+        }
+        
+        if ([[dict objectForKey:@"withShareTicket"] isKindOfClass:[NSNumber class]])
+        {
+            withShareTicket = [[dict objectForKey:@"withShareTicket"] boolValue];
+        }
+        
+        if ([[dict objectForKey:@"miniProgramType"] isKindOfClass:[NSNumber class]])
+        {
+            miniProgramType = [[dict objectForKey:@"miniProgramType"] integerValue];
+        }
+        
+        
+        if ([[dict objectForKey:@"openMini"] isKindOfClass:[NSNumber class]])
+        {
+            openMini = [[dict objectForKey:@"openMini"] boolValue];
+        }
+        
+        if ([dict objectForKey:@"extMsg"])
+        {
+            extMsg = [dict objectForKey:@"extMsg"];
+        }
+        
+        if ([[dict objectForKey:@"extDic"] isKindOfClass:[NSDictionary class]])
+        {
+            extDic = [dict objectForKey:@"extDic"];
+        }
+        
+
+        //QQ相关
+        if ([dict objectForKey:@"audioFlashURL"])
+        {
+            audioFlashURL = [dict objectForKey:@"audioFlashURL"];
+        }
+        
+        if ([dict objectForKey:@"videoFlashURL"])
+        {
+            videoFlashURL = [dict objectForKey:@"videoFlashURL"];
+        }
+        
+        if ([[dict objectForKey:@"shareToQQMini"] isKindOfClass:[NSNumber class]])
+        {
+            shareToQQMini = [[dict objectForKey:@"shareToQQMini"] boolValue];
+        }
+        
+        if ([dict objectForKey:@"miniAppID"])
+        {
+            miniAppID = [dict objectForKey:@"miniAppID"];
+        }
+        
+        if ([dict objectForKey:@"miniPath"])
+        {
+            miniPath = [dict objectForKey:@"miniPath"];
+        }
+        
+        if ([dict objectForKey:@"miniWebpageUrl"])
+        {
+            miniWebpageUrl = [dict objectForKey:@"miniWebpageUrl"];
+        }
+        
+        //快手相关
+        if ([dict objectForKey:@"linkURL"])
+        {
+            linkURL = [dict objectForKey:@"linkURL"];
+        }
+        if ([dict objectForKey:@"openID"])
+        {
+            openID = [dict objectForKey:@"openID"];
+        }
+        if ([dict objectForKey:@"receiverOpenID"])
+        {
+            receiverOpenID = [dict objectForKey:@"receiverOpenID"];
+        }
+        if ([dict objectForKey:@"localIdentifier"])
+        {
+            localIdentifier = [dict objectForKey:@"localIdentifier"];
+        }
+        if ([[dict objectForKey:@"tags"] isKindOfClass:[NSArray class]])
+        {
+            tags = [dict objectForKey:@"tags"];
+        }
+        
+        
+        //抖音、TikTok相关
+        if ([[dict objectForKey:@"assetLocalIds"] isKindOfClass:[NSArray class]])
+        {
+            assetLocalIds = [dict objectForKey:@"assetLocalIds"];
+        }
+        
+        //Kakao相关
+        if ([dict objectForKey:@"templateId"])
+        {
+            templateId = [dict objectForKey:@"templateId"];
+        }
+        
+        if ([[dict objectForKey:@"templateArgs"] isKindOfClass:[NSDictionary class]])
+        {
+            templateArgs = [dict objectForKey:@"templateArgs"];
+        }
+        
+        if ([[dict objectForKey:@"permission"] isKindOfClass:[NSNumber class]])
+        {
+            permission = [[dict objectForKey:@"permission"] intValue];
+        }
+        
+        if ([[dict objectForKey:@"sharable"] isKindOfClass:[NSNumber class]])
+        {
+            sharable = [[dict objectForKey:@"sharable"] boolValue];
+        }
+        
+        if ([[dict objectForKey:@"androidExecParam"] isKindOfClass:[NSDictionary class]])
+        {
+            androidExecParam = [dict objectForKey:@"androidExecParam"];
+        }
+        
+        if ([[dict objectForKey:@"iosExecParam"] isKindOfClass:[NSDictionary class]])
+        {
+            iosExecParam = [dict objectForKey:@"iosExecParam"];
+        }
+        
+        //Dropbox
+        if ([dict objectForKey:@"attachmentName"])
+        {
+            attachmentName = [dict objectForKey:@"attachmentName"];
+        }
+        
+        if ([dict objectForKey:@"attachmentType"])
+        {
+            attachmentType = [dict objectForKey:@"attachmentType"];
+        }
+        
+        //Pinterest相关
+        if ([dict objectForKey:@"imageUrl"])
+        {
+            imageUrl = [dict objectForKey:@"imageUrl"];
+        }
+        if ([dict objectForKey:@"boardName"])
+        {
+            boardName = [dict objectForKey:@"boardName"];
+        }
+        
+        //LinkedIn相关
+        if ([dict objectForKey:@"visibility"])
+        {
+            visibility = [dict objectForKey:@"visibility"];
+        }
+        
+        //Telegram相关
+        if ([[dict objectForKey:@"menuDisplayPointX"] isKindOfClass:[NSNumber class]])
+        {
+            menuDisplayPointX = [[dict objectForKey:@"menuDisplayPointX"] intValue];
+        }
+        
+        if ([[dict objectForKey:@"menuDisplayPointY"] isKindOfClass:[NSNumber class]])
+        {
+            menuDisplayPointY = [[dict objectForKey:@"menuDisplayPointY"] intValue];
+        }
+        
+        //有道
+        if ([[dict objectForKey:@"imageAssets"] isKindOfClass:[NSArray class]])
+        {
+            imageAssets = [dict objectForKey:@"imageAssets"];
+        }
+
+        //明道
+        if ([dict objectForKey:@"videoAsset"] && ![[dict objectForKey:@"videoAsset"] isKindOfClass:[NSNull class]])
+        {
+            videoAsset = [dict objectForKey:@"videoAsset"];
+        }
+
+        //易信
+        if ([dict objectForKey:@"musicLowBandUrl"])
+        {
+            musicLowBandUrl = [dict objectForKey:@"musicLowBandUrl"];
+        }
+
+        if ([dict objectForKey:@"musicDataUrl"])
+        {
+            musicDataUrl = [dict objectForKey:@"musicDataUrl"];
+        }
+
+        if ([dict objectForKey:@"musicLowBandDataUrl"])
+        {
+            musicLowBandDataUrl = [dict objectForKey:@"musicLowBandDataUrl"];
+        }
+
+        if ([dict objectForKey:@"videoLowBandUrl"])
+        {
+            videoLowBandUrl = [dict objectForKey:@"videoLowBandUrl"];
+        }
+
+        if ([dict objectForKey:@"comment"])
+        {
+            comment = [dict objectForKey:@"comment"];
+        }
+
+        if ([dict objectForKey:@"toUserId"])
+        {
+            toUserId = [dict objectForKey:@"toUserId"];
+        }
+        
+        //SnapChat相关
+        if ([dict objectForKey:@"caption"])
+        {
+            caption = [dict objectForKey:@"caption"];
+        }
+        
+        if ([dict objectForKey:@"attachmentUrl"])
+        {
+            attachmentUrl = [dict objectForKey:@"attachmentUrl"];
+        }
+        
+        if ([dict objectForKey:@"sticker"]  && ![[dict objectForKey:@"sticker"] isKindOfClass:[NSNull class]])
+        {
+            sticker = [dict objectForKey:@"sticker"];
+        }
+        
+        if ([[dict objectForKey:@"stickerAnimated"] isKindOfClass:[NSNumber class]])
+        {
+            stickerAnimated = [[dict objectForKey:@"stickerAnimated"] boolValue];
+        }
+        
+        if ([[dict objectForKey:@"stickerRotation"] isKindOfClass:[NSNumber class]])
+        {
+            stickerRotation = [[dict objectForKey:@"stickerRotation"] floatValue];
+        }
+        
+        if ([[dict objectForKey:@"cameraViewState"] isKindOfClass:[NSNumber class]])
+        {
+            cameraViewState = [[dict objectForKey:@"cameraViewState"] integerValue];
+        }
+        
+        //Oasis相关
+        if ([dict objectForKey:@"fileExtension"])
+        {
+            fileExtension = [dict objectForKey:@"fileExtension"];
+        }
+        
         
         if ([[dict objectForKey:@"client_share"] isKindOfClass:[NSNumber class]])
         {
@@ -801,10 +1323,90 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
                                title:title
                                 type:type];
     
+    NSInteger currPlatform = [platforms[0] integerValue];
+    
+    //wechat
+    if ([platforms containsObject:@(SSDKPlatformTypeWechat)] || [platforms containsObject:@(SSDKPlatformSubTypeWechatFav)] || [platforms containsObject:@(SSDKPlatformSubTypeWechatSession)] || [platforms containsObject:@(SSDKPlatformSubTypeWechatTimeline)]){
+        if(shareToMini){
+            [para SSDKSetupWeChatMiniProgramShareParamsByTitle:title
+                                                         description:desc
+                                                          webpageUrl:[NSURL URLWithString:url]
+                                                                path:path
+                                                          thumbImage:thumbImage
+                                                        hdThumbImage:hdThumbImage
+                                                            userName:userName
+                                                     withShareTicket:withShareTicket
+                                                     miniProgramType:miniProgramType
+                                                  forPlatformSubType:currPlatform];
+        }else if(openMini){
+            // 应用打开小程序
+            [WeChatConnector openMiniProgramWithUserName:userName
+                                                    path:path
+                                         miniProgramType:miniProgramType
+                                                       extMsg:extMsg
+                                                       extDic:extDic
+                                                complete:^(BOOL success) {
+                if (success)
+                {
+                    NSLog(@"打开小程序成功");
+                }
+                else
+                {
+                    NSLog(@"打开小程序失败");
+                }
+            }];
+        }else{
+            if(type == SSDKContentTypeAudio || type == SSDKContentTypeVideo ||
+               type == SSDKContentTypeApp || type == SSDKContentTypeFile || emoticonData){
+                
+                [para SSDKSetupWeChatParamsByText:message
+                                            title:title
+                                              url:[NSURL URLWithString:url]
+                                       thumbImage:thumbImage
+                                            image:images
+                                     musicFileURL:[NSURL URLWithString:musicFileURL]
+                                          extInfo:extInfo
+                                         fileData:[fileData dataUsingEncoding:NSUTF8StringEncoding]
+                                     emoticonData:emoticonData
+                              sourceFileExtension:sourceFileExtension
+                                   sourceFileData:sourceFileData
+                                             type:type
+                               forPlatformSubType:currPlatform];
+            }
+        }
+        
+    }
+    
+    //QQ
+    if ([platforms containsObject:@(SSDKPlatformTypeQQ)] || [platforms containsObject:@(SSDKPlatformSubTypeQQFriend)]){
+        if(shareToQQMini){
+            [para SSDKSetupQQMiniProgramShareParamsByTitle:title
+                                               description:desc
+                                                webpageUrl:[NSURL URLWithString:url]
+                                              hdThumbImage:hdThumbImage
+                                                 miniAppID:miniAppID
+                                                  miniPath:miniPath
+                                            miniWebpageUrl:miniWebpageUrl
+                                           miniProgramType:miniProgramType
+                                        forPlatformSubType:currPlatform];
+        }else{
+            [para SSDKSetupQQParamsByText:message
+                                    title:title
+                                      url:[NSURL URLWithString:url]
+                            audioFlashURL:[NSURL URLWithString:audioFlashURL]
+                            videoFlashURL:[NSURL URLWithString:videoFlashURL]
+                               thumbImage:thumbImage
+                                   images:images
+                                     type:type
+                       forPlatformSubType:currPlatform];
+        }
+
+    }
+
     //Facebook
-    if ([dict objectForKey:@"FacebookShareType"])
+    if ([platforms containsObject:@(SSDKPlatformTypeFacebook)])
     {
-        id shareType = [dict objectForKey:@"FacebookShareType"];
+        int shareType = [[dict objectForKey:@"FacebookShareType"] intValue];
         [para SSDKSetupFacebookParamsByText:message
                                       image:images
                                         url:[NSURL URLWithString:url]
@@ -813,12 +1415,12 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
                              attachementUrl:attachementUrl
                                     hashtag:hashtag
                                       quote:quote
-                                  shareType:[shareType integerValue]
+                                  shareType:shareType
                                        type:type];
     }
     
     //Ins
-    if ([dict objectForKey:@"insDisplayPointX"] && [dict objectForKey:@"insDisplayPointY"])
+    if ([platforms containsObject:@(SSDKPlatformTypeInstagram)])
     {
 
         id displayPointX = [dict objectForKey:@"insDisplayPointX"];
@@ -828,67 +1430,232 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
     }
     
     //WhatsApp
-    if ([dict objectForKey:@"whatsAppDisplayPointX"] && [dict objectForKey:@"whatsAppDisplayPointY"])
+    if ([platforms containsObject:@(SSDKPlatformTypeWhatsApp)])
     {
         id displayPointX = [dict objectForKey:@"whatsAppDisplayPointX"];
         id displayPointY = [dict objectForKey:@"whatsAppDisplayPointY"];
 
-        [para SSDKSetupWhatsAppParamsByText:message
-                                      image:images
-                                      audio:(id)audio
-                                      video:video
-                           menuDisplayPoint:CGPointMake([displayPointX floatValue], [displayPointY floatValue])
-                                       type:type];
+        if(type == SSDKContentTypeImage){
+            [para SSDKSetupWhatsAppParamsByText:message
+                                          image:images
+                                          audio:nil
+                                          video:nil
+                               menuDisplayPoint:CGPointMake([displayPointX floatValue], [displayPointY floatValue])
+                                           type:type];
+        }
     }
     
     //FacebookMessenger
-    if ([[dict objectForKey:@"quoteText"] isKindOfClass:[NSString class]])
+    if ([platforms containsObject:@(SSDKPlatformTypeFacebookMessenger)])
     {
-        quoteText = [dict objectForKey:@"quoteText"];
         [para SSDKSetupFacebookMessengerParamsByTitle:title
                                                   url:[NSURL URLWithString: url]
-                                            quoteText:quoteText
                                                images:images
-                                                  gif:gif
-                                                audio:audio
                                                 video:video
                                                  type:type];
     }
     
     //sina
-    if (sina_linkCard == YES)
-    {
-        [para setObject:@(sina_linkCard) forKey:@"sina_linkCard"];
-        [para setObject:[MobSDK appKey] forKey:@"mob_appkey"];
-        if (sina_cardTitle != nil)
+    if ([platforms containsObject:@(SSDKPlatformTypeSinaWeibo)]){
+        if (sina_linkCard == YES)
         {
-            [para setObject:sina_cardTitle forKey:@"sina_cardTitle"];
+            
+            [para SSDKSetupSinaWeiboLinkCardShareParamsByText:message
+                                                    cardTitle:sina_cardTitle
+                                                  cardSummary:sina_cardSummary
+                                                       images:images
+                                                          url:[NSURL URLWithString: url]];
         }
-        if (sina_cardSummary != nil)
-        {
-            [para setObject:sina_cardSummary forKey:@"sina_cardSummary"];
+        
+        if(type == SSDKContentTypeVideo){
+            [para SSDKSetupSinaWeiboShareParamsByText:message
+                                                title:title
+                                               images:nil
+                                                video:[[NSBundle mainBundle]pathForResource:videoName ofType:videoType]
+                                                  url:nil
+                                             latitude:0
+                                            longitude:0
+                                             objectID:nil
+                                       isShareToStory:NO
+                                                 type:type];
         }
     }
     
-    if (dict)
-    {
-        NSString *siteUrlStr = nil;
-        NSString *siteStr = nil;
-        
-        NSString *siteUrl = [dict objectForKey:@"siteUrl"];
-        if ([siteUrl isKindOfClass:[NSString class]])
-        {
-            siteUrlStr = siteUrl;
-        }
-        
-        NSString *site = [dict objectForKey:@"site"];
-        if ([site isKindOfClass:[NSString class]])
-        {
-            siteStr = site;
+    //快手
+    if ([platforms containsObject:@(SSDKPlatformTypeKuaiShou)]){
+        [para SSDKSetupKuaiShouShareParamsByTitle:title
+                                             desc:desc
+                                          linkURL:linkURL
+                                       thumbImage:thumbImage
+                                           openID:openID
+                                   receiverOpenID:receiverOpenID
+                                  localIdentifier:localIdentifier
+                                             tags:tags
+                                        extraInfo:extInfo
+                                             type:SSDKContentTypeMessage];
+    }
+    
+    //抖音
+    if ([platforms containsObject:@(SSDKPlatformTypeDouyin)]){
+        if(assetLocalIds){
+            [para SSDKSetupTikTokParamesByAssetLocalIds:assetLocalIds
+                                                hashtag:hashtag
+                                              extraInfo:extDic
+                                                   type:type];
         }
     }
     
-    return para;
+    //TikTok
+    if ([platforms containsObject:@(SSDKPlatformTypeTikTok)]){
+        if(assetLocalIds){
+            [para SSDKSetupTikTokParamesByAssetLocalIds:assetLocalIds
+                                                hashtag:hashtag
+                                              extraInfo:extDic
+                                                   type:type];
+        }
+    }
+    
+    //KakaoTalk
+    if ([platforms containsObject:@(SSDKPlatformSubTypeKakaoTalk)]){
+        [para SSDKSetupKaKaoTalkParamsByUrl:[NSURL URLWithString:url]
+                                 templateId:templateId
+                               templateArgs:templateArgs];
+
+    }
+    //KakaoStory
+    if ([platforms containsObject:@(SSDKPlatformSubTypeKakaoStory)]){
+        [para SSDKSetupKakaoStoryParamsByContent:message
+                                           title:title
+                                          images:images
+                                             url:[NSURL URLWithString:url]
+                                      permission:permission
+                                        sharable:sharable
+                                androidExecParam:androidExecParam
+                                    iosExecParam:iosExecParam
+                                            type:type];
+
+    }
+    //Dropbox
+    if ([platforms containsObject:@(SSDKPlatformTypeDropbox)]){
+        if(attachmentName && attachmentName.length && attachmentType && attachmentType.length ){
+            [para SSDKSetupDropboxParamsByAttachment:[NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:attachmentName ofType:attachmentType]]];
+        }
+    }
+
+    //Pinterest
+    if ([platforms containsObject:@(SSDKPlatformTypePinterest)]){
+        [para SSDKSetupPinterestParamsByImageUrl:imageUrl
+                                                  desc:desc
+                                                   url:[NSURL URLWithString:url]
+                                             boardName:boardName];
+    }
+    
+    //linkedin
+    if ([platforms containsObject:@(SSDKPlatformTypeLinkedIn)]){
+        [para SSDKSetupLinkedInParamsByText:message
+                                            image:images
+                                              url:[NSURL URLWithString:url]
+                                            title:title
+                                          urlDesc:desc
+                                       visibility:visibility
+                                             type:type];
+    }
+
+    //Telegram
+    if ([platforms containsObject:@(SSDKPlatformTypeTelegram)]){
+        if(type == SSDKContentTypeAudio || type == SSDKContentTypeVideo || type == SSDKContentTypeFile){
+            [para SSDKSetupTelegramParamsByText:message
+                                          image:images
+                                          audio:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioName ofType:audioType]]
+                                          video:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioName ofType:audioType]]
+                                           file:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:fileName ofType:fileType]]
+                               menuDisplayPoint:CGPointMake(menuDisplayPointX, menuDisplayPointY)
+                                           type:type];
+        }
+    }
+    
+    //易信
+    if ([platforms containsObject:@(SSDKPlatformSubTypeYiXinSession)] ||
+        [platforms containsObject:@(SSDKPlatformSubTypeYiXinTimeline)] ||
+        [platforms containsObject:@(SSDKPlatformSubTypeYiXinFav)]){
+
+        if(type == SSDKContentTypeAudio || type == SSDKContentTypeVideo || type == SSDKContentTypeApp){
+            [para SSDKSetupYiXinParamsByText:message
+                                       title:title
+                                         url:[NSURL URLWithString:url]
+                                  thumbImage:thumbImage
+                                       image:images
+                                musicFileURL:[NSURL URLWithString:musicFileURL]
+                             musicLowBandUrl:musicLowBandUrl
+                                musicDataUrl:musicDataUrl
+                         musicLowBandDataUrl:musicLowBandDataUrl
+                                     extInfo:extInfo
+                                    fileData:[fileData dataUsingEncoding:NSUTF8StringEncoding]
+                             videoLowBandUrl:videoLowBandUrl
+                                     comment:comment
+                                    toUserId:toUserId
+                                        type:type
+                          forPlatformSubType:currPlatform];
+        }
+    }
+    
+    //SnapChat
+    if ([platforms containsObject:@(SSDKPlatformTypeSnapChat)]){
+        [para SSDKSetupSnapChatParamsByCaption:caption
+                                 attachmentUrl:attachmentUrl
+                                         image:images
+                                         video:video
+                                       sticker:sticker
+                               stickerAnimated:stickerAnimated
+                               stickerRotation:stickerRotation
+                               cameraViewState:cameraViewState
+                                          type:type];
+    }
+    //Oasis
+    if ([platforms containsObject:@(SSDKPlatformTypeOasis)]){
+        [para SSDKSetupOasisParamsByTitle:title
+                                     text:message
+                            assetLocalIds:assetLocalIds
+                                    image:images
+                                    video:video
+                            fileExtension:fileExtension
+                                     type:type];
+    }
+    
+    //有道,明道
+    if ([platforms containsObject:@(SSDKPlatformTypeYouDaoNote)] || [platforms containsObject:@(SSDKPlatformTypeMingDao)]){
+        if(imageAssets || videoAsset){
+            //有道不支持视频分享
+            [para SSDKSetupShareParamsByImageAsset:imageAssets videoAsset:videoAsset completeHandle:^(BOOL complete) {
+                if(complete){
+                    completeHandle(para,YES);
+                }
+            }];
+        }else{
+            completeHandle(para,YES);
+        }
+    }else{
+        completeHandle(para,YES);
+    }
+    
+    
+//    if (dict)
+//    {
+//        NSString *siteUrlStr = nil;
+//        NSString *siteStr = nil;
+//
+//        NSString *siteUrl = [dict objectForKey:@"siteUrl"];
+//        if ([siteUrl isKindOfClass:[NSString class]])
+//        {
+//            siteUrlStr = siteUrl;
+//        }
+//
+//        NSString *site = [dict objectForKey:@"site"];
+//        if ([site isKindOfClass:[NSString class]])
+//        {
+//            siteStr = site;
+//        }
+//    }
 }
 
 @end

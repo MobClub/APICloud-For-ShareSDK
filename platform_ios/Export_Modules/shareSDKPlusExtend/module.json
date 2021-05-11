@@ -1,4 +1,6 @@
- {
-    "name":"shareSDKPlusExtend",
-    "class":"ShareSDKPlusExtend"
- }
+ [
+  {
+      "name":"shareSDKPlusExtend",
+      "class":"ShareSDKPlusExtend"
+  }
+ ]
