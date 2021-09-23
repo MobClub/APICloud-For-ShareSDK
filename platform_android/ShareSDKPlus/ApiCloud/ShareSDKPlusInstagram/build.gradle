@@ -59,6 +59,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
+    implementation files('libs/ShareSDK-Instagram-3.8.7.jar')
 }
 
 

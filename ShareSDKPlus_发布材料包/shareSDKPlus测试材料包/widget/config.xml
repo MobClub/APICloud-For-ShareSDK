@@ -280,6 +280,8 @@
 
     <param name="urlScheme" value="dingoabcwtuab76wy0kyzo" />
 
+    <param name="urlScheme" value="dingoax9s2mdekb7a6748n" />
+
     <param name="urlScheme" value="pocketapp1234" />
 
     <param name="urlScheme" value="pdk5057854497590653616" />
@@ -352,8 +354,8 @@
 
     <param name="DingTalk_AppKey" value="dingoabcwtuab76wy0kyzo" />
     
-    <param name="DingTalkAuth_AppKey" value="dingoacafcjgm0etysbv6r" />
-    <param name="DingTalkAuth_AppSecret" value="AMDCSN0sgQt2Gzx_xFU0og9cE_P9fDTumRUg3nYdxKrqL-2bgVIlM6Xj4sRzZMTC" />
+    <param name="DingTalkAuth_AppKey" value="dingoax9s2mdekb7a6748n" />
+    <param name="DingTalkAuth_AppSecret" value="dxx9KwP4BYN975umF6Mi2QW3jL7O3k3qHCSvcCbes5Y5R7mFF1ocd19p4NdzOKD4" />
     <param name="DingTalkAuth_RedirectUri" value="https://www.mob.com/sharesdk/dingding" />
 
     <param name="YinXiang_AppKey" value="46131514-6903" />
@@ -431,8 +433,8 @@
     <param name="KuaiShou_AppSecret" value="RQ17enXUOioeoDMrwk3j2Q" />
     <param name="KuaiShou_AppUniversalLink" value="https://70imc.share2dlink.com/" />
     
-    <param name="WeWork_AppKey" value="wwautha21eaecf93f0e3ba000012" />
-    <param name="WeWork_CorpId" value="wwa21eaecf93f0e3ba" />
+    <param name="WeWork_Schema" value="wwautha21eaecf93f0e3ba000012" />
+    <param name="WeWork_Appkey" value="wwa21eaecf93f0e3ba" />
     <param name="WeWork_AgentId" value="1000012" />
     <param name="WeWork_AppSecret" value="dW7e27P7Hc8NiYdRxnbTeOLgfI1ugR72e-PM8uusq2s" />
 

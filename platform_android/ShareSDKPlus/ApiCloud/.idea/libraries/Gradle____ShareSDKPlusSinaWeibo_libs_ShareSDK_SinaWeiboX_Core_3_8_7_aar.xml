@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: ./ShareSDKPlusSinaWeibo/libs/ShareSDK-SinaWeiboX-Core-3.8.7.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a269942bbf151c46a29013fa73a3f90/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a269942bbf151c46a29013fa73a3f90/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a269942bbf151c46a29013fa73a3f90/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b57ae0fec16e5f05cec8ab3fd288d305/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b57ae0fec16e5f05cec8ab3fd288d305/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b57ae0fec16e5f05cec8ab3fd288d305/jetified-ShareSDK-SinaWeiboX-Core-3.8.7/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

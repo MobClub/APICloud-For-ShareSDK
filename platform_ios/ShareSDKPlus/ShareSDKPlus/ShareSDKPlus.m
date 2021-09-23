@@ -229,9 +229,9 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupKuaiShouWithAppId:params[@"KuaiShou_AppKey"] appSecret:params[@"KuaiShou_AppSecret"] universalLink:params[@"KuaiShou_AppUniversalLink"] delegate:[UZAppDelegate appDelegate]];
         }
         
-        if (params[@"WeWork_AppKey"] && params[@"WeWork_CorpId"] && params[@"WeWork_AgentId"] && params[@"WeWork_AppSecret"])
+        if (params[@"WeWork_Schema"] && params[@"WeWork_Appkey"] && params[@"WeWork_AgentId"] && params[@"WeWork_AppSecret"])
         {
-            [platformsRegister setupWeWorkByAppKey:params[@"WeWork_AppKey"] corpId:params[@"WeWork_CorpId"] agentId:params[@"WeWork_AgentId"] appSecret:params[@"WeWork_AppSecret"]];
+            [platformsRegister setupWeWorkBySchema:params[@"WeWork_Schema"] appKey:params[@"WeWork_Appkey"] agentId:params[@"WeWork_AgentId"] appSecret:params[@"WeWork_AppSecret"]];
         }
         
         if (params[@"Oasis_AppKey"])
@@ -407,9 +407,10 @@ static NSString *const shareSDKModuleName = @"shareSDKPlus";
             [platformsRegister setupKuaiShouWithAppId:params[@"shareSDKPlus_KuaiShou_AppKey"] appSecret:params[@"shareSDKPlus_KuaiShou_AppSecret"] universalLink:params[@"shareSDKPlus_KuaiShou_AppUniversalLink"] delegate:[UZAppDelegate appDelegate]];
         }
         
-        if (params[@"shareSDKPlus_WeWork_AppKey"] && params[@"shareSDKPlus_WeWork_CorpId"] && params[@"shareSDKPlus_WeWork_AgentId"] && params[@"shareSDKPlus_WeWork_AppSecret"])
+        
+        if (params[@"shareSDKPlus_WeWork_Schema"] && params[@"shareSDKPlus_WeWork_Appkey"] && params[@"shareSDKPlus_WeWork_AgentId"] && params[@"shareSDKPlus_WeWork_AppSecret"])
         {
-            [platformsRegister setupWeWorkByAppKey:params[@"shareSDKPlus_WeWork_AppKey"] corpId:params[@"shareSDKPlus_WeWork_CorpId"] agentId:params[@"shareSDKPlus_WeWork_AgentId"] appSecret:params[@"shareSDKPlus_WeWork_AppSecret"]];
+            [platformsRegister setupWeWorkBySchema:params[@"shareSDKPlus_WeWork_Schema"] appKey:params[@"shareSDKPlus_WeWork_Appkey"] agentId:params[@"shareSDKPlus_WeWork_AgentId"] appSecret:params[@"shareSDKPlus_WeWork_AppSecret"]];
         }
         
         if (params[@"shareSDKPlus_Oasis_AppKey"])
@@ -886,8 +887,9 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
     BOOL stickerAnimated = NO;
     CGFloat stickerRotation = 0;
     NSInteger cameraViewState = 0;
+    NSInteger shareActionMode = 0;
 
-
+    
     SSDKContentType type = SSDKContentTypeAuto;
     BOOL clientShare = NO;
     BOOL advancedShare = NO;
@@ -1135,6 +1137,11 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
         {
             assetLocalIds = [dict objectForKey:@"assetLocalIds"];
         }
+        if ([[dict objectForKey:@"shareActionMode"] isKindOfClass:[NSNumber class]])
+        {
+            shareActionMode = [[dict objectForKey:@"shareActionMode"] integerValue];
+        }
+        
         
         //Kakao相关
         if ([dict objectForKey:@"templateId"])
@@ -1323,6 +1330,8 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
                                title:title
                                 type:type];
     
+    [para setValue:shareActionMode == 1 ? @(SSDKDouyinOpenSDKShareTypeShareContentToIM) : @(SSDKDouyinOpenSDKShareTypePublishMedia) forKey:SSDKDouYinShareActionKey];
+    
     NSInteger currPlatform = [platforms[0] integerValue];
     
     //wechat
@@ -1498,9 +1507,10 @@ JS_METHOD(oneKeyShareContent:(UZModuleMethodContext *)context)
     //抖音
     if ([platforms containsObject:@(SSDKPlatformTypeDouyin)]){
         if(assetLocalIds){
-            [para SSDKSetupTikTokParamesByAssetLocalIds:assetLocalIds
+            [para SSDKSetupDouyinParamesByAssetLocalIds:assetLocalIds
                                                 hashtag:hashtag
                                               extraInfo:extDic
+                                        shareActionMode:shareActionMode
                                                    type:type];
         }
     }

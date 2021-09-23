@@ -84,6 +84,9 @@
 		52BA311119F63B0300D81640 /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BA311019F63B0300D81640 /* libbsm.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		52CA35751AB195C9002579CF /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CA35741AB195C9002579CF /* libresolv.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		52E586AA1AFC74F100864ACF /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BA30A919F6367A00D81640 /* CoreAudio.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		91575F5326CFA06300B575A6 /* DouyinOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91575F5226CFA06300B575A6 /* DouyinOpenSDK.framework */; };
+		91575F5626CFA06C00B575A6 /* TikTokOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91575F5526CFA06C00B575A6 /* TikTokOpenSDK.framework */; };
+		91575F5826CFA1BD00B575A6 /* TikTokConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91575F5726CFA1BD00B575A6 /* TikTokConnector.framework */; };
 		915B9A7D25A7F7BE00C8D933 /* TikTokOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915B9A7C25A7F7BE00C8D933 /* TikTokOpenSDK.framework */; };
 		916438BB2626D9100035CCB0 /* SnapChatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916438BA2626D9100035CCB0 /* SnapChatConnector.framework */; };
 		916438C32626DB3F0035CCB0 /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916438BF2626DA0E0035CCB0 /* SCSDKCoreKit.framework */; };
@@ -317,6 +320,9 @@
 		52BA310D19F63AB200D81640 /* libarchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.tbd"; name = libarchive.tbd; path = usr/lib/libarchive.tbd; sourceTree = SDKROOT; };
 		52BA311019F63B0300D81640 /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.tbd"; name = libbsm.tbd; path = usr/lib/libbsm.tbd; sourceTree = SDKROOT; };
 		52CA35741AB195C9002579CF /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.tbd"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		91575F5226CFA06300B575A6 /* DouyinOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DouyinOpenSDK.framework; sourceTree = "<group>"; };
+		91575F5526CFA06C00B575A6 /* TikTokOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TikTokOpenSDK.framework; sourceTree = "<group>"; };
+		91575F5726CFA1BD00B575A6 /* TikTokConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TikTokConnector.framework; sourceTree = "<group>"; };
 		915B9A7C25A7F7BE00C8D933 /* TikTokOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TikTokOpenSDK.framework; sourceTree = "<group>"; };
 		916438BA2626D9100035CCB0 /* SnapChatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapChatConnector.framework; sourceTree = "<group>"; };
 		916438BD2626DA0E0035CCB0 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SCSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -335,14 +341,12 @@
 		D538550F242B6E07009B4797 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		D5385510242B6E07009B4797 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
 		D5385511242B6E07009B4797 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
-		D5385513242B6E07009B4797 /* TikTokOpenPlatformSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TikTokOpenPlatformSDK.framework; sourceTree = "<group>"; };
 		D5385515242B6E07009B4797 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D5385516242B6E07009B4797 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D5385517242B6E07009B4797 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		D5385518242B6E07009B4797 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D538551A242B6E07009B4797 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		D538551B242B6E07009B4797 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		D538551C242B6E07009B4797 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		D538551D242B6E07009B4797 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		D538551E242B6E07009B4797 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		D5385520242B6E07009B4797 /* OasisSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OasisSDK.framework; sourceTree = "<group>"; };
@@ -476,6 +480,7 @@
 				52BA30BC19F6367A00D81640 /* Accelerate.framework in Frameworks */,
 				D5385594242B6E07009B4797 /* KakaoLink.framework in Frameworks */,
 				52BA30BD19F6367A00D81640 /* Accounts.framework in Frameworks */,
+				91575F5326CFA06300B575A6 /* DouyinOpenSDK.framework in Frameworks */,
 				D53855C9242B6E07009B4797 /* InstagramConnector.framework in Frameworks */,
 				D53855A2242B6E07009B4797 /* PrintConnector.framework in Frameworks */,
 				D53855C2242B6E07009B4797 /* YouTubeConnector.framework in Frameworks */,
@@ -486,6 +491,7 @@
 				52BA30C419F6367A00D81640 /* CoreFoundation.framework in Frameworks */,
 				D5385588242B6E07009B4797 /* libAPOpenSdk.a in Frameworks */,
 				0B57A8CF226F19E7006F1DEA /* libShareSDKPlus.a in Frameworks */,
+				91575F5826CFA1BD00B575A6 /* TikTokConnector.framework in Frameworks */,
 				52BA30C519F6367A00D81640 /* CoreImage.framework in Frameworks */,
 				52BA30C619F6367A00D81640 /* CoreMIDI.framework in Frameworks */,
 				52BA30C719F6367A00D81640 /* CoreMotion.framework in Frameworks */,
@@ -504,6 +510,7 @@
 				52BA30CC19F6367A00D81640 /* GameController.framework in Frameworks */,
 				52BA30CE19F6367A00D81640 /* GLKit.framework in Frameworks */,
 				52BA30CF19F6367A00D81640 /* GSS.framework in Frameworks */,
+				91575F5626CFA06C00B575A6 /* TikTokOpenSDK.framework in Frameworks */,
 				52BA30D319F6367A00D81640 /* JavaScriptCore.framework in Frameworks */,
 				D53855B4242B6E07009B4797 /* VKontakteConnector.framework in Frameworks */,
 				D53855C6242B6E07009B4797 /* YouDaoNoteConnector.framework in Frameworks */,
@@ -757,6 +764,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		91575F5426CFA06C00B575A6 /* TikTokSDK */ = {
+			isa = PBXGroup;
+			children = (
+				91575F5526CFA06C00B575A6 /* TikTokOpenSDK.framework */,
+			);
+			path = TikTokSDK;
+			sourceTree = "<group>";
+		};
 		915B9A7B25A7F7BE00C8D933 /* TikTokSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +839,7 @@
 		D5385509242B6E07009B4797 /* PlatformSDK */ = {
 			isa = PBXGroup;
 			children = (
+				91575F5426CFA06C00B575A6 /* TikTokSDK */,
 				916438BC2626DA0E0035CCB0 /* SnapChat */,
 				916D86202600BC5900FF4C1E /* KwaiSDKLibrary */,
 				915B9A7B25A7F7BE00C8D933 /* TikTokSDK */,
@@ -858,7 +874,7 @@
 		D5385512242B6E07009B4797 /* DouyinOpenSDK */ = {
 			isa = PBXGroup;
 			children = (
-				D5385513242B6E07009B4797 /* TikTokOpenPlatformSDK.framework */,
+				91575F5226CFA06300B575A6 /* DouyinOpenSDK.framework */,
 			);
 			path = DouyinOpenSDK;
 			sourceTree = "<group>";
@@ -879,7 +895,6 @@
 			children = (
 				D538551A242B6E07009B4797 /* WXApi.h */,
 				D538551B242B6E07009B4797 /* WXApiObject.h */,
-				D538551C242B6E07009B4797 /* README.txt */,
 				D538551D242B6E07009B4797 /* WechatAuthSDK.h */,
 				D538551E242B6E07009B4797 /* libWeChatSDK.a */,
 			);
@@ -993,6 +1008,7 @@
 		D538554E242B6E07009B4797 /* PlatformConnector */ = {
 			isa = PBXGroup;
 			children = (
+				91575F5726CFA1BD00B575A6 /* TikTokConnector.framework */,
 				916F3CF2260C363E003295B6 /* TelegramConnector.framework */,
 				916D86302600BD2000FF4C1E /* KuaiShouConnector.framework */,
 				D538554F242B6E07009B4797 /* PrintConnector.framework */,
@@ -1320,7 +1336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MobTech.allkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Mobtech-Dev";
+				PROVISIONING_PROFILE_SPECIFIER = com.MobTech.allkeysDevelop;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1361,7 +1377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.MobTech.allkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Mobtech-Dev";
+				PROVISIONING_PROFILE_SPECIFIER = com.MobTech.allkeysDevelop;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -754,6 +754,39 @@
 
     }
 
+    
+    function dyIMShareContentClickHandler(platform, type) {
+
+        var shareParams =
+        {
+            //通用参数
+            "images" : "http://download.sdk.mob.com/206/4f8/dfc9ea27dd8bc4abfec865c38d/800_450_156.2.jpg",
+            "type" : type,
+            //抖音相关
+            "shareActionMode" : 1
+
+        };
+        shareApi.shareContent({
+            "platform": platform,
+            "shareParams": shareParams
+        },function(ret, err){
+            var state = ret.state;
+            switch(state)
+            {
+                case $sharesdk.ResponseState.Success://1
+                    api.alert({ title: '成功' });
+                    break;
+                case $sharesdk.ResponseState.Fail://2
+                    api.alert({ title: '失败', msg: ret.error });
+                    break;
+                case $sharesdk.ResponseState.Cancel://3
+                    api.alert({ title: '取消' });
+                    break;
+                default:
+            }
+        });
+    }
+
     function commomShareContentClickHandler(platform, type) {
 
         var shareParams =
@@ -828,6 +861,7 @@
 
                 //抖音相关
                 "assetLocalIds" : null,    //["localidentifier1","localidentifier2"]
+                "shareActionMode" : 0,
 
                 //TikTok相关
                 "assetLocalIds" : null,    //["localidentifier1","localidentifier2"]
@@ -1041,7 +1075,9 @@
             <header>
                 <h1>iOS demo</h1>
             </header>
-            <a class="button" tapmode="active" onclick="authBtnClickHandler($sharesdk.PlatformID.WeChat)">授权</a>
+            <a class="button" tapmode="active" onclick="authBtnClickHandler($sharesdk.PlatformID.WeChat)">微信授权</a>
+            <a class="button" tapmode="active" onclick="authBtnClickHandler($sharesdk.PlatformID.DingTalk)">钉钉授权</a>
+            <a class="button" tapmode="active" onclick="authBtnClickHandler($sharesdk.PlatformID.TikTok)">TikTok授权</a>
             <a class="button" tapmode="active" onclick="cancelAuthBtnClickHandler()">取消授权</a>
             <a class="button" tapmode="active" onclick="userInfoBtnClickHandler($sharesdk.PlatformID.WeChat)">获取用户信息</a>
             <a class="button" tapmode="active" onclick="shareContentClickHandler()">分享内容</a>
@@ -1063,6 +1099,7 @@
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.FacebookMessenger,$sharesdk.ContentType.Image)">分享图片到FacebookMessenger</a>
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.KuaiShou,$sharesdk.ContentType.Messenger)">分享私信到快手</a>
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.Douyin,$sharesdk.ContentType.Image)">分享图片到抖音</a>
+            <a class="button" tapmode="active" onclick="dyIMShareContentClickHandler($sharesdk.PlatformID.Douyin,$sharesdk.ContentType.Image)">分享图片到抖音IM</a>
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.KakaoTalk,$sharesdk.ContentType.WebPage)">分享链接到KaKaoTalk</a>
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.KakaoStory,$sharesdk.ContentType.Image)">分享图片到KaKaoStory</a>
             <a class="button" tapmode="active" onclick="commomShareContentClickHandler($sharesdk.PlatformID.Line,$sharesdk.ContentType.Image)">分享图片到Line</a>

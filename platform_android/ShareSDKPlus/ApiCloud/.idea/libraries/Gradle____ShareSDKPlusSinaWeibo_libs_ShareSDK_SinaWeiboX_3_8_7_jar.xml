@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./ShareSDKPlusSinaWeibo/libs/ShareSDK-SinaWeiboX-3.8.7.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ShareSDKPlusSinaWeibo/libs/ShareSDK-SinaWeiboX-3.8.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./ShareSDKPlusTwitter/libs/ShareSDK-Twitter-3.8.7.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ShareSDKPlusTwitter/libs/ShareSDK-Twitter-3.8.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

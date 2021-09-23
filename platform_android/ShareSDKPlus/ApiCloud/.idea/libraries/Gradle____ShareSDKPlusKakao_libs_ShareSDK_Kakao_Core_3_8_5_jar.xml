@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./ShareSDKPlusKakao/libs/ShareSDK-Kakao-Core-3.8.5.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ShareSDKPlusKakao/libs/ShareSDK-Kakao-Core-3.8.5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./ShareSDKPlusLine/libs/ShareSDK-Line-3.8.5.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ShareSDKPlusLine/libs/ShareSDK-Line-3.8.5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

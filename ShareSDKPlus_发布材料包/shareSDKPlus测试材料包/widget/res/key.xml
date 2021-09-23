@@ -123,8 +123,8 @@
     <param name="shareSDKPlus_KuaiShou_AppSecret" value="RQ17enXUOioeoDMrwk3j2Q" />
     <param name="shareSDKPlus_KuaiShou_AppUniversalLink" value="https://70imc.share2dlink.com/" />
     
-    <param name="shareSDKPlus_WeWork_AppKey" value="wwautha21eaecf93f0e3ba000012" />
-    <param name="shareSDKPlus_WeWork_CorpId" value="wwa21eaecf93f0e3ba" />
+    <param name="shareSDKPlus_WeWork_Schema" value="wwautha21eaecf93f0e3ba000012" />
+    <param name="shareSDKPlus_WeWork_Appkey" value="wwa21eaecf93f0e3ba" />
     <param name="shareSDKPlus_WeWork_AgentId" value="1000012" />
     <param name="shareSDKPlus_WeWork_AppSecret" value="dW7e27P7Hc8NiYdRxnbTeOLgfI1ugR72e-PM8uusq2s" />
     

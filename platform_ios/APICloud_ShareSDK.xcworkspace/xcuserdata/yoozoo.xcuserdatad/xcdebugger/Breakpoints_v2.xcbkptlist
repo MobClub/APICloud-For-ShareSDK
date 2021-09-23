@@ -71,17 +71,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1E4D1127-E802-4DCD-8393-CA1F0A3ECAB4"
+            uuid = "CEC1C4E7-19B0-430F-8CE0-8BDEC7C500D4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1603"
-            endingLineNumber = "1603"
+            startingLineNumber = "1142"
+            endingLineNumber = "1142"
             landmarkName = "-_contentWithDict:platforms:completeHandle:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07DDE63F-6045-4462-8CBF-3BD7B9068B59"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1333"
+            endingLineNumber = "1333"
+            landmarkName = "-_contentWithDict:platforms:completeHandle:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBDA140D-33C1-4252-9429-31FE2B02D811"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
+            landmarkName = "JS_METHOD(context)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "035636C2-F9CB-4653-BE9F-446F4D09BC1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "649"
+            endingLineNumber = "649"
+            landmarkName = "JS_METHOD(context)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C67CC2B2-38F3-460D-9D28-FDF7DC19BC7E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "737"
+            endingLineNumber = "737"
+            landmarkName = "JS_METHOD(context)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "C67CC2B2-38F3-460D-9D28-FDF7DC19BC7E - 604981639ae0abeb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ShareSDKPlus jsmethod_oneKeyShareContent:]_block_invoke"
+                  moduleName = "UZApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoozoo/Desktop/Project/sharesdk-for-apicloud/platform_ios/ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "737"
+                  endingLineNumber = "737"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "C67CC2B2-38F3-460D-9D28-FDF7DC19BC7E - 8547cc8b8188ffb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[ShareSDKPlus jsmethod_oneKeyShareContent:]_block_invoke_2"
+                  moduleName = "UZApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yoozoo/Desktop/Project/sharesdk-for-apicloud/platform_ios/ShareSDKPlus/ShareSDKPlus/ShareSDKPlus.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "739"
+                  endingLineNumber = "739"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
