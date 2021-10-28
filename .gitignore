@@ -1,0 +1,5 @@
+*/.idea/*
+platform_android/ShareSDKPlus/ApiCloud/app/src/main/assets/widget/.apicloud/.project
+platform_android/ShareSDKPlus/ApiCloud/.idea/workspace.xml
+platform_android/ShareSDKPlus/ApiCloud/.gitignore
+platform_android/ShareSDKPlus/ApiCloud/packageHelper/

@@ -39,7 +39,7 @@ android {
 
         from 'libs/'
         into '../packageHelper/shareSDKPlus/'
-        include 'OneKeyShare-3.8.7.aar', 'ShareSDK-3.8.7.aar'
+        include 'OneKeyShare*.aar', 'ShareSDK*.aar'
     }
 
     task zipAar(type: Zip, dependsOn: copyAar) {

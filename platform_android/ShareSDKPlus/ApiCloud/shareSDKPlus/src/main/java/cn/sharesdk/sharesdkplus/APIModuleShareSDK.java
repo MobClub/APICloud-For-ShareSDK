@@ -1,15 +1,11 @@
 package cn.sharesdk.sharesdkplus;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.mob.MobSDK;
-import com.mob.tools.utils.BitmapHelper;
 import com.uzmap.pkg.uzcore.UZWebView;
 import com.uzmap.pkg.uzcore.uzmodule.UZModule;
 import com.uzmap.pkg.uzcore.uzmodule.UZModuleContext;
@@ -18,11 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 
-import cn.sharesdk.BuildConfig;
 import cn.sharesdk.alipay.friends.Alipay;
 import cn.sharesdk.alipay.moments.AlipayMoments;
 import cn.sharesdk.dingding.friends.Dingding;

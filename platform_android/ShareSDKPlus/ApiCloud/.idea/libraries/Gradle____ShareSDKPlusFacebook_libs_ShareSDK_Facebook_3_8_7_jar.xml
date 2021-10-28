@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: ./ShareSDKPlusFacebook/libs/ShareSDK-Facebook-3.8.7.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ShareSDKPlusFacebook/libs/ShareSDK-Facebook-3.8.7.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

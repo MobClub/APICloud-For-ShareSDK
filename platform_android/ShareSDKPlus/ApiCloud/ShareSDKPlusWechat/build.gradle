@@ -58,10 +58,6 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
-    implementation files('libs/ShareSDK-Wechat-3.8.7.jar')
-    implementation files('libs/ShareSDK-Wechat-Core-3.8.7.jar')
-    implementation files('libs/ShareSDK-Wechat-Favorite-3.8.7.jar')
-    implementation files('libs/ShareSDK-Wechat-Moments-3.8.7.jar')
 }
 
 

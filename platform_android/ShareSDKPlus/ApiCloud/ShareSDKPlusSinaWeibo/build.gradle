@@ -62,6 +62,7 @@ android {
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.aar'], exclude: [])
+
     api fileTree(dir: 'libs', include: ['*.jar'], exclude: [])
 }
 
